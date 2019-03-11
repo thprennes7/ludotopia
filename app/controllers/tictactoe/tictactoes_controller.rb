@@ -1,4 +1,6 @@
 class Tictactoe::TictactoesController < ApplicationController
+	before_action :get_tictactoe, only: [:show, :destroy]
+  before_action :authenticate_user!
 
 	def create
 		game = Tictactoe.create(status: 0)
@@ -10,11 +12,11 @@ class Tictactoe::TictactoesController < ApplicationController
 		end
 	end
 	def show
-		@party = get_tictactoe(params[:id])
+		
 	end
 
 	private
-	def get_tictactoe(id)
-		Tictactoe.find(id)
+	def get_tictactoe
+		@party = Tictactoe.find(params[:id])
 	end
 end

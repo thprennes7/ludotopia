@@ -49,5 +49,6 @@ unless TictactoeGrid.all.any?
 	i = 1
 	9.times do
 		TictactoeGrid.create!(case: i)
+		i+=1
 	end
 end

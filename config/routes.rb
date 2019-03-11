@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :tictactoe_grids
+  resources :tictactoe_users
+  resources :tictactoes
   resources :banners
   resources :donations
   resources :scores

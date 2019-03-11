@@ -1,0 +1,2 @@
+class TictactoeGrid < ApplicationRecord
+end

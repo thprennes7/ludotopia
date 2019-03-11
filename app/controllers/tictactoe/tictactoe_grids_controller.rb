@@ -1,2 +1,2 @@
-class TictactoeGridsController < ApplicationController
+class Tictactoe::TictactoeGridsController < ApplicationController
 end

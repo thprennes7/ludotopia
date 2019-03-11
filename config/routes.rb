@@ -16,7 +16,9 @@ Rails.application.routes.draw do
 
 
   # TicTacToe
-  resources :tictactoe_grids
-  resources :tictactoe_users
-  resources :tictactoes
+  namespace :tictactoe do
+    resources :tictactoe_grids
+    resources :tictactoe_users
+    resources :tictactoes
+  end
 end

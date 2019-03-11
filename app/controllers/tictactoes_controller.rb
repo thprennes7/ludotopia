@@ -1,2 +1,0 @@
-class TictactoesController < ApplicationController
-end

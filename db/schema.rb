@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_171516) do
   end
 
   create_table "tictactoe_grids", force: :cascade do |t|
-    t.string "case"
+    t.integer "case"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,6 +1,6 @@
 class Tictactoe < ApplicationRecord
 	has_many :tictactoe_user
-	validate :status, presence: true
+	validates :status, presence: true
 
 	after_create :create_grid
 

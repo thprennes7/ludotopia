@@ -46,6 +46,7 @@ puts "Like create"
 
 
 unless TictactoeGrid.all.any?
+	# Fill the grid if it's empty
 	i = 1
 	9.times do
 		TictactoeGrid.create!(case: i)

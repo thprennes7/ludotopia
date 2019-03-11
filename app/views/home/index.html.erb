@@ -1,2 +1,821 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta name="author" content="AtypicalThemes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+
+    <!-- WEBSITE TITLE & DESCRIPTION -->
+    <title>Strider - A Game Studio Template</title>
+    <meta name="description" content="The best template for game developers and small studios">
+    <meta name="keywords" content="game, gaming, videogame, developer, steam, studio, team">
+
+    <!-- OG meta tags that improve the look of your post on social media -->
+    <meta property="og:site_name" content="" /><!--website name-->
+    <meta property="og:site" content="" /> <!--website link-->
+    <meta property="og:title" content=""/> <!--Post title-->
+    <meta property="og:description" content="" /> <!--Post description-->
+    <meta property="og:image" content="" /><!-- Image link (jpg only)-->
+    <meta property="og:url" content="" /> <!--where do you want your post to link to-->
+    <meta property="og:type" content="article" />
+
+    <!-- Favicon and Apple Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+
+    <!-- STYLES -->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Animations -->
+    <link href="css/animations.css" rel="stylesheet">
+    <!-- Lightbox -->
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <!-- Video Lightbox -->
+    <link href="css/modal-video.min.css" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+  
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <h1 class="loader-logo"><span class="colored">S</span>TRIDER</h1>
+        <div id="progress"></div>
+        <h3 class="loader-text">LOADING</h3>
+    </div>
+    
+    <!-- //// HEADER //// -->
+    <header id="main-header">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+            <div class="container">
+                <!-- Site Logo -->
+                <a id="logo" class="navbar-brand" href="#"><img class="img-fluid" src="images/logo.png" alt="site logo"></a>
+                <!-- Dropdown Button -->
+                <button id="hamburger" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                </button>
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#games">Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#team">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#careers">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header><!-- Header End -->
+    
+    <!-- /// HERO SECTION /// -->
+    <div id="hero-section" class="small-margin">
+        <div id="particles-web"></div>
+        <div class="row hero-unit">
+            <div class="container">
+                <div class="hero-caption"><!-- Main Tagline -->
+                    <h1>We Make <span class="colored">Awesome Games</span></h1>
+                </div>
+            </div>
+        </div>
+    </div><!-- Hero Section End -->
+    
+    <!-- /// Main Container /// -->
+    <div class="container">
+        <!-- /// ABOUT SECTION /// -->
+        <div id="about" class="large-margin">
+            <a href="about"></a><!-- Nav Anchor -->
+            <div class="row heading tiny-margin">
+                <div class="col-md-auto">
+                    <h1 class="animation-element slide-down">ABOUT <span class="colored">US</span></h1>
+                </div>
+                <div class="col">
+                    <hr class="animation-element extend">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="small-margin">We are a dedicated team of developers, designers, artists, programmers, and most importantly gaming enthusiasts. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae ante pharetra, molestie nunc non, interdum ipsum.</p>
+                    <img id="awards" src="images/awards.png" class="img-fluid" alt="awads">
+                </div>
+                <div class="col-md-6">
+                    <img id="support-image" src="images/placeholder.jpg" data-src="images/about.jpg" class="img-fluid b-lazy" alt="digital collage">
+                </div>
+            </div>
+        </div>
+        <!-- /// GAMES SECTION /// -->
+        <div id="games" class="large-margin">
+            <a href="games"></a><!-- Nav Anchor -->
+            <div class="row heading tiny-margin">
+                <div class="col-md-auto">
+                    <h1 class="animation-element slide-down">OUR <span class="colored">GAMES</span></h1>
+                </div>
+                <div class="col">
+                    <hr class="animation-element extend">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-11 small-margin">
+                   <p>Here at Strider games we pride ourselves in delivering rich and polished experiences that our fanbase can enjoy and immerse themselve into. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis rhoncus nibh.</p>
+                </div>
+                <div class="col-md-12">
+                    <ul class="game-tags">
+                        <li>Sort By Tag :</li>
+                        <li><a href="#" data-filter=".new">NEW</a></li>
+                        <li><a href="#" data-filter="*">ALL</a></li>
+                        <li><a href="#" data-filter=".pc">PC</a></li>
+                        <li><a href="#" data-filter=".mobile">MOBILE</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="games-portfolio ">
+                <!-- Game Card Video -->
+                <div class="row game-card pc new">
+                    <div class="col-lg-12 col-xl-5 game-card-left">
+                        <a href="#" class="js-video-button" data-video-id='DPBW_MFqeRs' data-channel="youtube"> <!-- Video link goes here -->
+                            <div class="overlay">
+                                <i class="fa fa-play fa-3x"></i>
+                            </div>
+                            <img src="images/placeholder.jpg" data-src="images/game.jpg" class="img-fluid b-lazy" alt="video thumbnail"> <!-- Video Thumbnail Img -->
+                        </a>
+                    </div>
+                    <div class="col-lg-12 col-xl-7 game-card-right">
+                        <h2 class="short-hr-left">SWORDS &amp; SCLAES - DRAGON RISING</h2>
+                        <p class="tags"><span class="subtle">Action RPG | PC</span> </p>
+                        <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis rhoncus nibh. Phasellus dignissim luctus consectetur. Fusce viverra est non purus ultrices, vel molestie massa tincidunt. <span class="expand colored strong" data-toggle="modal" data-target="#game1">Read More</span></p>
+                        <div class="steam-btn">
+                            <a href="#">
+                                <i class="fa fa-steam fa-3x"></i>
+                                <p>GET IT ON <br><span class="spaced">STEAM</span></p>
+                            </a>
+                        </div>
+                        <div class="reviews">
+                            <a href="#"><div class="score-card">
+                                <p class="score">8.0</p>
+                                <p>Gamespot</p>
+                            </div></a>
+                            <a href="#"><div class="score-card">
+                                <p class="score">7.9</p>
+                                <p>IGN</p>
+                            </div></a>
+                            <a href="#"><div class="score-card">
+                                <p class="score">86</p>
+                                <p>Metacritic</p>
+                            </div></a>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade game-modal" id="game1" tabindex="-1" role="dialog" aria-labelledby="scales" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="scales">SWORDS &amp; SCALES</h1>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                               <div class="modal-body">
+                                   <h2 class="short-hr-left">TEAM UP AND FIGHT DRAGONS</h2>
+                                   <p>Integer eget diam felis. Quisque et aliquet lectus, et lacinia turpis. Praesent eget pretium orci. Sed vestibulum rutrum volutpat. Curabitur feugiat arcu odio, quis convallis eros laoreet ac.</p>
+                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+                                   <br>
+                                   <h2 class="short-hr-left">MAKE FRIENDS</h2>
+                                   <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
+                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+                                   <br>
+                                   <h2 class="short-hr-left">TRAIN YOUR DRAGON</h2>
+                                   <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div><!-- Game Card End -->
+                
+                <!-- Game Card Video -->
+                <div class="row game-card mobile new">
+                    <div class="col-lg-12 col-xl-5 game-card-left">
+                        <a href="#" class="js-video-button" data-video-id='285232623' data-channel="vimeo"> <!-- Video link goes here -->
+                            <div class="overlay">
+                                <i class="fa fa-play fa-3x"></i>
+                            </div>
+                            <img src="images/placeholder.jpg" data-src="images/game.jpg" class="img-fluid b-lazy" alt="video thumbnail"> <!-- Video Thumbnail Img -->
+                        </a>
+                    </div>
+                    <div class="col-lg-12 col-xl-7 game-card-right">
+                        <h2 class="short-hr-left">BEDLAMBORNE</h2>
+                        <p class="tags"><span class="subtle">Horror Adventure | Mobile</span> </p>
+                        <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis rhoncus nibh. Phasellus dignissim luctus consectetur. Fusce viverra est non purus ultrices, vel molestie massa tincidunt. <span class="expand colored strong" data-toggle="modal" data-target="#game2">Read More</span></p>
+                        <a href="#" class="button-store">
+                            <i class="fa fa-android fa-2x"></i>
+                            <p>Available on<br><span class="strong">Google Play</span></p>
+                        </a>
+                        <a href="#" class="button-store">
+                            <i class="fa fa-apple fa-2x"></i>
+                            <p>Available on<br><span class="strong">Apple Store</span></p>
+                       </a>
+                        <div class="rating">
+                            <p class="strong">4.5</p>
+                            <ul>
+                                <li><i class="fa fa-star colored"></i></li>
+                                <li><i class="fa fa-star colored"></i></li>
+                                <li><i class="fa fa-star colored"></i></li>
+                                <li><i class="fa fa-star colored"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade game-modal" id="game2" tabindex="-1" role="dialog" aria-labelledby="bedlam" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="bedlam">BEDLAMBORNE</h1>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                               <div class="modal-body">
+                                   <h2 class="short-hr-left">A DARK WORLD</h2>
+                                   <p>Integer eget diam felis. Quisque et aliquet lectus, et lacinia turpis. Praesent eget pretium orci. Sed vestibulum rutrum volutpat. Curabitur feugiat arcu odio, quis convallis eros laoreet ac.</p>
+                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+                                   <br>
+                                   <h2 class="short-hr-left">ENGAGING STORY</h2>
+                                   <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
+                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+                                   <br>
+                                   <h2 class="short-hr-left">INTERESTING CHARACTERS</h2>
+                                   <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div><!-- Game Card End -->
+                
+                <!-- Game Card -->
+                <div class="row game-card pc">
+                    <div class="col-lg-12 col-xl-5 game-card-left">
+                        <a href="images/game_large.jpg" data-lightbox="screenshots_aurora">
+                            <div class="overlay">
+                                <i class="fa fa-picture-o fa-3x"></i>
+                            </div>
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="images/game.jpg">
+                                <source media="(min-width: 768px)" srcset="images/game_large.jpg">
+                                <img src="images/placeholder.jpg" data-src="images/game.jpg" class="img-fluid b-lazy" alt="aurora image">
+                            </picture>
+                        </a>
+                        <a href="images/game_large.jpg" data-lightbox="screenshots_aurora"></a>
+                        <a href="images/game_large.jpg" data-lightbox="screenshots_aurora"></a>
+                    </div>
+                    <div class="col-lg-12 col-xl-7 game-card-right">
+                        <h2 class="short-hr-left">AURORA AWAKENING</h2>
+                        <p class="tags"><span class="subtle">Action RPG | PC</span> </p>
+                        <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis rhoncus nibh. Phasellus dignissim luctus consectetur. Fusce viverra est non purus ultrices, vel molestie massa tincidunt. <span class="expand colored strong" data-toggle="modal" data-target="#game3">Read More</span></p>
+                        <div class="steam-btn">
+                            <a href="#">
+                                <i class="fa fa-steam fa-3x"></i>
+                                <p>GET IT ON <br><span class="spaced">STEAM</span></p>
+                            </a>
+                        </div>
+                        <div class="reviews">
+                            <a href="#"><div class="score-card">
+                                <p class="score">8.5</p>
+                                <p>Gamespot</p>
+                            </div></a>
+                            <a href="#"><div class="score-card">
+                                <p class="score">8.1</p>
+                                <p>IGN</p>
+                            </div></a>
+                            <a href="#"><div class="score-card">
+                                <p class="score">83</p>
+                                <p>Metacritic</p>
+                            </div></a>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade game-modal" id="game3" tabindex="-1" role="dialog" aria-labelledby="aurora" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="aurora">AURORA AWAKENING</h1>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                               <div class="modal-body">
+                                   <iframe class="modal-vid" src="https://www.youtube.com/embed/DPBW_MFqeRs?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                                   <h2 class="short-hr-left">EXPLORE AN EXPANSIVE WORLD</h2>
+                                   <p>Integer eget diam felis. Quisque et aliquet lectus, et lacinia turpis. Praesent eget pretium orci. Sed vestibulum rutrum volutpat. Curabitur feugiat arcu odio, quis convallis eros laoreet ac.</p>
+                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+                                   <br>
+                                   <h2 class="short-hr-left">ADAPT AND DEVELOP YOUR CHARACTER</h2>
+                                   <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
+                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+                                   <br>
+                                   <h2 class="short-hr-left">GET IMMERSED IN A DEEP STORY</h2>
+                                   <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div><!-- Game Card End -->
+                
+                <!-- Game Card -->
+                <div class="row game-card mobile">
+                    <div class="col-lg-12 col-xl-5 game-card-left">
+                        <a href="images/game_large.jpg" data-lightbox="screenshots_dark">
+                            <div class="overlay">
+                                <i class="fa fa-picture-o fa-3x"></i>
+                            </div>
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="images/game.jpg">
+                                <source media="(min-width: 768px)" srcset="images/game_large.jpg">
+                                <img src="images/placeholder.jpg" data-src="images/game.jpg" class="img-fluid b-lazy" alt="aurora image">
+                            </picture>
+                        </a>
+                        <a href="images/game_large.jpg" data-lightbox="screenshots_dark"></a>
+                        <a href="images/game_large.jpg" data-lightbox="screenshots_dark"></a>
+                    </div>
+                    <div class="col-lg-12 col-xl-7 game-card-right">
+                        <h2 class="short-hr-left">ECHO - DARK ADVENTURES</h2>
+                        <p class="tags"><span class="subtle">Adventure | Mobile</span></p>
+                        <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis rhoncus nibh. Phasellus dignissim luctus consectetur. Fusce viverra est non purus ultrices, vel molestie massa tincidunt. <span class="expand colored strong" data-toggle="modal" data-target="#game4">Read More</span></p>
+                        <a href="#" class="button-store">
+                            <i class="fa fa-android fa-2x"></i>
+                            <p>Available on<br><span class="strong">Google Play</span></p>
+                        </a>
+                        <a href="#" class="button-store">
+                            <i class="fa fa-apple fa-2x"></i>
+                            <p>Available on<br><span class="strong">Apple Store</span></p>
+                       </a>
+                        <div class="rating">
+                            <p class="strong">4.1</p>
+                            <ul>
+                                <li><i class="fa fa-star colored"></i></li>
+                                <li><i class="fa fa-star colored"></i></li>
+                                <li><i class="fa fa-star colored"></i></li>
+                                <li><i class="fa fa-star colored"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade game-modal" id="game4" tabindex="-1" role="dialog" aria-labelledby="echo" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="echo">ECHO - DARK ADVENTURES</h1>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                               <div class="modal-body">
+                                   <iframe class="modal-vid" src="https://www.youtube.com/embed/73vSguCeJl0?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                                   <h2 class="short-hr-left">EXPLORE AN EXPANSIVE WORLD</h2>
+                                   <p>Integer eget diam felis. Quisque et aliquet lectus, et lacinia turpis. Praesent eget pretium orci. Sed vestibulum rutrum volutpat. Curabitur feugiat arcu odio, quis convallis eros laoreet ac.</p>
+                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+                                   <br>
+                                   <h2 class="short-hr-left">GET IMMERSED IN A FANTASTIC STORY</h2>
+                                   <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
+                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+                                   <br>
+                                   <h2 class="short-hr-left">ADAPT AND DEVELOP YOUR CHARACTER</h2>
+                                   <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Game Card End -->
+            </div>
+        </div>
+        <!-- /// TEAM SECTION /// -->
+        <div id="team" class="large-margin">
+            <a href="team"></a><!-- Nav Anchor -->
+            <div class="row heading tiny-margin">
+                <div class="col-md-auto">
+                    <h1 class="animation-element slide-down">THE <span class="colored">TEAM</span></h1>
+                </div>
+                <div class="col">
+                    <hr class="animation-element extend">
+                </div>
+            </div>
+            <div class="row medium-margin">
+                <div class="col-md-11 tiny-margin">
+                    <p>Our passion unites us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt mi ut mauris varius, vitae lobortis erat ullamcorper. Pellentesque vel dolor non nisi fringilla scelerisque in non ante.</p>
+                </div>
+                <div id="full-row" class="row text-center">
+                    <div class="col-md-3 team-card">
+                        <figure>
+                            <img src="images/placeholder.jpg" data-src="images/team.jpg" class="img-fluid b-lazy" alt="teammember">
+                            <figcaption class="team-caption">
+                                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+                                <hr class="hr-short">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <p class="team-name">Vladimir M.</p>
+                        <p class="subtle">Lead Designer</p>
+                    </div>
+                    <div class="col-md-3 team-card">
+                        <figure>
+                            <img src="images/placeholder.jpg" data-src="images/team.jpg" class="img-fluid b-lazy" alt="teammember">
+                            <figcaption class="team-caption">
+                                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+                                <hr class="hr-short">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <p class="team-name">Asimov R.</p>
+                        <p class="subtle">Founder</p>
+                    </div>
+                    <div class="col-md-3 team-card">
+                        <figure>
+                            <img src="images/placeholder.jpg" data-src="images/team.jpg" class="img-fluid b-lazy" alt="teammember">
+                            <figcaption class="team-caption">
+                                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+                                <hr class="hr-short">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <p class="team-name">Natalia I.</p>
+                        <p class="subtle">Lead Artist</p>
+                    </div>
+                    <div class="col-md-3 team-card">
+                        <figure>
+                            <img src="images/placeholder.jpg" data-src="images/team.jpg" class="img-fluid b-lazy" alt="teammember">
+                            <figcaption class="team-caption">
+                                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+                                <hr class="hr-short">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <p class="team-name">Dimitri A.</p>
+                        <p class="subtle">Programmer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row tiny-margin">
+                <div class="col-md-11">
+                    <h2 class="short-hr-left">OUR STUDIO</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, nisl non mattis sollicitudin, risus quam tempor sem, vel interdum est libero non odio.</p>
+                </div>
+            </div>
+            <div class="grid-gallery">
+                <div class="row">
+                    <div class="col-md-4 gallery-item">
+                        <a href="images/studio.jpg" data-lightbox="studio_gallery">
+                            <div class="overlay gallery">
+                                <i class="fa fa-picture-o fa-3x"></i>
+                            </div>
+                            <img src="images/placeholder.jpg" data-src="images/studio.jpg" class="img-fluid b-lazy" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <a href="images/studio.jpg" data-lightbox="studio_gallery">
+                            <div class="overlay gallery">
+                                <i class="fa fa-picture-o fa-3x"></i>
+                            </div>
+                            <img src="images/placeholder.jpg" data-src="images/studio.jpg" class="img-fluid b-lazy" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <a href="images/studio.jpg" data-lightbox="studio_gallery">
+                            <div class="overlay gallery">
+                                <i class="fa fa-picture-o fa-3x"></i>
+                            </div>
+                            <img src="images/placeholder.jpg" data-src="images/studio.jpg" class="img-fluid b-lazy" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 gallery-item">
+                        <a href="images/studio.jpg" data-lightbox="studio_gallery">
+                            <div class="overlay gallery">
+                                <i class="fa fa-picture-o fa-3x"></i>
+                            </div>
+                            <img src="images/placeholder.jpg" data-src="images/studio.jpg" class="img-fluid b-lazy" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <a href="images/studio.jpg" data-lightbox="studio_gallery">
+                            <div class="overlay gallery">
+                                <i class="fa fa-picture-o fa-3x"></i>
+                            </div>
+                            <img src="images/placeholder.jpg" data-src="images/studio.jpg" class="img-fluid b-lazy" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <a href="images/studio.jpg" data-lightbox="studio_gallery">
+                            <div class="overlay gallery">
+                                <i class="fa fa-picture-o fa-3x"></i>
+                            </div>
+                            <img src="images/placeholder.jpg" data-src="images/studio.jpg" class="img-fluid b-lazy" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /// CAREERS SECTION /// -->
+        <div id="careers" class='large-margin'>
+            <a href="careers"></a><!-- Nav Anchor -->
+            <div class="row heading tiny-margin">
+                <div class="col-md-auto">
+                    <h1 class="animation-element slide-down">WE'RE <span class="colored">HIRING</span></h1>
+                </div>
+                <div class="col">
+                    <hr class="animation-element extend">
+                </div>
+            </div>
+            <div class="row medium-margin">
+                <div class="col-md-11">
+                    <h2 class="short-hr-left">JOB OPENINGS</h2>
+                    <p>Are you a talented and motivated individual? Then we would love to have you in our team. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, nisl non mattis sollicitudin, risus quam tempor sem, vel interdum est libero non odio.</p><br>
+                </div>
+                <div class="col-md-4">
+                    <div class="job-card">
+                        <h3 class="colored">LEAD PROGRAMMER</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="button" data-toggle="modal" data-target="#modal1">View Details</button>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="lead-programmer" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title colored" id="lead-programmer">LEAD PROGRAMMER</h2>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h3>THE IDEAL CANDIDATE:</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, nisl non mattis sollicitudin, risus quam tempor sem, vel interdum est libero non odio.</p>
+                                    <br>
+                                    <h3>REQUIREMENTS:</h3>
+                                    <ul>
+                                    <li><p>B.Sc. in Computer Science and/or Mathematics</p></li>
+                                    <li><p>Proficient with c++ and object-oriented programming</p></li>
+                                    <li><p>Development experience in the games industry a plus.</p></li>
+                                    <li><p>Ability to contribute innovative and original ideas towards all aspects of game production and development</p></li>
+                                    <li><p>Strong communication and organizational skills</p></li>
+                                    <li><p>Must work well under pressure and handle multiple tasks</p></li>
+                                    <li><p>Passion for making GREAT games</p></li>
+                                    </ul>
+                                    <br>
+                                    <h3>HOW TO APPLY:</h3>
+                                    <p>If you think you have what it takes to join our team you an apply here <a href="mailto:office@example.com" >office@example.com</a></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+                                    <a href="mailto:office@example.com" class="button">Apply</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="job-card">
+                        <h3 class="colored">LEVEL DESIGNER</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="button" data-toggle="modal" data-target="#modal2">View Details</button>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade " id="modal2" tabindex="-1" role="dialog" aria-labelledby="level-designer" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title colored" id="level-designer">LEVEL DESIGNER</h2>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h3>THE IDEAL CANDIDATE:</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, nisl non mattis sollicitudin, risus quam tempor sem, vel interdum est libero non odio.</p>
+                                    <br>
+                                    <h3>REQUIREMENTS:</h3>
+                                    <ul>
+                                    <li><p>B.Sc. in Computer Science and/or Mathematics</p></li>
+                                    <li><p>Proficient with c++ and object-oriented programming</p></li>
+                                    <li><p>Development experience in the games industry a plus.</p></li>
+                                    <li><p>Ability to contribute innovative and original ideas towards all aspects of game production and development</p></li>
+                                    <li><p>Strong communication and organizational skills</p></li>
+                                    <li><p>Must work well under pressure and handle multiple tasks</p></li>
+                                    <li><p>Passion for making GREAT games</p></li>
+                                    </ul>
+                                    <br>
+                                    <h3>HOW TO APPLY:</h3>
+                                    <p>If you think you have what it takes to join our team you an apply here <a href="mailto:office@example.com" >office@example.com</a></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+                                    <a href="mailto:office@example.com" class="button">Apply</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="job-card">
+                        <h3 class="colored">AI ENGINEER</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="button" data-toggle="modal" data-target="#modal3">View Details</button>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade " id="modal3" tabindex="-1" role="dialog" aria-labelledby="ai-engineer" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title colored" id="ai-engineer">AI ENGINEER</h2>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                               <div class="modal-body">
+                                    <h3>THE IDEAL CANDIDATE:</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, nisl non mattis sollicitudin, risus quam tempor sem, vel interdum est libero non odio.</p>
+                                    <br>
+                                    <h3>REQUIREMENTS:</h3>
+                                    <ul>
+                                    <li><p>B.Sc. in Computer Science and/or Mathematics</p></li>
+                                    <li><p>Proficient with c++ and object-oriented programming</p></li>
+                                    <li><p>Development experience in the games industry a plus.</p></li>
+                                    <li><p>Ability to contribute innovative and original ideas towards all aspects of game production and development</p></li>
+                                    <li><p>Strong communication and organizational skills</p></li>
+                                    <li><p>Must work well under pressure and handle multiple tasks</p></li>
+                                    <li><p>Passion for making GREAT games</p></li>
+                                    </ul>
+                                    <br>
+                                    <h3>HOW TO APPLY:</h3>
+                                    <p>If you think you have what it takes to join our team you an apply here <a href="mailto:office@example.com" >office@example.com</a></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+                                    <a href="mailto:office@example.com" class="button">Apply</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="short-hr-center">OUR NEWSLETTER</h2>
+                    <p>Stay up to date with the team and our products by subscribing to our newsletter.</p>
+                    <form id="newsletter" data-toggle="validator">
+                        <input type="email" id="emailsign" placeholder="Your email adress"> <!-- Email Field -->
+                        <button type="submit" id="form-signup" class="button">SUBSCRIBE</button>
+                        <div id="msgSignup" class="h3 text-center hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /// CONTACT SECTION /// -->
+        <div id="contact" class="large-margin">
+            <a href="contact"></a><!-- Nav Anchor -->
+            <div class="row heading tiny-margin">
+                <div class="col-md-auto">
+                    <h1 class="animation-element slide-down">GET IN <span class="colored">TOUCH</span></h1>
+                </div>
+                <div class="col">
+                    <hr class="animation-element extend">
+                </div>
+            </div>
+            <div class="">
+                <div class="row small-margin">
+                    <div class="col-md-11">
+                        <p>We would love to hear from you. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra laoreet dolor sit amet blandit. Ut suscipit nisl ut risus volutpat malesuada.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="short-hr-left">LEAVE US A MESSAGE</h2>
+                        <form id="contactForm" data-toggle="validator">
+                            <div class="form-group">
+                                <!-- Name Field -->
+                                <input type="text" id="name" placeholder="Name*" required size="35" data-error="Name is required">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Email Field -->
+                                <input type="email" id="email" placeholder="Email*" required size="35" data-error="Email is required">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Message Field -->
+                                <textarea id="message" name="message" placeholder="Message*" required data-error="Message cannot be empty"></textarea>
+                                <p class="subtle">* required field</p>
+                                <div class="help-block with-errors"></div>
+                                <!-- Submit Button -->
+                                <button type="submit" class="button">SEND MESSAGE</button>
+                                <!-- Success Message -->
+                                <div id="msgSubmit" class="text-center hidden"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="short-hr-left">OUR DETAILS</h2>
+                        <div id="contact-info">
+                            <ul>
+                                <li><i class="fa fa-phone"></i><p>Phone: <span class="colored"><a href="tel:+1(803)635585">+1 (803) 635 585</a></span></p></li>
+                                <li><i class="fa fa-envelope"></i><p>Email: <span class="colored"><a href="mailto:office@example.com">office@example.com</a></span></p></li>
+                                <li><i class="fa fa-globe"></i><p>Website: <span class="colored"><a href="www.atypicalthemes.com" target="_blank">www.atypicalthemes.com</a></span></p></li>
+                                <li><i class="fa fa-map-marker"></i><p>Address: <span class="colored">1168 12th Street East Oconomowoc, WI 53066</span></p></li>
+                            </ul>
+                        </div>
+                        <!-- Google Map -->
+                        <div id="map-canvas"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- Main Container End -->
+    <!-- /// FOOTER /// -->
+    <footer id="main-footer">
+        <div id="footer"> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p id="copyright">&copy; Atypical Themes <span id="year"> </span></p><!-- Copyright Text -->
+                        <ul class="social-links"> <!-- Social Media Icons -->
+                            <li><a href="#"><i class="fa fa-facebook fa-lg icon-social"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter  fa-lg icon-social"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus fa-lg icon-social"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin fa-lg icon-social"></i></a>
+                            <li><a href="#"><i class="fa fa-pinterest fa-lg icon-social"></i></a>
+                            <li><a href="#"><i class="fa fa-instagram fa-lg icon-social"></i></a>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- Container End -->
+        </div>
+    </footer><!-- Footer End -->
+    
+    <!-- //// SCRIPTS //// -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/blazy.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/jquery-modal-video.min.js"></script>
+    <script src="js/validator.min.js"></script>
+    <script src="js/strider.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB64kJJiSynOc9ZqkNMOyl94cvsw5Z2uno"></script>
+</body>
+</html>

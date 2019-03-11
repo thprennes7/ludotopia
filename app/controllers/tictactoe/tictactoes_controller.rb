@@ -5,6 +5,7 @@ class Tictactoe::TictactoesController < ApplicationController
 	def create
 		game = Tictactoe.create(status: 0)
 		if game.save
+			TictactoeUser.create!(tictactoe_id: game.id, user_id: current_user.id)
 			redirect_to Tictactoe_path(game.id)
 		else
 			flash[:error] = "Une erreur est survenue. Si le problème persiste, contactez un admin."

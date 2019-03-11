@@ -1,2 +1,2 @@
-class TictactoesController < ApplicationController
+class Tictactoe::TictactoesController < ApplicationController
 end

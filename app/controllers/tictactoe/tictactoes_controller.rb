@@ -1,4 +1,5 @@
 class Tictactoe::TictactoesController < ApplicationController
+
 	def create
 		game = Tictactoe.create(status: 0)
 		if game.save
@@ -9,6 +10,11 @@ class Tictactoe::TictactoesController < ApplicationController
 		end
 	end
 	def show
-		@party = Tictactoe.find(params[:id])
+		@party = get_tictactoe(params[:id])
+	end
+
+	private
+	def get_tictactoe(id)
+		Tictactoe.find(id)
 	end
 end

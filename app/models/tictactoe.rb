@@ -6,6 +6,7 @@ class Tictactoe < ApplicationRecord
 
 
 	def create_grid
+		#Create the JSON file for the grid of the party
 		grid = TictactoeGrid.all
 
 		file = File.open("/db/tictactoe/party#{self.id}", "w")

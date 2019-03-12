@@ -1,8 +1,14 @@
+/*
 
-// ybo : call the file template
-@import "animations.css";
-@import "bootstrap.min.css";
-@import "font-awesome.min.css";
-@import "lightbox.min.css";
-@import "modal-video.min.css";
-@import "style.css";
+*= require_tree .
+*= require_self
+
+*= require font-awesome
+*= require assets/css/animations.css
+*= require assets/css/bootstrap.min.css
+*= require assets/css/font-awesome.min.css
+*= require assets/css/lightbox.min.css
+*= require assets/css/modal-video.min.css
+*= require assets/css/style.css
+
+*/

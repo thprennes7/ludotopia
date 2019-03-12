@@ -1,0 +1,964 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Author: AtypicalThemes
+Template: Strider - A Game Studio Template
+Version:	1.0
+
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+
+-------------------------------------------------------------------
+Table of contents
+
+    I.General
+    II.Page Prealoader
+    III.Header & Navigation
+    IV.Hero Section
+    V.About Section
+    VI.Games Section
+    VII.Team Section
+    VIII.Careers Section
+    IX.Contact Section
+    X.Footer
+    XI.404 Page
+    XII.Responsive Styles
+
+-------------------------------------------------------------------
+[Color codes]
+
+Background:	#111; (black)
+Content:	#FFF; (white)
+Footer:		#070707; (black)
+
+a (standard):	#F5F5F5; (white)
+a (hover): #E48632; (orange)
+a (visited):	#E48632;
+a (active):	#E48632;
+
+[Colors]
+
+Primary Color: #E48632;
+-------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500'); /* Raleway Font */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans'); /* Open Sans Font */
+@font-face {
+    font-family: 'Anurati';
+    src: url('../fonts/Anurati-Regular.otf');
+}
+
+/* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
+/* -Color- */
+.colored {
+    color: #E48632;
+}
+/* -Link Styling- */
+a {
+    color: #F39C12;
+    font-family: Raleway, sans-serif;
+	text-decoration: none;
+}
+a:visited {
+    color: #EEE;
+    text-decoration: none;
+}
+a:hover {
+    color: #E48632;
+	text-decoration: underline;
+}
+a:active {
+    color: #E48632;
+    text-decoration: underline;
+}
+a:focus {
+    color: #E48632;
+    text-decoration: none;
+}
+/* -Resets- */
+html, body { 
+    background-color: #111;
+    background: url(../images/bg.png);
+    background-repeat: repeat;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 1.5rem; /* 24px */
+    max-width: 100%;
+	overflow-x: hidden;
+}
+/* -Full width fluid container- */
+.full-width {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* -Text Styling */
+h1,h2,h3,h4,h5,h6 {
+	font-family: Raleway, sans-serif;
+}
+h1 {
+    font-size: 2.25rem; /* 36px */
+    font-family: Anurati, sans-serif;
+    letter-spacing: 5px;
+} 
+h2 {
+    font-size: 1.50rem; /* 24px */
+    font-weight: 500;
+}
+h3 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 400;
+}
+h4 {
+    font-size: 1.10rem;
+    font-weight: 300;
+}
+p {
+    font-family: Open Sans, sans-serif;
+    font-size: 0.9375rem; /* 15px */
+    padding: 5px 5px 5px 0;
+    margin: 0;
+}
+.strong {
+    font-weight: bold;
+}
+.subtle {
+	color: #999;
+}
+.spaced {
+    letter-spacing: 5px;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+/* -Margins and Floats- */
+.floated-left {
+     float: left;
+}
+.floated-right {
+    float: right;
+}
+.inline {
+	display: inline;
+}
+.offset {
+	margin-left: 10px;
+}
+.tiny-margin {
+    margin-bottom: 1.5em /* 24px */
+}
+.small-margin {
+	margin-bottom: 3em; /* 48px */
+}
+.medium-margin {
+	margin-bottom: 6em; /* 96px */
+}
+.large-margin {
+	margin-bottom: 12em; /* 192px */
+}
+/* -<hr>- */
+hr {
+    width: 100%;
+    height: 2px;
+    background: #E48632;
+    margin: 20px 0;
+    border: none;
+}
+.hr-short {
+    width: 100px;
+    height: 2px;
+    margin: 5px auto;
+}
+.short-hr-left::after {
+    border-top: 2px solid;
+    border-color: #E48632;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 60px;
+    margin: 13px 0 0 0;
+}
+.short-hr-center::after {
+    border-top: 2px solid;
+    border-color: #E48632;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 60px;
+    margin: 13px auto 0 auto;
+}
+/* General input fields */
+input {
+    height: 45px;
+    padding-left: 10px;
+    border: 1px solid #D4D4D4 !important;
+}
+input:focus {
+    border: 1px solid #333;
+    outline: none;
+}
+textarea {
+    height: 150px;
+	width: 100%;
+    max-width: 100%;
+	padding-top: 10px;
+	padding-left: 10px;
+    border: 1px solid #D4D4D4 !important;
+}
+textarea:focus {
+    border: 1px solid #333;
+    outline: none;
+}
+/* -General Button Styles */
+button {
+    outline: none !important;
+}
+.button {
+	background: #E48632;
+    border: none;
+    border-radius: 2px;
+    color: #FFF;
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+	display: block;
+	height: auto;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+    padding: 5px 15px;
+    outline: none;
+	transition: all 0.2s ease;
+    cursor: pointer;
+}
+.button:hover {
+	background: #FFF;
+	color: #2B2B2B;
+}
+/* --------------------------- /////////// II. PAGE PRELOADER /////////// --------------------------- */
+/* -Loading Screen- */
+#loader-wrapper {
+    background: #111;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    text-align: center;
+    z-index: 1050;
+}
+.loader-logo {
+    position: relative;
+    color: #FFF;
+    top: 43%;
+}
+#progress {
+    width: 0;
+    height: 2px;
+    background: #E48632;
+    position: relative;
+    top: 45%;
+}
+.loader-text {
+    position: relative;
+    color: #FFF;
+    top: 48%;
+}
+
+/* -Loading Screen Animation- */
+.loaded {
+    -moz-transform: translate3d(0px, -100%, 0px);
+    -webkit-transform: translate3d(0px, -100%, 0px);
+    -o-transform: translate(0px, -100%);
+    -ms-transform: translate(0px, -100%);
+    transform: translate3d(0px, -100%, 0px);
+    -webkit-transition: all 0.5s ease; 
+    transition: all 0.5s ease;
+}
+
+/* --------------------------- /////////// III. HEADER & NAVIGATION /////////// --------------------------- */
+#logo {
+    font-family: Anurati, sans-serif;
+    font-size: 1.75rem; /* 28px */;
+    letter-spacing: 5px;
+}
+.navbar-dark {
+    background-color: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0);
+    z-index: 900;
+    transition: 0.3s;
+}
+.scrolled {
+    background-color: rgba(0,0,0,0.8); /* navbar background gradient */
+    z-index: 900;
+}
+.nav-link {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-top: 5px;
+    transition: 0.2s;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #FFF;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #E48632;
+}
+.navbar-dark .navbar-nav .nav-link:active {
+    color: #E48632;
+}
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #E48632;
+}
+.navbar-toggler {
+    border: none;
+    cursor: pointer;
+}
+#hamburger .icon-bar {
+    display: block;
+    height: 2px;
+    width: 25px;
+    background: #FFF;
+    margin: 7px 0;
+    transition: .3s ease-in-out;
+}
+/* - Mobile menu animation - */
+#hamburger .icon-bar:nth-child(1) {
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+#hamburger .icon-bar:nth-child(2) {
+   -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+#hamburger .icon-bar:nth-child(3) {
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+#hamburger.open .icon-bar:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#hamburger.open .icon-bar:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+#hamburger.open .icon-bar:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* --------------------------- /////////// IV. HERO SECTION /////////// --------------------------- */
+/* -Hero Image- */
+.hero-unit {
+    background-color: #111;
+    background: url(../images/bg.png);
+    background-repeat: repeat;
+    min-height: 720px;
+    height: 100vh;
+}
+/* -Particles- */
+#particles-web {
+    position: absolute;
+    top: 0;
+    background: none;
+    height: 100%;
+    width: 100%;
+}
+/* -Hero Image Caption- */
+.hero-caption {
+    display: block;
+    position: relative;
+    margin-top: 40vh;
+    color: #FFF;
+	text-shadow: none; 
+    padding: 20px;
+    z-index: 5;
+    text-align: center;
+}
+.hero-caption h1 {
+    font-weight: 300;
+    font-size: 3rem;
+    font-family: Raleway, sans-serif;
+}
+
+/* --------------------------- /////////// V. ABOUT SECTION /////////// --------------------------- */
+#support-image {
+    margin: 0 0 0 20%;
+}
+/* --------------------------- /////////// VI. GAMES SECTION /////////// --------------------------- */
+.game-tags {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    padding: 10px;
+    border-left: 2px solid #E48632;
+}
+.game-tags li {
+    display: inline;
+    margin: 0 0 0 15px;
+    font-family: Raleway, sans-serif;
+    font-size:1.10rem; /* 20px */;
+    font-weight: 500;
+}
+.game-tags li a {
+    color: #FFF;
+    text-decoration: none;
+}
+.game-tags li a:hover {
+    color: #E48632;
+}
+.game-tags li a:focus {
+    color: #E48632;
+}
+.game-card {
+    width: 100%;
+    margin: 0 auto 1.5rem auto;
+    min-height: 270px;
+    height: auto;
+}
+.lightbox .lb-image {
+    border: 4px solid #111;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    border-left: 2px solid #E48632;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.overlay i {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+}
+.overlay:hover {
+    opacity: 1;
+}
+.game-card-left {
+    padding: 0;
+}
+.game-card-left img {
+    height: 100%;
+    width: 100%;
+    min-height: 270px;
+}
+.game-card-right {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    padding: 20px 40px;
+    margin: 0;
+}
+.game-card-right h2 {
+    margin-bottom: 0;
+}
+.game-card-right > .short-hr-left::after {
+    margin: 5px 0;
+}
+.tags {
+    font-size: 14px;
+    padding-top: 0;
+}
+.game-description {
+    margin: 15px 0;
+}
+/* -- Modal -- */
+.expand {
+    cursor: pointer;
+}
+.game-modal .modal-header {
+    height: 150px;
+    background-image: url(../images/modal_header_bg.png);
+    background-position: bottom;
+    background-size:  cover;
+    border-bottom: 1px solid #555;
+}
+.game-modal .modal-title {
+    margin: 5% 0 0 5%;
+}
+.game-modal img {
+    margin: 5px 0 50px 0;
+}
+.modal-vid {
+    width: 100%;
+    max-width: 768px;
+    height: 415px;
+    margin: 20px 0 60px 0;
+    border: none;
+}
+/* -- Buttons -- */
+.steam-btn {
+    display: inline-block;
+}
+.steam-btn a {
+    display: inline-block;
+    min-height: 55px;
+    min-width: 150px;
+    height: auto;
+    width: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    border-radius: 3px;
+    padding: 6px;
+    border: none;
+    color: #F5F5F5;
+    cursor: pointer;
+    margin: 30px 0 0 0;
+}
+.steam-btn:hover a {
+    background: #000;
+    color: #FFF;
+}
+.steam-btn i {
+    float: left;
+}
+.steam-btn p {
+    float: right;
+    line-height: 20px;
+    font-weight: bold;
+}
+.button-store {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 5px 22px;
+    border-radius: 5px;
+    margin: 30px 10px 0 0;
+    color: #FFF;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    border: none;
+    cursor: pointer;
+}
+.button-store:hover {
+    background: #000;
+    color: #FFF;
+}
+.button-store > i {
+    float: left;
+    display: inline;
+    margin-top: 5px;
+}
+.button-store  p {
+    float: right;
+    padding: 0 0 0 10px;
+}
+.reviews {
+    width: auto;
+    display: inline-block;
+    float: right;
+    margin: 20px 0 0 0 ;
+    text-align: center;
+}
+.reviews a {
+    color: #FFF;
+}
+.reviews a:hover {
+    color: #FFF;
+}
+.reviews a:active {
+    color: #FFF;
+}
+.reviews a:visited {
+    color: #FFF;
+}
+.score-card {
+    display: inline-block;
+    min-height: 70px;
+    min-width: 90px;
+    width: auto;
+    height: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    text-align: center;
+    margin: 0 5px 0 0;
+    padding: 5px;
+    border-radius: 2px;
+}
+.score-card:hover {
+    background: #000;
+}
+.score-card:hover .score {
+    color: #E48632;
+}
+.score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 5px;
+    padding-bottom: 0;
+}
+.rating {
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    text-align: center;
+    float: right;
+    border-radius: 2px;
+    margin: 20px 0 0 0;
+}
+.rating ul {
+    margin: 0;
+}
+.rating ul li {
+    display: inline;
+    margin: 0 5px 0 0;
+}
+.rating p {
+    font-size: 1.5rem;
+}
+/* --------------------------- /////////// VII. TEAM SECTION /////////// --------------------------- */
+#full-row {
+    width: 100%;
+}
+#team figure {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+#team figure img {
+    border-radius: 3px;
+    border-bottom: 2px solid #E48632;
+}
+.team-caption ul {
+    margin-top: 10px;
+}
+.team-caption ul li {
+    display: inline;
+    margin: 0 5px;
+}
+.team-caption ul li > a {
+    color: #EEE;
+}
+.team-caption ul li > a:hover {
+    color: #E48632;
+}
+.team-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    text-align: center; 
+    padding: 40% 20px 20px 20px;
+    z-index: 5;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+#team figure:hover > .team-caption {
+    opacity: 1;
+}
+#team figure:hover > img {
+    filter: blur(2px);
+}
+.team-name {
+    font-size: 1.5rem;
+    padding-bottom: 0;
+}
+.gallery-item {
+    padding: 0 2.5px;
+}
+.grid-gallery .row {
+    margin: 0 0 5px 0;
+}
+.overlay.gallery {
+    left: 0;
+    width: 100%;
+    border: none;
+}
+/* --------------------------- /////////// VIII. CAREERS SECTION /////////// --------------------------- */
+.job-card {
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    border-left: 2px solid #E48632;
+    padding: 25px 35px;
+    margin: 10px 0;
+}
+.modal-content {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+}
+.modal-header {
+    border-bottom: 1px solid #E48632;
+}
+.modal-body > ul > li > p {
+    padding: 0 5px;
+}
+.modal-body ul {
+    list-style: disc;
+    margin: 0 0 0 25px;
+}
+.modal-body h3 {
+    margin-bottom: 0;
+}
+.modal-footer {
+    border-top: 1px solid #E48632;
+}
+.modal-footer button {
+    margin: 0;
+}
+.button.secondary {
+    background: #222;
+}
+.button.secondary:hover {
+    background: #FFF;
+}
+.close {
+    color: #FFF;
+    opacity: 1;
+    text-shadow: none;
+    cursor: pointer;
+}
+.close:hover {
+    color: #E48632;
+    opacity: 1;
+}
+/* -- Newsletter -- */
+#newsletter input {
+    width: 40%;
+    height: 45px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    border: none !important;
+    padding: 0 0 0 20px;
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+}
+#newsletter button {
+    display: inline-block;
+    height: 43px;
+    width: auto;
+}
+/* --------------------------- /////////// IX. CONTACT SECTION /////////// --------------------------- */
+#contactForm {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    padding: 5%;
+    margin-top: 25px;
+}
+#contactForm input {
+    width: 100%;
+    color: #FFF;
+    background: none;
+    border-bottom: 2px solid #E48632 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    margin-bottom: 25px;
+}
+#contactForm textarea {
+    width: 100%;
+    color: #FFF;
+    background: none;
+    border-bottom: 2px solid #E48632 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    margin-bottom: 25px;
+}
+#contactForm .button {
+    margin-left: 0;
+    padding: 15px 25px;
+    font-size: 1.25rem;
+}
+/* - Warning and succes msg text- */
+.text-danger, .text-success {
+    font-family: Open Sans, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+}
+#contact-info {
+    margin-top: 25px;
+}
+#contact ul li i {
+    color: #E48632;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    padding: 10px;
+    
+}
+#contact ul li p {
+    display: inline;
+    margin-left: 5px;
+}
+#contact ul li {
+    margin-bottom: 15px;
+}
+#map-canvas {
+    width: 100%;
+    height: 330px;
+    opacity: 0.9;
+}
+/* --------------------------- /////////// X. FOOTER /////////// --------------------------- */
+#footer {
+    width: 100%;
+    min-height: 70px;
+    height: auto;
+    background: #070707;
+    border-top: 2px solid #E48632;
+    padding: 20px 0 0 0;
+}
+.social-links {
+    float: right;
+}
+.social-links li {
+    display: inline;
+    margin-left: 15px;
+}
+.social-links li a {
+    color: #FFF;
+}
+.social-links li a:hover {
+    color: #E48632;
+}
+.social-links li a:focus {
+    color: #E48632;
+}
+#copyright {
+    float: left;
+}
+/* --------------------------- /////////// XI. 404 PAGE /////////// --------------------------- */
+#container-404 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+#container-404 .row-fluid {
+     margin-top: 18%;
+}
+.text-404 h1 {
+    font-family: Anurati, sans-serif;
+    font-size: 4rem;
+}
+.text-404 a {
+    display: inline-block;
+    text-decoration: none;
+}
+/* --------------------------- /////////// XII. RESPONSIVE STYLES /////////// --------------------------- */
+@media (max-width : 991px) {
+    .nav-item > a::first-letter {
+    color: #E48632;
+    }
+    .navbar-dark {
+        background-color: rgba(0,0,0,0.4); /* navbar background gradient */
+    }
+    .scrolled {
+        background-color: rgba(0,0,0,0.8); /* navbar background gradient */
+    }
+    #footer {
+        text-align: center;
+        padding: 10px 0 0 0;
+    }
+    .social-links {
+        float: none;
+    }
+    #copyright {
+        float: none;
+        margin-bottom: 5px;
+    }
+    #container-404 .row-fluid {
+        margin-top: 40%;
+    }
+}
+@media (max-width : 767px) {
+    .large-margin {
+	   margin-bottom: 4em; /* 96px */
+    }
+    .medium-margin {
+        margin-bottom: 3em;
+    }
+    .small-margin {
+        margin-bottom: 2em;
+    }
+    .heading {
+        font-size: 1.50rem;
+    }
+    hr {
+        margin: 0;
+    }
+    #support-image {
+        display: block;
+        margin: 2em auto 0 auto;
+    }
+    .game-card {
+        margin: 0 0 3em 0;
+    }
+    .steam-btn {
+        display: block;
+        text-align: center;
+    }
+    .button-store:nth-of-type(2) {
+        float: right;
+    }
+    .reviews {
+        display: block;
+        margin: 15px auto 0 auto;
+        float: left;
+        width: 100%;
+    }
+    .rating {
+        display: block;
+        margin: 15px auto 0 auto;
+        float: none;
+    }
+    #team figure {
+        margin: 20px auto;
+    }
+    .gallery-item {
+        margin: 5px 0;
+    }
+    .grid-gallery .row {
+        margin: 0;
+    }
+    #newsletter input {
+        width: 100%;
+        display: block;
+        margin: 20px 0;
+    }
+    #newsletter button {
+        width: 100%; 
+        display: block;
+    }
+    #contactForm {
+        margin: 0 0 3em 0;
+    }
+    .text-404 h1 {
+        font-size: 3.5rem;
+    }
+}
+@media (max-width : 480px) {
+    .game-card-left img {
+        min-height: 0;
+    }
+    .score-card {
+        margin: 5px 0;
+    }
+    .hero-caption h1 {
+        font-size: 2.5rem;
+    }
+    .button-store {
+        margin: 5px auto;
+    }
+    .button-store:nth-of-type(2) {
+        float: none;
+    }
+}

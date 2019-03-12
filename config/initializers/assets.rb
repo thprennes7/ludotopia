@@ -13,6 +13,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-# ybo: add lib/assets and vendor/assets
+# ybo: add lib/assets, vendor/assets and pictures
 Rails.application.config.assets.paths << Rails.root.join('lib')
 Rails.application.config.assets.paths << Rails.root.join('vendor')
+#ybo: test for picture
+Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)

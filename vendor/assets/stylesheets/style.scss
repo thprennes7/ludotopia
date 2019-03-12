@@ -79,7 +79,7 @@ a:focus {
 /* -Resets- */
 html, body { 
     background-color: #111;
-    background: url(../images/bg.png);
+    background: image-url("bg.png");
     background-repeat: repeat;
     color: #FFF;
     font-size: 16px;

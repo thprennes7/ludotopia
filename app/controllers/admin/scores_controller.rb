@@ -5,6 +5,7 @@ class Admin::ScoresController < AdminsController
 
   def index
     @scores = Score.all.sort.reverse
+    @games = Game.all
   end
 
   def show

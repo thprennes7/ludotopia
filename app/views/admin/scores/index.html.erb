@@ -1,1 +1,10 @@
-Vue scores
+
+<% @games.each do |game| %>
+<h2><%= game.title  %></h2>
+<%= find_scores(game).each do |score| %>
+<ul class="score<%= score.id %>_infos">
+  <li><%= score.user.username %></li>
+  <li><%= score.victory %></li>
+</ul>
+<% end %>
+<% end %>

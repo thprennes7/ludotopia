@@ -1,5 +1,5 @@
 class Admin::GamesController < AdminsController
-  before_action :set_game
+  before_action :set_game, except: [:index]
   respond_to :js, :html, :json
 
 

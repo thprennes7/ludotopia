@@ -16,7 +16,8 @@ class Tictactoe::TictactoesController < ApplicationController
 		end
 	end
 	def show
-		
+		@friends = Contact.where(me: current_user)
+		@participants = TictactoeUser.where(tictactoe_id: @party.id)
 	end
 
 	private

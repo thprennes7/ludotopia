@@ -9,9 +9,9 @@ class Tictactoe < ApplicationRecord
 		#Create the JSON file for the grid of the party
 		grid = TictactoeGrid.all
 
-		file = File.open("/db/tictactoe/party#{self.id}", "w")
+		file = File.open("./db/tictactoe/party#{self.id}.json", "w")
 
-		file.write(grid.to_json)
+		file.write('{"grid": ' + grid.to_json + ', "player": "1"}')
 
 		file.close
 	end

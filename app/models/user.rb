@@ -17,7 +17,7 @@ class User < ApplicationRecord
   private
 
   def set_status
-    self.status_id = 0
+    self.status = Status.first
   end
 
 

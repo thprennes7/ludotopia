@@ -23,7 +23,7 @@ class DonationsController < ApplicationController
     end
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to
+    redirect_to game_path(current_user.id)
   end
 
   def show

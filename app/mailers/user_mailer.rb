@@ -15,4 +15,12 @@ class UserMailer < ApplicationMailer
       mail(to: @user.email, subject: 'Merci pour la donation')
     end
 
+    def news_game(article)
+      @users = User.all
+      @article = article
+      @users.each do |user|
+        @user = user
+        mail(to: @user.email, subject: 'Des nouveauté chez Ludotopia')
+      end
+    end
 end

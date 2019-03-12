@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :donations
   has_many :games, through: :score
   has_one_attached :avatar
+<<<<<<< HEAD
 
   private
 
@@ -19,4 +20,17 @@ class User < ApplicationRecord
     UserMailer.welcome_email(self).deliver_now
   end
 
+=======
+  after_create :set_status
+  has_many :contact, foreign_key: "friend_id", class_name: "Contact"
+
+
+  private
+
+  def set_status
+    self.status = Status.first
+  end
+
+
+>>>>>>> aurelien
 end

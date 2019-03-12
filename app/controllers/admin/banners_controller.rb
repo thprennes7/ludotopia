@@ -1,5 +1,5 @@
 class Admin::BannersController < AdminsController
-  before_action :set_banner
+  before_action :set_banner, except: [:index]
   respond_to :js, :html, :json
 
 
@@ -14,6 +14,11 @@ class Admin::BannersController < AdminsController
   def create
     @banner = Banner.new(banner_params)
     flash[:notice] = "Bannière créé !"
+    respond_with(@banner)
+  end
+
+  def update
+    flash[:notice] = "Bannière mis à jour"
     respond_with(@banner)
   end
 

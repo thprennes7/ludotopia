@@ -1,5 +1,7 @@
 module ApplicationHelper
-  def is_admin?
-    user_signed_in? && current_user.status_id == 4
+	include TictactoeUsersHelper
+
+  def is_admin?(user)
+    user_signed_in? && user.status == Status.last
   end
 end

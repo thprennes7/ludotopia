@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :contacts
   root to: 'home#index'
 
+
+
+  resources :charges
   resources :banners
   resources :donations
   resources :scores
@@ -12,7 +16,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :statuses
 
-# Creation of admin dashboard
+# Admin dashboard
   namespace :admin do
     resources :banners
     resources :donations

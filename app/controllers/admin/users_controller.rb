@@ -22,6 +22,12 @@ class Admin::UsersController < AdminsController
     respond_with(@user)
   end
 
+
+  def destroy
+    flash[:notice] = "Utilisateur #{@user.username} supprimé"
+    respond_with(@user)
+  end
+
   private
 
   def set_user

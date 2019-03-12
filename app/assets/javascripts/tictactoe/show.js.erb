@@ -1,7 +1,7 @@
-console.log('bonjour')
+console.log('<%= "oui" %>')
 $(document).ready(function(){
 		setInterval( function() {
-			$.get("/tictactoe/tictactoe/check_status","#status" , function(){
+			$.get("check_status","#status" , function(){
 				
 			});
 		}, 500);

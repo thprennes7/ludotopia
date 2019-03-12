@@ -1,1 +1,9 @@
-Vue games
+<% @games.each do |game| %>
+  <ul class="game<%= game.id %>_infos">
+    <li><%= game.title %></li>
+    <li><%= game.description %></li>
+    <li><%= game.link %></li>
+  </ul>
+  <%= link_to "Modifier", "#" %>
+  <%= link_to "Supprimer", admin_game_path(game), method: :delete, remote: true %>
+<% end %>

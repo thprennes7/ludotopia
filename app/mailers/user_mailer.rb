@@ -5,7 +5,14 @@ class UserMailer < ApplicationMailer
     def welcome_email(user)
       @user = user
       @url = 'https://ludotopia.herokuapp.com'
-      @facebook = 'https://www.facebook.com/Ludotopia-258709275039675/'
       mail(to: @user.email, subject: 'Bienvenue chez Ludotopia !')
     end
+
+    def confirm_donation(donation)
+      @url = 'https://ludotopia.herokuapp.com'
+      @user = User.find(donation.user.id)
+      @donation = Donation.where(user_id: donation.user_id)
+      mail(to: @user.email, subject: 'Merci pour la donation')
+    end
+
 end

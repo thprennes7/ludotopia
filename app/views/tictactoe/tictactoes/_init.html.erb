@@ -14,7 +14,7 @@
 <h5>Personnes autorisées à jouer :</h5>
 <ul>
 	<% @participants.each do |participant| %>
-	<% render "/tictactoe/tictactoe_users/user", participant: participant %>
+	<li><p><%= participant.user.username %> <% if current_user != participant.user %><%= link_to "Supprimer", tictactoe_tictactoe_users_path(participant.id), method: :delete %> <% end -%> </p></li>
 	<% end -%>
 </ul>
 

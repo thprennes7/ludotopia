@@ -3,12 +3,12 @@
 <h5>Ajouter un participant :</h5>
 
 <%= form_tag(tictactoe_tictactoe_users_path, method: :post, class:"") do %>
-<%= hidden_field_tag(:tictactoe, party) %>
-<%= select_tag(:participant) %>
-<% contacts.each do |friend| %>
-	<%= option_for_select([friend.username, friend]) %>
-<% end -%>
-<%= submit_tag("Ajouter") %>
+	<%= hidden_field_tag(:tictactoe, party) %>
+	<%= select_tag(:participant) %>
+	<% contacts.each do |friend| %>
+		<%= option_for_select([friend.username, friend]) %>
+	<% end -%>
+	<%= submit_tag("Ajouter") %>
 <% end -%>
 
 <h5>Personnes autorisées à jouer :</h5>
@@ -17,3 +17,9 @@
 	<% render "tictactoe_users/user", participant: participant %>
 	<% end -%>
 </ul>
+
+<%= form_tag(tictactoe_tictactoe_path(party.id), method: :patch, class:"") do %>
+	<%= hidden_field_tag "status", 1 %>
+	<%= hidden_field_tag "id", party.id %>
+	<%= submit_tag("Commencer la partie") %>
+<% end -%>

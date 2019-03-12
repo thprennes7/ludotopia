@@ -3,12 +3,12 @@
 *= require_tree .
 *= require_self
 
-*= require font-awesome
-*= require assets/css/animations.css
-*= require assets/css/bootstrap.min.css
-*= require assets/css/font-awesome.min.css
-*= require assets/css/lightbox.min.css
-*= require assets/css/modal-video.min.css
-*= require assets/css/style.css
+
+*= require bootstrap.min.css
+*= require font-awesome.min.css
+*= require animations.css
+*= require lightbox.min.css
+*= require modal-video.min.css
+*= require style.css
 
 */

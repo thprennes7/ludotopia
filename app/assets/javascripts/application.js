@@ -15,18 +15,16 @@
 //= require jquery-ui
 //= require rails-ujs
 //= require activestorage
-//= require_tree .
+//= require_tree 
 
 //ybo: call js file of template
-//= require jquery
-//= require popper
-//= require assets/js/blazy.min.js
-//= require assets/js/bootstrap.min.js
-//= require assets/js/isotope.pkgd.min.js
-//= require assets/js/jquery-3.2.1.min.js
-//= require assets/js/jquery-modal-video.min.js
-//= require assets/js/lightbox.min.js
-//= require assets/js/particles.js
-//= require assets/js/popper.min.js
-//= require assets/js/strider.js
-//= require assets/js/validator.min.js
+//= require jquery-3.2.1.min.js
+//= require popper.min.js
+//= require bootstrap.min.js
+//= require particles.js
+//= require blazy.min.js
+//= require isotope.pkgd.min.js
+//= require lightbox.min.js
+//= require jquery-modal-video.min.js
+//= require strider.js
+//= require validator.min.js

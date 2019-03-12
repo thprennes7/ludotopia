@@ -74,7 +74,6 @@
                     <%= image_tag "awards.png", alt:"sorry, pictures is not charge", class:" img-fluid", id:"awards" %>
                 </div>
                 <div class="col-md-6">
-                    <img id="support-image" src="images/placeholder.jpg" data-src="images/about.jpg" class="img-fluid b-lazy" alt="digital collage">
                     <%= image_tag "placeholder.jpg", alt:"digital collage", class:"img-fluid b-lazy", id:"support-image" %>
                 </div>
             </div>
@@ -108,11 +107,11 @@
                 <!-- Game Card Video -->
                 <div class="row game-card pc new">
                     <div class="col-lg-12 col-xl-5 game-card-left">
-                        <a href="#" class="js-video-button" data-video-id='DPBW_MFqeRs' data-channel="youtube"> <!-- Video link goes here -->
+                        <a href="#" class="js-video-button" data-video-id='c4D786zRO6g' data-channel="youtube"> <!-- Video link goes here -->
                             <div class="overlay">
                                 <i class="fa fa-play fa-3x"></i>
                             </div>
-                            <img src="images/placeholder.jpg" data-src="images/game.jpg" class="img-fluid b-lazy" alt="video thumbnail"> <!-- Video Thumbnail Img -->
+                            <%= image_tag "placeholder.jpg", alt:"video thumbnail", class:"img-fluid b-lazy" %> <!-- Video Thumbnail Img -->
                         </a>
                     </div>
                     <div class="col-lg-12 col-xl-7 game-card-right">
@@ -185,7 +184,7 @@
                         <p class="tags"><span class="subtle">Horror Adventure | Mobile</span> </p>
                         <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis rhoncus nibh. Phasellus dignissim luctus consectetur. Fusce viverra est non purus ultrices, vel molestie massa tincidunt. <span class="expand colored strong" data-toggle="modal" data-target="#game2">Read More</span></p>
                         <a href="#" class="button-store">
-                            <i class="fa fa-android fa-2x"></i>
+                            <%= fa_icon "android", :class =>"fa-2x" %>
                             <p>Available on<br><span class="strong">Google Play</span></p>
                         </a>
                         <a href="#" class="button-store">
@@ -728,7 +727,6 @@
                             </ul>
                         </div>
                         <!-- Google Map -->
-                        <div id="map-canvas"></div>
                     </div>
                 </div>
             </div>

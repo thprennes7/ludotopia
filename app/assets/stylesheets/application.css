@@ -3,7 +3,7 @@
 *= require_tree .
 *= require_self
 
-
+*= require font-awesome
 *= require bootstrap.min.css
 *= require font-awesome.min.css
 *= require animations.css

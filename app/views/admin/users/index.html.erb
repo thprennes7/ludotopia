@@ -8,7 +8,7 @@
   <li><%= user.last_name %></li>
   <li><%= user.email %></li>
   <li><%= link_to "Mettre à jour", remote: true %></li>
-  <li><%= link_to "Supprimer", user_registration_path(user), method: :delete, remote: true %></li>
+  <li><%= link_to "Supprimer", user_registration_path(user), method: :delete %></li>
 </ul>
 
 <% end %>

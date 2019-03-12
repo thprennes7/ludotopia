@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ludotopia</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Ludotopia</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all'%>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+</head>
 
-  <body>
-    <%= yield %>
-    <%= javascript_include_tag 'application'%>
-  </body>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
+  <%= yield %>
+  <%= javascript_include_tag 'application'%>
+</body>
 </html>

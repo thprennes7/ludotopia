@@ -19,6 +19,10 @@ class Tictactoe::TictactoesController < ApplicationController
 		@friends = Contact.where(me: current_user)
 		@participants = TictactoeUser.where(tictactoe_id: @party.id)
 	end
+	def update
+		@party.update(status: params[:status])
+		redirect_to request.referer
+	end
 
 	private
 	def get_tictactoe

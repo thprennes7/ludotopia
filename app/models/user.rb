@@ -11,11 +11,14 @@ class User < ApplicationRecord
   has_many :donations
   has_many :games, through: :score
   has_one_attached :avatar
-  after_create: :set_role
+  after_create: :set_status
 
 
   private
 
+  def set_status
+    self.status_id = 0
+  end
 
 
 end

@@ -42,3 +42,14 @@ puts 'Comment create'
   Like.create!(article_id: Article.all.sample.id, user_id: User.all.sample.id, comment_id: Comment.all.sample.id)
 end
 puts "Like create"
+
+
+
+unless TictactoeGrid.all.any?
+	# Fill the grid if it's empty
+	i = 1
+	9.times do
+		TictactoeGrid.create!(case: i)
+		i+=1
+	end
+end

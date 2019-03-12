@@ -3,9 +3,9 @@
 <% 
 case @party.status
 when 0
-	render 'init', party: @party, contacts: @friends, participants: @paticipants
+	render 'init', locals: {party: @party, contacts: @friends, participants: @paticipants}
 when 1
-	render 'party', party: @party, participants: @participants
+	render 'party', locals: {party: @party, participants: @participants}
 when 2
 	render 'ended'
 else

@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def create
     @amount = (params[:amount] * 100).to_i

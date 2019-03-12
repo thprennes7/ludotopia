@@ -1,0 +1,14 @@
+<% @users.each do |user| %>
+<% if user.avatar.attached? %>
+<%= image_tag user.avatar, alt: "#{user.username}'s  avatar" %>
+<% end %>
+<ul id="user<%= user.id %>_info">
+  <li><%= user.username %></li>
+  <li><%= user.first_name %></li>
+  <li><%= user.last_name %></li>
+  <li><%= user.email %></li>
+  <li><%= link_to "Mettre à jour", remote: true %></li>
+  <li><%= link_to "Supprimer", user_registration_path(user), method: :delete, remote: true %></li>
+</ul>
+
+<% end %>

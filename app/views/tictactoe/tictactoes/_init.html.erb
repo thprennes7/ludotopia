@@ -14,11 +14,11 @@
 <h5>Personnes autorisées à jouer :</h5>
 <ul>
 	<% @participants.each do |participant| %>
-	<% render "/tictactoe/tictactoe_users/user" %>
+	<% render "/tictactoe/tictactoe_users/user", participant: participant %>
 	<% end -%>
 </ul>
 
-<%= form_tag(tictactoe_tictactoe_path(@party.id), method: :patch, class:"") do %>
+<%= form_tag(tictactoe_tictacto_path(@party.id), method: :patch, class:"") do %>
 	<%= hidden_field_tag "status", 1 %>
 	<%= hidden_field_tag "id", @party.id %>
 	<%= submit_tag("Commencer la partie") %>

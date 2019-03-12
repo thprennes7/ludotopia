@@ -1,0 +1,2 @@
+class Tictactoe < ApplicationRecord
+end

@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
 # Admin dashboard
   namespace :admin do
-    resources :banners
+    resources :banners do
+      resources :banner_images
+    end
     resources :donations
     resources :scores
     resources :games

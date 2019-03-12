@@ -18,7 +18,7 @@ class Admin::BannersController < AdminsController
   end
 
   def update
-    flash[:notice] = "Bannière mis à jour"
+    flash[:notice] = "Bannière mis à jour" if @banner.update_attributes(banner_params)
     respond_with(@banner)
   end
 
@@ -28,7 +28,7 @@ class Admin::BannersController < AdminsController
     @banner = Banner.find(params[:id])
   end
 
-  def article_params
-    params.require(:banner).permit(:title, :subtitle, :banner_imgs)
+  def banner_params
+    params.permit(:title, :subtitle, :banner_imgs)
   end
 end

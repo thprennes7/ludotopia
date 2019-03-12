@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   resources :comments
   resources :games
   resources :articles
-  devise_for :users
+  devise_for :users, controllers: {
+        registrations: 'users/registrations'
+      }
+
   resources :statuses
 
 # Admin dashboard

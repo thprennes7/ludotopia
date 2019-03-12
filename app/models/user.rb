@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :donations
   has_many :games, through: :score
   has_one_attached :avatar
-  after_create: :set_status
+  after_create :set_status
 
 
   private

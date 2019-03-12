@@ -1,10 +1,15 @@
 class Admin::ArticlesController < AdminsController
-  before_action :set_article
+  before_action :set_article, except: [:index]
   respond_to :js, :html, :json
 
 
   def index
     @articles = Article.all.sort.reverse
+  end
+
+  def update
+    flash[:notice] = "Article mis à jour"
+    respond_with(@article)
   end
 
   def show

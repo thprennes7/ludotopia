@@ -5,7 +5,7 @@ class Tictactoe::TictactoeUsersController < ApplicationController
 
 	def create
 		user = TictactoeUser.new(tictactoe_id: params[:game], user_id: params[:user])
-		if user.save
+		if TictactoeUser.where(tictactoe_id: params[:game]).length < 2 && TictactoeUser.find_by(tictactoe_id: params[:game], user_id: params[:user]) == nil && user.save
 			respond_with(user)
 		else
 			flash[:error] = "Une erreur est survenue lors de l'ajout."
@@ -19,4 +19,5 @@ class Tictactoe::TictactoeUsersController < ApplicationController
 	private
 	def get_participant
 		@particpant = TictactoeUser.find(params[:id])
+	end
 end

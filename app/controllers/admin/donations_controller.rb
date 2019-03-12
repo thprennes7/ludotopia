@@ -5,6 +5,7 @@ class Admin::DonationsController < AdminsController
 
   def index
     @donations = Donation.all.sort.reverse
+    @games = Game.all.sort.reverse
   end
 
   def show

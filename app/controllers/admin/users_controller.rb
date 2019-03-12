@@ -13,7 +13,12 @@ class Admin::UsersController < AdminsController
 
   def create
     @user = User.new(user_params)
-    flash[:notice] = "Création du User."
+    flash[:notice] = "Création de l'utilisateur."
+    respond_with(@user)
+  end
+
+  def update
+    flash[:notice] = "Utilisateur mis à jour"
     respond_with(@user)
   end
 

@@ -17,6 +17,11 @@ class Admin::BannersController < AdminsController
     respond_with(@banner)
   end
 
+  def update
+    flash[:notice] = "Bannière mis à jour"
+    respond_with(@banner)
+  end
+
   private
 
   def set_banner

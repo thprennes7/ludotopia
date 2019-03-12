@@ -17,6 +17,11 @@ class Admin::GamesController < AdminsController
     respond_with(@game)
   end
 
+  def update
+    flash[:notice] = "Partie mise à jour."
+    respond_with(@game)
+  end
+
   private
 
   def set_game

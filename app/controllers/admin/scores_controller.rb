@@ -17,6 +17,11 @@ class Admin::ScoresController < AdminsController
     respond_with(@score)
   end
 
+  def update
+    flash[:notice] = "Score mis à jour"
+    respond_with(@score)
+  end
+
   private
 
   def set_score

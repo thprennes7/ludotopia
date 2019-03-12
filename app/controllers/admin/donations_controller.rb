@@ -17,6 +17,11 @@ class Admin::DonationsController < AdminsController
     respond_with(@donation)
   end
 
+  def update
+    flash[:notice] = "Donation mise à jour"
+    respond_with(@donation)
+  end
+
   private
 
   def set_donation

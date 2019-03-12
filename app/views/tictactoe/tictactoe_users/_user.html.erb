@@ -1,1 +1,1 @@
-<li><p><%= user.username %> <% if current_user != user %><%= link_to "Supprimer", tictactoe_tictactoe_users_path(user: user.id, game: game), method: :delete %> <% end -%> </p></li>
+<li><p><%= user.username %> <% if current_user != user %><%= link_to "Supprimer", tictactoe_tictactoe_users_path(user: user.id, party: party), method: :delete %> <% end -%> </p></li>

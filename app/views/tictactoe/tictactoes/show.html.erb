@@ -2,13 +2,13 @@
 
 <% 
 case @party.status
-when 0
-	render 'init'
-when 1
-	render 'party'
-when 2
-	render 'ended'
-else
+when 0 %>
+<%=	render 'init' %>
+<% when 1 %>
+<%=	render 'party' %>
+<% when 2 %>
+<%=	render 'ended' %>
+<% else
 
 end
 %>

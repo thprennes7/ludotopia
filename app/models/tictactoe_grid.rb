@@ -1,16 +1,11 @@
 class TictactoeGrid < ApplicationRecord
 
-	scope :all_cases, { all.each do |case_row|
-												grid << case_row.case
-											end
-											grid }
+	scope :all_cases, get_cases(all)
 
-	def all_cases
+	def get_cases(table)
 		# sort all cases in an array
 
-		grid = Array.new
-
-		self.each do |table_case|
+		table.each do |table_case|
 			grid << table_case.case
 		end
 

@@ -21,7 +21,6 @@ class Tictactoe::TictactoesController < ApplicationController
 	end
 	def update
 		@party.update(status: params[:status])
-		redirect_to request.referer
 	end
 
 	private

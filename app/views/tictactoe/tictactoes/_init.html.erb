@@ -14,6 +14,6 @@
 <h5>Personnes autorisées à jouer :</h5>
 <ul>
 	<% participants.each do |participant| %>
-	<% render "tictactoe_users/user", user: participant.user, party: particpant.tictactoe_id %>
+	<% render "tictactoe_users/user", participant: participant %>
 	<% end -%>
 </ul>

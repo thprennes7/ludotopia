@@ -1,5 +1,5 @@
 class Admin::ArticlesController < AdminsController
-  before_action :set_article
+  before_action :set_article, except: [:index]
   respond_to :js, :html, :json
 
 

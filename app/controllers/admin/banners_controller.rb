@@ -1,5 +1,5 @@
 class Admin::BannersController < AdminsController
-  before_action :set_banner
+  before_action :set_banner, except: [:index]
   respond_to :js, :html, :json
 
 

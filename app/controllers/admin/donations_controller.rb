@@ -1,5 +1,5 @@
 class Admin::DonationsController < AdminsController
-  before_action :set_donation
+  before_action :set_donation, except: [:index]
   respond_to :js, :html, :json
 
 
@@ -13,7 +13,7 @@ class Admin::DonationsController < AdminsController
 
   def create
     @donation = Donation.new(donation_params)
-    flash[:notice] = "Bannière créé !"
+    flash[:notice] = "Don effectué !"
     respond_with(@donation)
   end
 

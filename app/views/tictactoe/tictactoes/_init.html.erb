@@ -1,1 +1,19 @@
-_init.html.erb
+<p class="">Lien à partager : FILL THIS</p>
+
+<h5>Ajouter un participant :</h5>
+
+<%= form_tag(tictactoe_tictactoe_users_path, method: :post, class:"") do %>
+<%= hidden_field_tag(:tictactoe, party) %>
+<%= select_tag(:participant) %>
+<% contacts.each do |friend| %>
+	<%= option_for_select([friend.username, friend]) %>
+<% end -%>
+<%= submit_tag("Ajouter") %>
+<% end -%>
+
+<h5>Personnes autorisées à jouer :</h5>
+<ul>
+	<% participants.each do |participant| %>
+	<% render "tictactoe_users/user", user: participant.user, party: particpant.tictactoe_id %>
+	<% end -%>
+</ul>

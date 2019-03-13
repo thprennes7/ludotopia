@@ -4,7 +4,7 @@ class Admin::BannerImagesController < AdminsController
   private
 
   def banner_img_params
-    params.permit(:banner_img, :id)
+    params.permit(:banner_image, :banner_id)
   end
 
 end

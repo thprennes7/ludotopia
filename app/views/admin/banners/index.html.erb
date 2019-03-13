@@ -1,8 +1,9 @@
-<%= form_with model: Banner.new, multipart: true do |form| %>
-<%= form.file_field :banner_image %>
-<%= form.text_field :title %>
-<%= form.text_field :subtitle %>
-<%= form.submit "Créer"  %>
+<%= form_tag banners_path, method: :post, multipart: true, remote: true do %>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= text_field_tag :title %>
+<%= text_field_tag :subtitle %>
+<%= file_field_tag :banner_image %>
+<%= submit_tag "Créer"  %>
 <% end %>
 
 <% @banners.each do |banner| %>
@@ -11,7 +12,7 @@
 <%= image_tag banner.banner_image %>
 <% end %>
 
-<%= form_tag(banner_banner_images_path(banner.id), remote: true, method: :post, multipart: true) do %>
+<%= form_tag(banner_banner_images_path(banner), remote: true, multipart: true) do %>
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 <%= file_field_tag :banner_image %>
 <%= submit_tag "Uploader" %>

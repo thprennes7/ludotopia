@@ -34,6 +34,6 @@ class BannersController < ApplicationController
   end
 
   def banner_params
-    params.permit(:title, :subtitle)
+    params.permit(:title, :subtitle, :banner_image)
   end
 end

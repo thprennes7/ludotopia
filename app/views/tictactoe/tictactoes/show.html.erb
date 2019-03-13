@@ -1,12 +1,35 @@
+<div id="game-board">
+	<div style="display: none;" id="party-id"><%= @party.id %></div>
 <% 
 case @party.status
-when 0
-	render 'init', parti_id: @party.id
-when 1
-	render 'party', parti_id: @party.id
-when 2
-	render 'ended'
-else
+when 0 %>
+<%=	render 'init' %>
+<% when 1 %>
+<%=	render 'party' %>
+<% when 2 %>
+<%=	render 'ended' %>
+<% else
 
 end
 %>
+</div>
+
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "tictactoe/show" %>
+<% end %>
+<script type="text/javascript">
+	function changeStatus(status){
+	$gameBoard.empty();
+	switch(status) {
+		case '0' :
+		$gameBoard.html('<%= j render "init" %>');
+		break;
+		case '1' :
+		$gameBoard.html('<%= j render "party" %>');
+		break;
+		case '2' :
+		$gameBoard.html('<%= j render "ended" %>');
+		break;
+	}
+}
+</script>

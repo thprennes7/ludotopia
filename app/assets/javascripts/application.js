@@ -14,6 +14,9 @@
 //= require jquery-ui
 //= require rails-ujs
 //= require activestorage
+
+//= stub 'tictactoe/show'
+
 //= require_tree 
 
 //ybo: call js file of template

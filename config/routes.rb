@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   namespace :tictactoe do
     resources :tictactoe_grids
     resources :tictactoe_users
-    resources :tictactoes
+    resources :tictactoes do
+      get 'get_status'
+    end
   end
 end

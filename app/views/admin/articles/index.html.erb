@@ -1,22 +1,32 @@
+<h2>Créer un article :</h2>
 <%= form_tag  articles_path, method: :post, multipart: true, remote: true do %>
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-<%= text_field_tag :title %>
-<%= text_field_tag :description %>
-<%= submit_tag "Créer" %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= text_field_tag :title %>
+  <%= text_area_tag :description %>
+  <%= file_field_tag :article_images, multiple: true %>
+  <%= submit_tag "Créer" %>
 <% end %>
 
+<h2>Modifier des articles :</h2>
 <% @articles.each do |article| %>
+<h3>Article n°<%= article.id %></h3>
+  <%= form_tag articles_path(article), method: :patch, multipart: true, remote: true do %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= text_field_tag :title, article.title %>
+    <%= text_area_tag :description, article.description %>
+    <%= submit_tag "Mettre à jour" %>
+  <% end %>
+  <%= link_to "Supprimer l'article", article_path(article), method: :delete, remote: true %>
 
-<%= form_tag articles_path(article), method: :patch, multipart: true, remote: true do %>
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-<%= text_field_tag :title, article.title %>
-<%= text_field_tag :description, article.description %>
-<%= submit_tag "Mettre à jour" %>
-<% end %>
+  <% if article.article_images.attached? %>
+    <% article.article_images.each_with_index do |article_image, index| %>
+      <%= image_tag article_image, alt: "image #{index}" %>
+      <%= link_to "Supprimer", article_article_images_path(article_image), method: :delete, remote: true, multipart: true  %>
+    <% end %>
+  <% end %>
 
-<% article.article_images.each do |article_image| %>
-
-
-
-
+  <%= form_tag article_article_images_path(article), multipart: true, remote: true do %>
+    <%= file_field_tag :article_images, multiple: true %>
+    <%= submit_tag "Uploader l'image" %>
+  <% end %>
 <% end %>

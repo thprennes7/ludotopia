@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, except: [:index]
+  before_action :set_article, except: [:index, :create]
   respond_to :js, :html, :json
 
 
@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    flash[:notice] = "Article mis à jour"
+    flash[:notice] = "Article mis à jour" if @article.update
     respond_with(@article)
   end
 
@@ -18,7 +18,12 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    flash[:notice] = "Article créé !"
+    flash[:notice] = "Article créé !" if @article.save
+    respond_with(@article)
+  end
+
+  def destroy
+    flash[:notice] = "Article supprimé" if @article.destroy
     respond_with(@article)
   end
 
@@ -29,6 +34,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, :article_imgs)
+    params.permit(:title, :description, :article_images)
   end
 end

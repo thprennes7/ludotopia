@@ -23,6 +23,10 @@ class Tictactoe::TictactoesController < ApplicationController
 		@party.update(status: params[:status])
 	end
 
+	def get_status
+		@party.check_status
+	end
+
 	private
 	def get_tictactoe
 		@party = Tictactoe.find(params[:id])

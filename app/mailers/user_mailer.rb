@@ -15,13 +15,9 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Merci pour la donation')
   end
 
-  def news_actuality(article)
+  def news_actuality(article, user)
     @article = article
-    @users = User.all
-    @users.each do |user|
-      @user = user
-      mail(to: @user.email, subject: 'Des nouveauté chez Ludotopia')
-      sleep 0.8
-    end
+    @user = user
+    mail(to: @user.email, subject: 'Des nouveauté chez Ludotopia')
   end
 end

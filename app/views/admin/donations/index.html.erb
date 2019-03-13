@@ -1,0 +1,13 @@
+<% @games.each do |game| %>
+
+<h2><%= game.title %></h2>
+
+<% find_donations(game).each do |donation| %>
+
+<ul class="donation<%= donation.id %>_infos">
+  <li><%= donation.user.username %></li>
+  <li><%= donation.amount %></li>
+</ul>
+
+<% end %>
+<% end %>

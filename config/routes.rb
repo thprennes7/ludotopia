@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
 
-
+  resources :landings
   resources :charges
   resources :banners do
     resources :banner_images

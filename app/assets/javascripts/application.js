@@ -11,8 +11,19 @@
 // about supported directives.
 //
 //= require jquery3
-// require jquery_ujs
 //= require jquery-ui
 //= require rails-ujs
 //= require activestorage
-//= require_tree .
+//= require_tree 
+
+//ybo: call js file of template
+//= require jquery-3.2.1.min.js
+//= require popper.min.js
+//= require bootstrap.min.js
+//= require particles.js
+//= require blazy.min.js
+//= require isotope.pkgd.min.js
+//= require lightbox.min.js
+//= require jquery-modal-video.min.js
+//= require strider.js
+//= require validator.min.js

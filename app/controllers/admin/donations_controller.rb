@@ -12,17 +12,6 @@ class Admin::DonationsController < AdminsController
 
   end
 
-  def create
-    @donation = Donation.new(donation_params)
-    flash[:notice] = "Don effectué !"
-    respond_with(@donation)
-  end
-
-  def update
-    flash[:notice] = "Donation mise à jour"
-    respond_with(@donation)
-  end
-
   private
 
   def set_donation

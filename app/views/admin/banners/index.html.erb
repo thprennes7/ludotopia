@@ -1,0 +1,29 @@
+<%= form_with model: Banner.new, multipart: true do |form| %>
+<%= form.file_field :banner_image %>
+<%= form.text_field :title %>
+<%= form.text_field :subtitle %>
+<%= form.submit "Créer"  %>
+<% end %>
+
+<% @banners.each do |banner| %>
+
+<% if banner.banner_image.attached? %>
+<%= image_tag banner.banner_image %>
+<% end %>
+
+<%= form_tag(banner_banner_images_path(banner.id), remote: true, method: :post, multipart: true) do %>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= file_field_tag :banner_image %>
+<%= submit_tag "Uploader" %>
+<% end %>
+
+<%= form_tag(banner_path(banner.id), method: :put, remote: true) do%>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= text_field_tag :title, banner.title %>
+<%= text_field_tag :subtitle, banner.subtitle %>
+<%= submit_tag "Mettre à jour"  %>
+<% end %>
+
+<%= link_to "Supprimer", banner_path(banner), method: :delete, remote: true %>
+
+<% end %>

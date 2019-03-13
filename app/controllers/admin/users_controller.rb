@@ -11,23 +11,6 @@ class Admin::UsersController < AdminsController
 
   end
 
-  def create
-    @user = User.new(user_params)
-    flash[:notice] = "Création de l'utilisateur."
-    respond_with(@user)
-  end
-
-  def update
-    flash[:notice] = "Utilisateur mis à jour"
-    respond_with(@user)
-  end
-
-
-  def destroy
-    flash[:notice] = "Utilisateur #{@user.username} supprimé"
-    respond_with(@user)
-  end
-
   private
 
   def set_user

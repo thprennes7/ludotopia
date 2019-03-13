@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
 
   resources :charges
-  resources :banners, except: [:new, :edit, :create]
+  resources :banners do
+    resources :banner_images
+  end
   resources :donations, except: [:edit, :index, :show]
   resources :scores, except: [:edit]
   resources :likes
@@ -14,11 +16,9 @@ Rails.application.routes.draw do
   resources :articles, except: [:new, :edit, :create]
   devise_for :users, except: [:index]
 
-# Admin dashboard
+  # Admin dashboard
   namespace :admin do
-    resources :banners, only: [:new, :edit, :create] do
-      resources :banner_images, only: [:new, :edit, :create]
-    end
+    resources :banners
     resources :donations, only: [:edit, :index, :show]
     resources :scores, only: [:edit]
     resources :games, only: [:edit]
@@ -26,8 +26,6 @@ Rails.application.routes.draw do
     resources :users, only: [:index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-
 
   # TicTacToe
   namespace :tictactoe do

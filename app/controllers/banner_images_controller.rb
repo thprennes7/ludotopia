@@ -6,6 +6,7 @@ class BannerImagesController < ApplicationController
     flash[:notice] = "Image attachée !" if @banner.banner_image.attach(banner_img_params[:banner_image])
     respond_to do |format|
       format.js
+      format.html {redirect_to request.referer}
     end
   end
 

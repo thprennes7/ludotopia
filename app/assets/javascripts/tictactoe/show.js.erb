@@ -8,11 +8,15 @@ $(document).ready(function(){
 
 		$.ajax({
 			url: $partyId + '/get_status?id=' + $partyId,
-			data: $checkStatus,
-			dataType: 'Text'
-			});
-			console.log($checkStatus);
-			checkStatus($checkStatus);	
+			type: "GET",
+			dataType: 'json',
+			success: function(json, status) {
+				data = eval('('+json+')');
+				console.log(json);
+				console.log(data);
+				changeStatus(data);
+			}
+		});
 	}, 1500);
 });
 

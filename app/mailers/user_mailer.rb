@@ -19,8 +19,9 @@ class UserMailer < ApplicationMailer
     @article = article
     @users = User.all
     @users.each do |user|
-      @user = user.email
-      mail(to: @user, subject: 'Des nouveauté chez Ludotopia')
+      @user = user
+      mail(to: @user.email, subject: 'Des nouveauté chez Ludotopia')
+      sleep 0.8
     end
   end
 end

@@ -1,0 +1,24 @@
+console.log('oui');
+$(document).ready(function(){
+	$checkStatus = null;
+	$nowStatus = null;
+	$gameBoard = $("#game-board");
+	$partyId = $("#party-id").html();
+	setInterval( function() {
+
+		$.ajax({
+			url: $partyId + '/get_status?id=' + $partyId,
+			data: $checkStatus,
+			dataType: 'Text'
+			});
+			console.log($checkStatus);
+			checkStatus($checkStatus);	
+	}, 1500);
+});
+
+function checkStatus(status){
+	if (status != $nowStatus) {
+			$nowStatus = status;
+			changeStatus($nowStatus);
+		}
+}

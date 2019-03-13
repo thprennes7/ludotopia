@@ -4,6 +4,10 @@ class Tictactoe < ApplicationRecord
 
 	after_create :create_grid
 
+	def check_status
+		Tictactoe.find(self.id).status
+	end
+
 
 	def create_grid
 		#Create the JSON file for the grid of the party

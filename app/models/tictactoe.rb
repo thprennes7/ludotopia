@@ -4,7 +4,9 @@ class Tictactoe < ApplicationRecord
 
 	after_create :create_grid
 
-	scope :status, lambda { |party| find(party.id).status}
+	def check_status
+		Tictactoe.find(self.id).status
+	end
 
 
 	def create_grid

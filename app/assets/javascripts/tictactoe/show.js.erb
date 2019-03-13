@@ -1,24 +1,24 @@
-console.log('<%= "oui" %>');
+console.log('oui');
 $(document).ready(function(){
-	let checkStatus = null;
-	let nowStatus = null;
-	let gameBoard = "#game-board"
+	$checkStatus = null;
+	$nowStatus = null;
+	$gameBoard = $("#game-board");
+	$partyId = $("#party-id").html();
 	setInterval( function() {
-		checkStatus = <%= party.check_status %>;
-		if (checkStatus != nowStatus) {
-			nowStatus = checkStatus;
-			$(gameBoard).empty();
-			switch(nowStatus) {
-				case 0 :
-				$(gameBoard).html(<%= j render 'init' %>);
-				break;
-				case 1 :
-				$(gameBoard).html(<%= j render 'party' %>);
-				break;
-				case 2 :
-				$(gameBoard).html(<%= j render 'ended' %>);
-				break;
-			}
-		}
-	}, 500);
+
+		$.ajax({
+			url: $partyId + '/get_status?id=' + $partyId,
+			data: $checkStatus,
+			dataType: 'Text'
+			});
+			console.log($checkStatus);
+			checkStatus($checkStatus);	
+	}, 1500);
 });
+
+function checkStatus(status){
+	if (status != $nowStatus) {
+			$nowStatus = status;
+			changeStatus($nowStatus);
+		}
+}

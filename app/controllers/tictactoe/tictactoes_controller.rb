@@ -24,7 +24,7 @@ class Tictactoe::TictactoesController < ApplicationController
 	end
 
 	def get_status
-		@party.check_status
+		return @party.status
 	end
 
 	private

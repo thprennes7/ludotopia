@@ -11,7 +11,7 @@ class UserMailer < ApplicationMailer
     def confirm_donation(donation)
       @url = 'https://ludotopia.herokuapp.com'
       @user = User.find(donation.user.id)
-      @donation = Donation.where(user_id: donation.user_id)
+      @donation = donation
       mail(to: @user.email, subject: 'Merci pour la donation')
     end
 

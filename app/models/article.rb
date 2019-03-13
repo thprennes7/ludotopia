@@ -1,13 +1,15 @@
 class Article < ApplicationRecord
-  after_create :send_news
   has_many :comments
   has_many :likes
   has_many_attached :article_images
-
+  after_create :send_news
 
   private
 
   def send_news
-    UserMailer.news_actuality(self).deliver_now
+    users = User.all
+    users.each do |user|
+      UserMailer.news_actuality(self, user).deliver_now
+    end
   end
 end

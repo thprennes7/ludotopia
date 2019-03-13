@@ -4,7 +4,7 @@
     <%= image_tag banner.banner_image %>
   <% end %>
 
-  <%= form_tag(admin_banner_banner_images_path(banner.id), method: :post, multipart: true, remote: true) do %>
+  <%= form_tag(admin_banner_banner_images_path(banner.id), remote: true, method: :create, multipart: true) do %>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <%= file_field_tag :banner_image %>
     <%= submit_tag "Uploader" %>

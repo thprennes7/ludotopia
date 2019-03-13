@@ -14,4 +14,4 @@
 //= require jquery-ui
 //= require rails-ujs
 //= require activestorage
-//= require_tree .
+//= require_tree ./cable.js

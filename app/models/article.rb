@@ -8,6 +8,6 @@ class Article < ApplicationRecord
   private
 
   def send_news
-    UserMailer.news_game(self).deliver_now
+    UserMailer.news_actuality(self).deliver_now
   end
 end

@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
       mail(to: @user.email, subject: 'Merci pour la donation')
     end
 
-    def news_game(article)
+    def news_actuality(article)
       @users = User.all
       @article = article
       @users.each do |user|

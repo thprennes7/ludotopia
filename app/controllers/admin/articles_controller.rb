@@ -7,19 +7,8 @@ class Admin::ArticlesController < AdminsController
     @articles = Article.all.sort.reverse
   end
 
-  def update
-    flash[:notice] = "Article mis à jour"
-    respond_with(@article)
-  end
-
   def show
 
-  end
-
-  def create
-    @article = Article.new(article_params)
-    flash[:notice] = "Article créé !"
-    respond_with(@article)
   end
 
   private

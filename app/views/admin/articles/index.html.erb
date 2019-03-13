@@ -1,1 +1,22 @@
-Vue article
+<%= form_tag  articles_path, method: :post, multipart: true, remote: true do %>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= text_field_tag :title %>
+<%= text_field_tag :description %>
+<%= submit_tag "Créer" %>
+<% end %>
+
+<% @articles.each do |article| %>
+
+<%= form_tag articles_path(article), method: :patch, multipart: true, remote: true do %>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= text_field_tag :title, article.title %>
+<%= text_field_tag :description, article.description %>
+<%= submit_tag "Mettre à jour" %>
+<% end %>
+
+<% article.article_images.each do |article_image| %>
+
+
+
+
+<% end %>

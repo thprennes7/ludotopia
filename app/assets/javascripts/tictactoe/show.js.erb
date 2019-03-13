@@ -7,20 +7,22 @@ $(document).ready(function(){
 	setInterval( function() {
 
 		$.ajax({
-			url: $partyId + '/get_status?id=' + $partyId,
+			url: '/tictactoe/tictactoes/1/get_status?id=' + $partyId,
 			type: "GET",
-			dataType: 'json',
-			success: function(json, status) {
-				data = eval('('+json+')');
-				console.log(json);
-				console.log(data);
-				changeStatus(data);
+			success: function(data) {
+				var doc = document.documentElement.cloneNode();
+				doc.innerHTML = data;
+				$checkStatus = $(doc.querySelector('#status')).html();
+				
+				console.log($checkStatus);
+				changeStatus($checkStatus);
 			}
 		});
 	}, 1500);
 });
 
 function checkStatus(status){
+	console.log(status);
 	if (status != $nowStatus) {
 			$nowStatus = status;
 			changeStatus($nowStatus);

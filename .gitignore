@@ -28,4 +28,3 @@
 
 # Ignore environment file
 .env
-db/schema.rb

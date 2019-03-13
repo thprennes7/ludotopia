@@ -1,5 +1,5 @@
 <div id="game-board">
-
+	<div style="display: none;" id="party-id"><%= @party.id %></div>
 <% 
 case @party.status
 when 0 %>
@@ -17,3 +17,19 @@ end
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "tictactoe/show" %>
 <% end %>
+<script type="text/javascript">
+	function changeStatus(status){
+	$gameBoard.empty();
+	switch(status) {
+		case '0' :
+		$gameBoard.html('<%= j render "init" %>');
+		break;
+		case '1' :
+		$gameBoard.html('<%= j render "party" %>');
+		break;
+		case '2' :
+		$gameBoard.html('<%= j render "ended" %>');
+		break;
+	}
+}
+</script>

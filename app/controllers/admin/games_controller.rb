@@ -11,17 +11,6 @@ class Admin::GamesController < AdminsController
 
   end
 
-  def create
-    @game = Game.new(game_params)
-    flash[:notice] = "Création de la partie."
-    respond_with(@game)
-  end
-
-  def update
-    flash[:notice] = "Partie mise à jour."
-    respond_with(@game)
-  end
-
   private
 
   def set_game

@@ -74,7 +74,7 @@
                     <%= image_tag "awards.png", alt:"sorry, pictures is not charge", class:" img-fluid", id:"awards" %>
                 </div>
                 <div class="col-md-6">
-                    <%= image_tag "placeholder.jpg", alt:"digital collage", class:"img-fluid b-lazy", id:"support-image" %>
+                    <%= image_tag "about.jpg", alt:"digital collage", class:"img-fluid b-lazy", id:"support-image" %>
                 </div>
             </div>
         </div>
@@ -177,7 +177,7 @@
                             <div class="overlay">
                                 <i class="fa fa-play fa-3x"></i>
                             </div>
-                            <img src="images/placeholder.jpg" data-src="images/game.jpg" class="img-fluid b-lazy" alt="video thumbnail"> <!-- Video Thumbnail Img -->
+                            <%= image_tag "game.jpg", alt:"video thumbnail", class:"img-fluid b-lazy" %> <!-- Video Thumbnail Img -->
                         </a>
                     </div>
                     <div class="col-lg-12 col-xl-7 game-card-right">
@@ -185,7 +185,7 @@
                         <p class="tags"><span class="subtle">Horror Adventure | Mobile</span> </p>
                         <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis rhoncus nibh. Phasellus dignissim luctus consectetur. Fusce viverra est non purus ultrices, vel molestie massa tincidunt. <span class="expand colored strong" data-toggle="modal" data-target="#game2">Read More</span></p>
                         <a href="#" class="button-store">
-                            <%= fa_icon "android", :class =>"fa-2x" %>
+                            <i class="fa fa-android fa-2x"></i>
                             <p>Available on<br><span class="strong">Google Play</span></p>
                         </a>
                         <a href="#" class="button-store">
@@ -241,13 +241,13 @@
                                 <i class="fa fa-picture-o fa-3x"></i>
                             </div>
                             <picture>
-                                <source media="(min-width: 1200px)" srcset="images/game.jpg">
-                                <source media="(min-width: 768px)" srcset="images/game_large.jpg">
-                                <img src="images/placeholder.jpg" data-src="images/game.jpg" class="img-fluid b-lazy" alt="aurora image">
+                                <source media="(min-width: 1200px)" srcset="<%= image_url("game.jpg")%>">
+                                <source media="(min-width: 768px)" srcset="<%= image_url("game_large.jpg")%>">
+                                <img src="<%= image_url("placeholder.jpg")%>" data-src="<%= image_url("placeholder.jpg")%>" class="img-fluid b-lazy" alt="aurora image"> 
                             </picture>
                         </a>
-                        <a href="images/game_large.jpg" data-lightbox="screenshots_aurora"></a>
-                        <a href="images/game_large.jpg" data-lightbox="screenshots_aurora"></a>
+                        <a href="<%= image_url("game_large.jpg")%>" data-lightbox="screenshots_aurora"></a>
+                        <a href="<%= image_url("game_large.jpg")%>" data-lightbox="screenshots_aurora"></a>
                     </div>
                     <div class="col-lg-12 col-xl-7 game-card-right">
                         <h2 class="short-hr-left">AURORA AWAKENING</h2>

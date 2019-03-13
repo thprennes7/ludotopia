@@ -1,20 +1,15 @@
 class Admin::DonationsController < AdminsController
-  before_action :set_donation
+  before_action :set_donation, except: [:index]
   respond_to :js, :html, :json
 
 
   def index
     @donations = Donation.all.sort.reverse
+    @games = Game.all.sort.reverse
   end
 
   def show
 
-  end
-
-  def create
-    @donation = Donation.new(donation_params)
-    flash[:notice] = "Bannière créé !"
-    respond_with(@donation)
   end
 
   private

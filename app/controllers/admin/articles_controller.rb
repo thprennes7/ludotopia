@@ -1,5 +1,5 @@
 class Admin::ArticlesController < AdminsController
-  before_action :set_article
+  before_action :set_article, except: [:index]
   respond_to :js, :html, :json
 
 
@@ -9,12 +9,6 @@ class Admin::ArticlesController < AdminsController
 
   def show
 
-  end
-
-  def create
-    @article = Article.new(article_params)
-    flash[:notice] = "Article créé !"
-    respond_with(@article)
   end
 
   private

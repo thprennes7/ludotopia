@@ -1,7 +1,6 @@
 class Admin::BannersController < AdminsController
-  before_action :set_banner
+  before_action :set_banner, except: [:index, :create]
   respond_to :js, :html, :json
-
 
   def index
     @banners = Banner.all.sort.reverse
@@ -11,19 +10,13 @@ class Admin::BannersController < AdminsController
 
   end
 
-  def create
-    @banner = Banner.new(banner_params)
-    flash[:notice] = "Bannière créé !"
-    respond_with(@banner)
-  end
-
   private
 
   def set_banner
     @banner = Banner.find(params[:id])
   end
 
-  def article_params
-    params.require(:banner).permit(:title, :subtitle, :banner_imgs)
+  def banner_params
+    params.permit(:title, :subtitle, :banner_image)
   end
 end

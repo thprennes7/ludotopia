@@ -15,10 +15,13 @@ class Tictactoe::TictactoesController < ApplicationController
 			redirect_to request.referer
 		end
 	end
+
 	def show
 		@friends = Contact.where(me: current_user)
 		@participants = TictactoeUser.where(tictactoe_id: @party.id)
+		render 'show.js.erb'
 	end
+
 	def update
 		@party.update(status: params[:status])
 	end

@@ -4,7 +4,7 @@ $(document).ready(function(){
 	let nowStatus = null;
 	let gameBoard = "#game-board"
 	setInterval( function() {
-		checkStatus = <%= party.check_status %>;
+		checkStatus = <%= @party.check_status %>;
 		if (checkStatus != nowStatus) {
 			nowStatus = checkStatus;
 			$(gameBoard).empty();

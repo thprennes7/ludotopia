@@ -20,7 +20,6 @@
 
   <% if article.image.attached? %>
       <%= image_tag article.image, alt: "image#{article.id}" %>
-      <%= link_to "Supprimer", article_images_path(article, article.image), method: :delete, remote: true, multipart: true  %>
   <% end %>
 
   <%= form_tag article_images_path(article), multipart: true, remote: true do %>

@@ -9,14 +9,6 @@ class ImagesController < ApplicationController
     end
   end
 
-  def destroy
-    flash[:notice] = "Image supprimée" if @article.image.purge
-    respond_to do |format|
-      format.js
-      format.html {redirect_to request.referer}
-    end
-  end
-
   private
 
   def article_img_params

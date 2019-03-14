@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
 
-  resources :contacts
   root to: 'home#index'
 
 
-  resources :landings
+  resources :contacts
+  resources :landings, only: [:index]
   resources :charges
   resources :banners do
     resources :banner_images
   end
   resources :donations, except: [:edit, :index, :show]
   resources :scores, except: [:edit]
-  resources :likes
-  resources :comments
+  resources :likes, only: [:create, :edit, :new]
+  resources :comments, only: [:create, :edit, :new]
   resources :games, except: [:edit]
   resources :articles do
     resources :images

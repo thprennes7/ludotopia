@@ -8,7 +8,7 @@ class Tictactoe::TictactoesController < ApplicationController
 	def create
 		game = Tictactoe.create(status: 0)
 		if game.save
-			TictactoeUser.create!(tictactoe_id: game.id, user_id: current_user.id)
+			TictactoeUser.create!(tictactoe_id: game.id, user_id: current_user.id, player: 1)
 			TictactoeGrid.create!(tictactoe_id: game.id, player: 1)
 			redirect_to Tictactoe_path(game.id)
 		else
@@ -19,6 +19,7 @@ class Tictactoe::TictactoesController < ApplicationController
 	def show
 		@friends = Contact.where(me: current_user)
 		@participants = TictactoeUser.where(tictactoe_id: @party.id)
+		@user_participation = TictactoeUser.find_by(tictactoe_id: @party.id, user_id: current_user.id)
 	end
 	def update
 		@party.update(status: params[:status])

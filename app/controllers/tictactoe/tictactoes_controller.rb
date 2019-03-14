@@ -1,5 +1,5 @@
 class Tictactoe::TictactoesController < ApplicationController
-	before_action :get_tictactoe, only: [:show, :destroy, :get_status, :update]
+	before_action :get_tictactoe, only: [:show, :destroy, :update, :get_status]
   before_action :authenticate_user!
 	before_action only: [:show] do
 		is_whitelisted?(@party)
@@ -24,7 +24,6 @@ class Tictactoe::TictactoesController < ApplicationController
 	end
 
 	def get_status
-		@party.check_status
 	end
 
 	private

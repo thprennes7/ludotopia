@@ -1,0 +1,45 @@
+<!-- Game Card -->
+                <div class="row game-card pc">
+                    <div class="col-lg-12 col-xl-5 game-card-left">
+                        <a href="<%= image_url("game_large.jpg")%>" data-lightbox="screenshots_aurora">
+                            <div class="overlay">
+                                <i class="fa fa-picture-o fa-3x"></i>
+                            </div>
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="<%= image_url("game.jpg")%>">
+                                <source media="(min-width: 768px)" srcset="<%= image_url("game_large.jpg")%>">
+                                <img src="<%= image_url("placeholder.jpg")%>" data-src="<%= image_url("placeholder.jpg")%>" class="img-fluid b-lazy" alt="aurora image">
+                            </picture>
+                        </a>
+                        <a href="<%= image_url("game.jpg")%>" data-lightbox="screenshots_aurora"></a>
+                        <a href="<%= image_url("game_large.jpg")%>" data-lightbox="screenshots_aurora"></a>
+                        <a href="<%= image_url("game_large.jpg")%>" data-lightbox="screenshots_aurora"></a>
+
+                    </div>
+                    <div class="col-lg-12 col-xl-7 game-card-right">
+                        <h2 class="short-hr-left"><%= info.title %></h2>
+                        <p class="tags"><span class="subtle">Action RPG | PC</span> </p>
+                        <p class="game-description"><%= info.description %><span class="expand colored strong" data-toggle="modal" data-target="#game3">Voir plus</span></p>
+                        <div class="steam-btn">
+                            <a href="#">
+                                <i class="fa fa-steam fa-3x"></i>
+                                <p>GET IT ON <br><span class="spaced">STEAM</span></p>
+                            </a>
+                        </div>
+                        <div class="reviews">
+                            <a href="#"><div class="score-card">
+                                <p class="score">8.5</p>
+                                <p>Gamespot</p>
+                            </div></a>
+                            <a href="#"><div class="score-card">
+                                <p class="score">8.1</p>
+                                <p>IGN</p>
+                            </div></a>
+                            <a href="#"><div class="score-card">
+                                <p class="score">83</p>
+                                <p>Metacritic</p>
+                            </div></a>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                </div><!-- Game Card End -->

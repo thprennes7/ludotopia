@@ -1,5 +1,5 @@
 <h1>Liste des articles</h1>
 <% @articles.each do |article| %>
-<p><%= article.title %></p>
+<p><%= link_to "#{article.title}", article_path(article[:id]) %></p>
 <p><%= article.description %></p>
 <% end %>

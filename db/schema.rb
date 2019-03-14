@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_102522) do
   create_table "tictactoe_users", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "tictactoe_id"
+    t.integer "player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tictactoe_id"], name: "index_tictactoe_users_on_tictactoe_id"

@@ -1,5 +1,5 @@
 class Tictactoe::TictactoesController < ApplicationController
-	before_action :get_tictactoe, only: [:show, :destroy, :update, :get_status]
+	before_action :get_tictactoe, only: [:show, :destroy, :update, :get_status, :get_grid]
   before_action :authenticate_user!
 	before_action only: [:show] do
 		is_whitelisted?(@party)
@@ -25,6 +25,9 @@ class Tictactoe::TictactoesController < ApplicationController
 	end
 
 	def get_status
+	end
+	def get_grid
+		@grid = TictactoeGrid.find_by(tictactoe_id: @party.id)
 	end
 
 	private

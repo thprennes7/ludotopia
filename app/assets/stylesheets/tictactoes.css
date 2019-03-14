@@ -1,0 +1,61 @@
+/* Place all the styles related to the Tictactoes controller here. */
+/* They will automatically be included in application.css. */
+/* You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+#tictactoe-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	grid-auto-rows: minmax(100px, auto);
+	border-collapse: collapse;
+	box-sizing: border-box;
+}
+.case {
+	text-align: center;
+}
+#case-a1 {
+	border-radius: 2px 0 0 0;
+	grid-column: 1;
+	grid-row: 1;
+}
+#case-a2 {
+	border-top: 1px solid white;
+	grid-column: 2;
+	grid-row: 1;	
+}
+#case-a3 {
+	border-radius: 0 2px 0 0;
+	grid-column: 3;
+	grid-row: 1;
+}
+#case-b1 {
+	border-left: 1px solid white;
+	grid-column: 1;
+	grid-row: 2;
+}
+#case-b2 {
+	grid-column: 2;
+	grid-row: 2;
+}
+#case-b3 {
+	border-right: 1px solid white;
+	grid-column: 3;
+	grid-row: 2;
+}
+#case-c1 {
+	border-radius: 0 0 0 2px;
+	grid-column: 1;
+	grid-row: 3;
+}
+#case-c2 {
+	border-bottom: 1px solid white;
+	grid-column: 2;
+	grid-row: 3;
+}
+#case-c3 {
+	border-radius: 0 0 2px 0;
+	grid-column: 3;
+	grid-row: 3;
+}
+#case-a1, #case-a3, #case-b2, #case-c1, #case-c3 {
+	border: 1px solid white;
+} 

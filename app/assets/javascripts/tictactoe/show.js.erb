@@ -1,9 +1,10 @@
 console.log('oui');
 $(document).ready(function(){
+	$loadDocument = 0;
 	$oldStatus = null;
 	$nowStatus = null;
-	$oldGrid = null;
-	$nowGrid = null;
+	$oldGrid = [];
+	$nowGrid = [];
 	$gameBoard = $("#game-board");
 	$partyId = $("#party-id").html();
 	setInterval( function() {
@@ -21,11 +22,16 @@ $(document).ready(function(){
 				// Select the html in the div of the page
 				$oldStatus = $(doc.querySelector('#status')).html();
 
-				if ($checkStatus == 1){
+				if ($oldStatus == 1){
+					if($loadDocument == 0) {
+						
+						$loadDocument = 1;
+					}
+
 					getGrid();
 				}
 
-				changeStatus($oldStatus);
+				checkStatus($oldStatus);
 			}
 		});
 	}, 1500);
@@ -57,15 +63,22 @@ function getGrid(){
 			$oldGrid[7] = $(doc.querySelector('#c1')).html();
 			$oldGrid[8] = $(doc.querySelector('#c2')).html();
 			$oldGrid[9] = $(doc.querySelector('#c3')).html();
-
-			checkGrid($oldGrid);
+			checkGrid();
 		}
 	});
 }
 
-function checkGrid(grid){
-	if (grid != $nowGrid){
+function checkGrid(){
+	if ($oldGrid != $nowGrid){
 		changeGrid();
-		$nowGrid = grid;
+	}
+}
+
+function changeGrid() {
+	for (let x = 1; x <= 9; x++) {
+		if ($oldGrid[x] != $nowGrid[x]) {
+			$('#case-' + x).append($oldGrid[x]);
+			$nowGrid[x] = $oldGrid[x];
+		}
 	}
 }

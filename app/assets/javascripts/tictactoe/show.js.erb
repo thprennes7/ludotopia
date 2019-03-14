@@ -6,6 +6,7 @@ $(document).ready(function(){
 	$nowGrid = [];
 	$gameBoard = $("#game-board");
 	$partyId = $("#party-id").html();
+	$player = $("#player").html();
 	setInterval( function() {
 
 		$.ajax({
@@ -22,9 +23,6 @@ $(document).ready(function(){
 				$oldStatus = $(doc.querySelector('#status')).html();
 
 				if ($oldStatus == 1){
-					if() {
-					}
-
 					getGrid();
 				}
 
@@ -74,6 +72,7 @@ function checkGrid(){
 function changeGrid() {
 	for (let x = 1; x <= 9; x++) {
 		if ($oldGrid[x] != $nowGrid[x]) {
+			$('#case-' + x).empty();
 			$('#case-' + x).append($oldGrid[x]);
 			$nowGrid[x] = $oldGrid[x];
 		}

@@ -4,7 +4,8 @@ class Tictactoe::TictactoeUsersController < ApplicationController
 	respond_to :js, :html, :json
 
 	def create
-		user = TictactoeUser.new(tictactoe_id: params[:game], user_id: params[:user])
+		player = TictactoeUser.where(tictactoe_id: params[:game]).length + 1
+		user = TictactoeUser.new(tictactoe_id: params[:game], user_id: params[:user], player: player)
 		if TictactoeUser.max_participant(params[:game]) && TictactoeUser.not_already_in?(params[:user], params[:game])
 			if user.save
 				respond_with(user)

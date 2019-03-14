@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :supports
   resources :contacts
   root to: 'home#index'
 

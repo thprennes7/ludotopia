@@ -15,14 +15,14 @@ $(document).ready(function(){
 			type: "GET",
 			success: function(data) {
 				// Create a variable with html content
-				var doc = document.documentElement.cloneNode();
+				let doc = document.documentElement.cloneNode();
 				// Copy the content of data in doc the have it like html
 				doc.innerHTML = data;
 				// Select the html in the div of the page
 				$oldStatus = $(doc.querySelector('#status')).html();
 
 				if ($checkStatus == 1){
-					checkGrid();
+					getGrid();
 				}
 
 				changeStatus($oldStatus);
@@ -39,9 +39,33 @@ function checkStatus(status){
 		}
 }
 
-function checkGrid(){
+function getGrid(){
 	// Check if the grid as changed
 	$.ajax({
-		url:
+		url: '/tictactoe/tictactoes/1/get_grid?id=' + $partyId,
+		type: "GET",
+		success: function(data) {
+			let doc = document.documentElement.cloneNode();
+			doc.innerHTML = data;
+			$oldGrid[0] = $(doc.querySelector('#player')).html();
+			$oldGrid[1] = $(doc.querySelector('#a1')).html();
+			$oldGrid[2] = $(doc.querySelector('#a2')).html();
+			$oldGrid[3] = $(doc.querySelector('#a3')).html();
+			$oldGrid[4] = $(doc.querySelector('#b1')).html();
+			$oldGrid[5] = $(doc.querySelector('#b2')).html();
+			$oldGrid[6] = $(doc.querySelector('#b3')).html();
+			$oldGrid[7] = $(doc.querySelector('#c1')).html();
+			$oldGrid[8] = $(doc.querySelector('#c2')).html();
+			$oldGrid[9] = $(doc.querySelector('#c3')).html();
+
+			checkGrid($oldGrid);
+		}
 	});
+}
+
+function checkGrid(grid){
+	if (grid != $nowGrid){
+		changeGrid();
+		$nowGrid = grid;
+	}
 }

@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    flash[:notice] = "Article mis à jour" if @article.update
+    flash[:notice] = "Article mis à jour" if @article.update_attributes(article_params)
     respond_with(@article)
   end
 

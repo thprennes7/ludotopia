@@ -10,7 +10,7 @@
 <h2>Modifier des articles :</h2>
 <% @articles.each do |article| %>
 <h3>Article n°<%= article.id %></h3>
-  <%= form_tag articles_path(article), method: :patch, multipart: true, remote: true do %>
+  <%= form_tag article_path(article.id), method: :patch, remote: true do %>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <%= text_field_tag :title, article.title %>
     <%= text_area_tag :description, article.description %>

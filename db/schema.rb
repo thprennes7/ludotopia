@@ -129,12 +129,12 @@ ActiveRecord::Schema.define(version: 2019_03_14_102522) do
     t.string "a1"
     t.string "a2"
     t.string "a3"
-    t.string "b1"
-    t.string "b2"
-    t.string "b3"
-    t.string "c1"
-    t.string "c2"
-    t.string "c3"
+    t.string "a4"
+    t.string "a5"
+    t.string "a6"
+    t.string "a7"
+    t.string "a8"
+    t.string "a9"
     t.integer "player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

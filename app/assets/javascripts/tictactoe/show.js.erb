@@ -1,7 +1,9 @@
 console.log('oui');
 $(document).ready(function(){
-	$checkStatus = null;
+	$oldStatus = null;
 	$nowStatus = null;
+	$oldGrid = null;
+	$nowGrid = null;
 	$gameBoard = $("#game-board");
 	$partyId = $("#party-id").html();
 	setInterval( function() {
@@ -17,8 +19,13 @@ $(document).ready(function(){
 				// Copy the content of data in doc the have it like html
 				doc.innerHTML = data;
 				// Select the html in the div of the page
-				$checkStatus = $(doc.querySelector('#status')).html();
-				changeStatus($checkStatus);
+				$oldStatus = $(doc.querySelector('#status')).html();
+
+				if ($checkStatus == 1){
+					checkGrid();
+				}
+
+				changeStatus($oldStatus);
 			}
 		});
 	}, 1500);
@@ -30,4 +37,11 @@ function checkStatus(status){
 			$nowStatus = status;
 			changeStatus($nowStatus);
 		}
+}
+
+function checkGrid(){
+	// Check if the grid as changed
+	$.ajax({
+		url:
+	});
 }

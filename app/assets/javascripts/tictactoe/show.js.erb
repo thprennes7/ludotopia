@@ -7,16 +7,25 @@ $(document).ready(function(){
 	setInterval( function() {
 
 		$.ajax({
-			url: $partyId + '/get_status?id=' + $partyId,
-			data: $checkStatus,
-			dataType: 'Text'
-			});
-			console.log($checkStatus);
-			checkStatus($checkStatus);	
+			// Ajax request every 1.5s to check the status of the game
+			// It will switch the front for all player how are on the page if status change
+			url: '/tictactoe/tictactoes/1/get_status?id=' + $partyId,
+			type: "GET",
+			success: function(data) {
+				// Create a variable with html content
+				var doc = document.documentElement.cloneNode();
+				// Copy the content of data in doc the have it like html
+				doc.innerHTML = data;
+				// Select the html in the div of the page
+				$checkStatus = $(doc.querySelector('#status')).html();
+				changeStatus($checkStatus);
+			}
+		});
 	}, 1500);
 });
 
 function checkStatus(status){
+	// Check if status change or not
 	if (status != $nowStatus) {
 			$nowStatus = status;
 			changeStatus($nowStatus);

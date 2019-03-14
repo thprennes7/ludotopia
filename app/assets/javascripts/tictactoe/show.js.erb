@@ -1,6 +1,5 @@
 console.log('oui');
 $(document).ready(function(){
-	$loadDocument = 0;
 	$oldStatus = null;
 	$nowStatus = null;
 	$oldGrid = [];
@@ -23,9 +22,7 @@ $(document).ready(function(){
 				$oldStatus = $(doc.querySelector('#status')).html();
 
 				if ($oldStatus == 1){
-					if($loadDocument == 0) {
-						
-						$loadDocument = 1;
+					if() {
 					}
 
 					getGrid();

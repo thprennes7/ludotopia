@@ -8,8 +8,8 @@
   <%= stylesheet_link_tag 'application', media: 'all'%>
 </head>
 <body>
-  <%= render 'layouts/loading' %>
-  <%= render 'layouts/navbar' %>
+	<%= render 'layouts/loading' %>
+	<%= render 'layouts/navbar' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
@@ -18,5 +18,6 @@
   <%= render 'layouts/footer' %>
   <%= javascript_include_tag 'application'%>
   <%= yield :javascript_includes %>
+  <%= render 'layouts/footer' %>
 </body>
 </html>

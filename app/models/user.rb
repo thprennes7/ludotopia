@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable
 
   belongs_to :status
   has_many :comments
@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   after_create :set_status
   has_many :contact, foreign_key: "friend_id", class_name: "Contact"
-
+  after_create :welcome_send
 
   private
 
@@ -21,5 +21,8 @@ class User < ApplicationRecord
     self.status = Status.first
   end
 
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
 
 end

@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ludotopia</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Ludotopia</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all'%>
-  </head>
-
-  <body>
-    <%= yield %>
-    <%= javascript_include_tag 'application'%>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all'%>
+</head>
+<body>
+	<%= render 'layouts/loading' %>
+	<%= render 'layouts/navbar' %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
+  <%= yield %>
+  <%= javascript_include_tag 'application'%>
+  <%= yield :javascript_includes %>
+  <%= render 'layouts/footer' %>
+</body>
 </html>

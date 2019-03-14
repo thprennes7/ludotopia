@@ -5,21 +5,11 @@ class Admin::ScoresController < AdminsController
 
   def index
     @scores = Score.all.sort.reverse
+    @games = Game.all
   end
 
   def show
 
-  end
-
-  def create
-    @score = Score.new(score_params)
-    flash[:notice] = "Création de la partie."
-    respond_with(@score)
-  end
-
-  def update
-    flash[:notice] = "Score mis à jour"
-    respond_with(@score)
   end
 
   private

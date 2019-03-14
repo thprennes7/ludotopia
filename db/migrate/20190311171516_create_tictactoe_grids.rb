@@ -5,12 +5,12 @@ class CreateTictactoeGrids < ActiveRecord::Migration[5.2]
     	t.string :a1
     	t.string :a2
     	t.string :a3
-    	t.string :b1
-    	t.string :b2
-    	t.string :b3
-    	t.string :c1
-    	t.string :c2
-    	t.string :c3
+    	t.string :a4
+    	t.string :a5
+    	t.string :a6
+    	t.string :a7
+    	t.string :a8
+    	t.string :a9
     	t.integer :player
       t.timestamps
     end

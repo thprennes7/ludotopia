@@ -19,7 +19,7 @@
                     <div class="col-lg-12 col-xl-7 game-card-right">
                         <h2 class="short-hr-left"><%= info.title %></h2>
                         <p class="tags"><span class="subtle">Action RPG | PC</span> </p>
-                        <p class="game-description"><%= info.description %><span class="expand colored strong" data-toggle="modal" data-target="#game3">Voir plus</span></p>
+                        <p class="game-description"><%= info.description[0..50] + "..."%><span class="expand colored strong" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>">Voir plus</span></p>
                         <div class="steam-btn">
                             <a href="#">
                                 <i class="fa fa-steam fa-3x"></i>
@@ -42,4 +42,5 @@
                         </div>
                     </div>
                     <!-- Modal -->
+                    <%= render partial: 'shared/card_modal', locals: {current_info: info} %>
                 </div><!-- Game Card End -->

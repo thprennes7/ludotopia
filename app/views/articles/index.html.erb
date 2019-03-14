@@ -1,5 +1,4 @@
 <%= render 'shared/card_nav' %>
 <% @articles.each do |article| %>
-<%= render 'shared/card_picture', locals: {info: article}  %>
-
+<%= render partial: 'shared/card_picture', locals: {info: article}  %>
 <% end %>

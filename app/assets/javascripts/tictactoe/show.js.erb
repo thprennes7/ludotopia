@@ -7,6 +7,11 @@ $(document).ready(function(){
 	$gameBoard = $("#game-board");
 	$partyId = $("#party-id").html();
 	$player = $("#player").html();
+	if ($player == "1") {
+		$play = "x";
+	}else{
+		$play = "o";
+	}
 	setInterval( function() {
 
 		$.ajax({
@@ -64,6 +69,25 @@ function getGrid(){
 }
 
 function checkGrid(){
+	// Check the player to add eventListener to allow him to play or not
+	if ($oldGrid[0] == $player) {
+		for (let x = 1; x <= 9; x++) {
+			if ($oldGrid[x] == "") {
+				$('#case-' + x).click(function() {
+					$AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+					$.ajax({
+						url: '/tictactoe/tictactoe_grids/' + $partyId,
+						type: "PATCH",
+						data: "player=" + $player + "&a" + x + "=" + $play + "&authenticity_token=" + $AUTH_TOKEN
+					});
+				});
+			}
+		}
+	}else{
+		for(let x = 1; x <= 9; x++) {
+			$('#case-' + x).off();
+		}
+	}
 	if ($oldGrid != $nowGrid){
 		changeGrid();
 	}

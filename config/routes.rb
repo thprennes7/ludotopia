@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :games, except: [:edit]
   resources :articles do
-    resources :article_images
+    resources :images
   end
   devise_for :users, except: [:index]
 

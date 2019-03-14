@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     resources :tictactoe_users
     resources :tictactoes do
       get 'get_status'
+      get 'get_grid'
     end
   end
 end

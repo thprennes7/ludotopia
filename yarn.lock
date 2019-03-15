@@ -2,11 +2,3 @@
 # yarn lockfile v1
 
 
-{
-  "name": "myapp",
-  "description": "a really cool app",
-  "version": "1.0.0",
-  "engines": {
-    "yarn": "1.x"
-  }
-}

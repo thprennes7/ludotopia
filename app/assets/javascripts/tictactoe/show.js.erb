@@ -80,6 +80,9 @@ function checkGrid(){
 						type: "PATCH",
 						data: "player=" + $player + "&a" + x + "=" + $play + "&authenticity_token=" + $AUTH_TOKEN
 					});
+					for(let x = 1; x <= 9; x++) {
+						$('#case-' + x).off();
+					}
 				});
 			}
 		}

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   # Admin dashboard
   namespace :admin do
-    resources :supports, except: [:new, :create, :update; :edit]
+    resources :supports, except: [:new, :create, :update, :edit]
     resources :banners
     resources :donations, only: [:edit, :index, :show]
     resources :scores, only: [:edit]

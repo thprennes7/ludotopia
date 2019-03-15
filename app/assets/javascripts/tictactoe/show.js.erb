@@ -1,9 +1,17 @@
 console.log('oui');
 $(document).ready(function(){
-	$checkStatus = null;
+	$oldStatus = null;
 	$nowStatus = null;
+	$oldGrid = [];
+	$nowGrid = [];
 	$gameBoard = $("#game-board");
 	$partyId = $("#party-id").html();
+	$player = $("#player").html();
+	if ($player == "1") {
+		$play = "x";
+	}else{
+		$play = "o";
+	}
 	setInterval( function() {
 
 		$.ajax({
@@ -13,12 +21,17 @@ $(document).ready(function(){
 			type: "GET",
 			success: function(data) {
 				// Create a variable with html content
-				var doc = document.documentElement.cloneNode();
+				let doc = document.documentElement.cloneNode();
 				// Copy the content of data in doc the have it like html
 				doc.innerHTML = data;
 				// Select the html in the div of the page
-				$checkStatus = $(doc.querySelector('#status')).html();
-				changeStatus($checkStatus);
+				$oldStatus = $(doc.querySelector('#status')).html();
+
+				if ($oldStatus == 1){
+					getGrid();
+				}
+
+				checkStatus($oldStatus);
 			}
 		});
 	}, 1500);
@@ -30,4 +43,114 @@ function checkStatus(status){
 			$nowStatus = status;
 			changeStatus($nowStatus);
 		}
+}
+
+function getGrid(){
+	// Check if the grid as changed
+	$.ajax({
+		url: '/tictactoe/tictactoes/1/get_grid?id=' + $partyId,
+		type: "GET",
+		success: function(data) {
+			let doc = document.documentElement.cloneNode();
+			doc.innerHTML = data;
+			$oldGrid[0] = $(doc.querySelector('#player')).html();
+			$oldGrid[1] = $(doc.querySelector('#a1')).html();
+			$oldGrid[2] = $(doc.querySelector('#a2')).html();
+			$oldGrid[3] = $(doc.querySelector('#a3')).html();
+			$oldGrid[4] = $(doc.querySelector('#b1')).html();
+			$oldGrid[5] = $(doc.querySelector('#b2')).html();
+			$oldGrid[6] = $(doc.querySelector('#b3')).html();
+			$oldGrid[7] = $(doc.querySelector('#c1')).html();
+			$oldGrid[8] = $(doc.querySelector('#c2')).html();
+			$oldGrid[9] = $(doc.querySelector('#c3')).html();
+			checkVictory();
+			checkGrid();
+		}
+	});
+}
+
+function checkGrid(){
+	// Check the player to add eventListener to allow him to play or not
+	if ($oldGrid[0] == $player) {
+		for (let x = 1; x <= 9; x++) {
+			if ($oldGrid[x] == "") {
+				$('#case-' + x).mouseup(function() {
+					$.ajax({
+						url: '/tictactoe/tictactoe_grids/' + $partyId,
+						type: "PATCH",
+						data: "player=" + $player + "&a" + x + "=" + $play
+					});
+					turnOffButtons();
+				});
+			}
+		}
+	}else{
+		turnOffButtons();
+	}
+	if ($oldGrid != $nowGrid){
+		changeGrid();
+	}
+}
+
+function changeGrid() {
+	for (let x = 1; x <= 9; x++) {
+		if ($oldGrid[x] != $nowGrid[x]) {
+			$('#case-' + x).empty();
+			$('#case-' + x).append($oldGrid[x]);
+			$nowGrid[x] = $oldGrid[x];
+		}
+	}
+}
+
+function turnOffButtons() {
+	for(let x = 1; x <= 9; x++) {
+		$('#case-' + x).off("mouseup");
+	}
+}
+
+function endGame() {
+	$.ajax({
+		url: '/tictactoe/tictactoes/' + $partyId,
+		type: "PATCH",
+		data: "status=2"
+	});
+}
+
+function checkWinner(column) {
+	changeGrid();
+	if ($oldGrid[column] == "x"){
+		alert("Partie terminée ! Les X sont victorieux !");
+		endGame();
+	}
+	else{
+		alert("Partie terminée ! Les O ont vaincus !");
+		endGame();
+	}
+}
+
+function checkVictory() {
+	if ($oldGrid[1] == $oldGrid[2] && $oldGrid[1] == $oldGrid[3] && $oldGrid[1] != ""){
+		checkWinner(1);
+	}
+	if ($oldGrid[4] == $oldGrid[5] && $oldGrid[4] == $oldGrid[6] && $oldGrid[4] != ""){
+		checkWinner(4);
+	}
+	if ($oldGrid[7] == $oldGrid[8] && $oldGrid[7] == $oldGrid[9] && $oldGrid[7] != ""){
+		checkWinner(7);
+	}
+	if ($oldGrid[1] == $oldGrid[4] && $oldGrid[1] == $oldGrid[7] && $oldGrid[1] != ""){
+		checkWinner(1);
+	}
+	if ($oldGrid[2] == $oldGrid[5] && $oldGrid[2] == $oldGrid[8] && $oldGrid[2] != ""){
+		checkWinner(2);
+	}
+	if ($oldGrid[3] == $oldGrid[6] && $oldGrid[3] == $oldGrid[9] && $oldGrid[3] != ""){
+		checkWinner(3);
+	}
+	if ($oldGrid[1] == $oldGrid[5] && $oldGrid[1] == $oldGrid[9] && $oldGrid[1] != ""){
+		checkWinner(1);
+	}
+	if ($oldGrid[3] == $oldGrid[5] && $oldGrid[3] == $oldGrid[7] && $oldGrid[3] != ""){
+		checkWinner(3);
+	}
 }

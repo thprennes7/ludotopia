@@ -1,27 +1,32 @@
 class Tictactoe::TictactoeUsersController < ApplicationController
 	before_action :authenticate_user!
 	before_action :get_participant, only: [:destroy]
-	respond_to :js, :html, :json
 
 	def create
-		user = TictactoeUser.new(tictactoe_id: params[:game], user_id: params[:user])
-		if TictactoeUser.max_participant(params[:game]) && TictactoeUser.not_already_in?(params[:user], params[:game])
+		player = TictactoeUser.where(tictactoe_id: params[:tictactoe]).length + 1
+		user = TictactoeUser.new(tictactoe_id: params[:tictactoe], user_id: params[:participant], player: player)
+		if TictactoeUser.where(tictactoe_id: params[:tictactoe]).length < 2 && TictactoeUser.find_by(user_id: params[:participant], tictactoe_id: params[:tictactoe]) == nil
 			if user.save
-				respond_with(user)
+				redirect_to request.referer
 			else
 				flash[:error] = "L'utilisateur n'a pas pu être ajouté, si cela persiste, contactez un admin."
 			end
 		else
+			redirect_to request.referer
 			flash[:error] = "L'utilisateur est déjà inscrit ou le nombre max de participants est atteind."
 		end
 	end
 
 	def destroy
-		respond_with(@participant)
+		puts "==============================="
+		puts @participant
+		puts "==============================="
+		@participant.destroy
+		redirect_to request.referer
 	end
 
 	private
 	def get_participant
-		@particpant = TictactoeUser.find(params[:id])
+		@participant = TictactoeUser.find(params[:id])
 	end
 end

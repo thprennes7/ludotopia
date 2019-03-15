@@ -74,21 +74,20 @@ function checkGrid(){
 		for (let x = 1; x <= 9; x++) {
 			if ($oldGrid[x] == "") {
 				$('#case-' + x).click(function() {
-					$AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
 					$.ajax({
 						url: '/tictactoe/tictactoe_grids/' + $partyId,
 						type: "PATCH",
-						data: "player=" + $player + "&a" + x + "=" + $play + "&authenticity_token=" + $AUTH_TOKEN
+						data: "player=" + $player + "&a" + x + "=" + $play
 					});
 					for(let x = 1; x <= 9; x++) {
-						$('#case-' + x).off();
+						$('#case-' + x).off("click");
 					}
 				});
 			}
 		}
 	}else{
 		for(let x = 1; x <= 9; x++) {
-			$('#case-' + x).off();
+			$('#case-' + x).off("click");
 		}
 	}
 	if ($oldGrid != $nowGrid){

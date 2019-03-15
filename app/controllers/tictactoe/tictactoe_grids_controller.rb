@@ -1,4 +1,5 @@
 class Tictactoe::TictactoeGridsController < ApplicationController
+	protect_from_forgery with: :null_session
 	def update
 		if params[:player] == 1
 			next_player = 0
@@ -6,7 +7,7 @@ class Tictactoe::TictactoeGridsController < ApplicationController
 			next_player = 1
 		end
 		grid = TictactoeGrid.find_by(tictactoe_id: params[:id])
-		grid.update(player: player)
+		grid.update(player: next_player)
 		if params[:a1] != nil
 			grid.update(a1: params[:a1])
 		end

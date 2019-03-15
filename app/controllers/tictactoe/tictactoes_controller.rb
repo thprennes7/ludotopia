@@ -5,6 +5,7 @@ class Tictactoe::TictactoesController < ApplicationController
 	before_action only: [:show] do
 		is_whitelisted?(@party)
 	end
+	protect_from_forgery with: :null_session, only: [:update]
 
 	def create
 		game = Tictactoe.create(status: 0)

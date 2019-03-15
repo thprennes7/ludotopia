@@ -1,8 +1,8 @@
 class Tictactoe::TictactoeGridsController < ApplicationController
 	protect_from_forgery with: :null_session
 	def update
-		if params[:player] == 1
-			next_player = 0
+		if params[:player] == "1"
+			next_player = 2
 		else
 			next_player = 1
 		end

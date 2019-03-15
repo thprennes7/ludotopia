@@ -65,6 +65,4 @@ Rails.application.configure do
 
   # allows you to turn off email sending by passing it false
   config.action_mailer.perform_deliveries = true
-
-  config.assets.js_compressor = Uglifier.new(harmony: true)
 end

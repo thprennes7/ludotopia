@@ -1,0 +1,5 @@
+console.log("YES !");
+
+$articleContainer = $('.articles');
+
+$articleContainer.prepend("<%= j render 'admin/articles/update_article_form', article: @article %>").hide().slideDown(1500);

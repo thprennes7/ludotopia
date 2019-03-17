@@ -1,0 +1,6 @@
+<%= tidy_date(support.created_at)  %>
+
+<h2><%= support.title %></h2>
+<p><%= support.last_name %></p>
+<p><%= support.email %></p>
+<p><%= truncate(support.description, length: 25, separator: ' ') { link_to "Voir plus", admin_support_path(support) } %></p>

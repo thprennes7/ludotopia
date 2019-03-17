@@ -19,4 +19,8 @@ module ApplicationHelper
 		return markdown.render(text).html_safe
 	end
 
+	def tidy_date(date)
+		"#{date.year}/#{date.month}/#{date.day} - #{date.hour}:#{date.min}"
+	end
+
 end

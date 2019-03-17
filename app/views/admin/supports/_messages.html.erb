@@ -4,3 +4,4 @@
 <p><%= support.last_name %></p>
 <p><%= support.email %></p>
 <p><%= truncate(support.description, length: 25, separator: ' ') { link_to "Voir plus", admin_support_path(support) } %></p>
+<%= link_to "Supprimer", admin_support_path(support), method: :delete, remote: true, data: { confirm: "Supprimer le message n°#{support.id} ?" } %>

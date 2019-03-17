@@ -1,1 +1,29 @@
-Vue article
+<h2>Créer un article :</h2>
+<%= form_tag  articles_path, method: :post, multipart: true, remote: true do %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= text_field_tag :title %>
+  <%= text_area_tag :description %>
+  <%= file_field_tag :image %>
+  <%= submit_tag "Créer" %>
+<% end %>
+
+<h2>Modifier des articles :</h2>
+<% @articles.each do |article| %>
+<h3>Article n°<%= article.id %></h3>
+  <%= form_tag articles_path(article), method: :patch, multipart: true, remote: true do %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= text_field_tag :title, article.title %>
+    <%= text_area_tag :description, article.description %>
+    <%= submit_tag "Mettre à jour" %>
+  <% end %>
+  <%= link_to "Supprimer l'article", article_path(article), method: :delete, remote: true %>
+
+  <% if article.image.attached? %>
+      <%= image_tag article.image, alt: "image#{article.id}" %>
+  <% end %>
+
+  <%= form_tag article_images_path(article), multipart: true, remote: true do %>
+    <%= file_field_tag :image %>
+    <%= submit_tag "Uploader l'image" %>
+  <% end %>
+<% end %>

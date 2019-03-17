@@ -1,8 +1,7 @@
 class Donation < ApplicationRecord
-  after_create :send_donation
   belongs_to :game
   belongs_to :user
-
+  after_create :send_donation
 
   private
 

@@ -139,7 +139,6 @@ ActiveRecord::Schema.define(version: 2019_03_14_102522) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tictactoe_id"], name: "index_tictactoe_grids_on_tictactoe_id"
-  end
 
   create_table "tictactoe_users", force: :cascade do |t|
     t.bigint "user_id"
@@ -147,12 +146,9 @@ ActiveRecord::Schema.define(version: 2019_03_14_102522) do
     t.integer "player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tictactoe_id"], name: "index_tictactoe_users_on_tictactoe_id"
-    t.index ["user_id"], name: "index_tictactoe_users_on_user_id"
   end
 
   create_table "tictactoes", force: :cascade do |t|
-    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

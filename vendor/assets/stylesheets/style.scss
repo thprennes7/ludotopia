@@ -372,7 +372,7 @@ button {
 /* -Hero Image- */
 .hero-unit {
     background-color: #111;
-    background: url(../images/bg.png);
+   /* background: url(../images/bg.png);*/
     background-repeat: repeat;
     min-height: 720px;
     height: 100vh;
@@ -489,7 +489,7 @@ button {
 }
 .game-modal .modal-header {
     height: 150px;
-    background-image: url(../images/modal_header_bg.png);
+    /*background-image: url(../images/modal_header_bg.png);*/
     background-position: bottom;
     background-size:  cover;
     border-bottom: 1px solid #555;

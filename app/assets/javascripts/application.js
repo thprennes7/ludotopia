@@ -23,7 +23,8 @@
 //= require jquery-3.2.1.min.js
 //= require popper.min.js
 //= require bootstrap.min.js
-//= require particles.js
+//= stub particles.js
+//= stub particle-dependance.js
 //= require blazy.min.js
 //= require isotope.pkgd.min.js
 //= require lightbox.min.js

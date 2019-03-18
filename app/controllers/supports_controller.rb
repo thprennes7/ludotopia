@@ -1,6 +1,6 @@
 class SupportsController < ApplicationController
   respond_to :js, :html, :json
-  before_action :set_support, except: [:index]
+  before_action :set_support, except: [:index, :new, :create]
 
 
   # def destroy

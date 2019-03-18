@@ -1,37 +1,29 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
-  <div class="card text-center">
-    <div class="card-header">
-      Se connecter
+
+  <h2 class="short-hr-left">SE CONNECTER</h2>
+
+  <div id="contactForm" style="min-width: 30rem">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+      <div class="help-block with-errors"></div>
     </div>
 
-    <div class="card-body">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-group">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Mot de passe" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-      <div class="form-group">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-      <% end %>
-
-      <div class="form-group">
-        <%= f.submit "Connexion", class: "btn btn-primary" %>
-      </div>
-      <% end %>
+    <div class="form-group">
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Mot de passe" %>
+      <div class="help-block with-errors"></div>
     </div>
 
-    <div class="card-footer">
-      <div class="form-group">
-        <%= render "devise/shared/links" %>
-      </div>
-    </div>
+    <% if devise_mapping.rememberable? %>
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+    <% end %>
 
+    <%= f.submit "Connexion", class: "button" %>
+    <% end %>
+
+
+    <%= render "devise/shared/links" %>
   </div>
 </div>

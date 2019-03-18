@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all.sort.reverse
+    @comments = Comment.all.sort.reverse
   end
 
   def update

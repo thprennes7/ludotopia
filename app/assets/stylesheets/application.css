@@ -4,7 +4,7 @@
 *= require_self
 
 *= require bootstrap.min.css
-*= require font-awesome.min.css
+*= require font-awesome
 *= require animations.css
 *= require lightbox.min.css
 *= require modal-video.min.css

@@ -28,8 +28,10 @@
         <%= text_field_tag 'description', "" %>
         <%= submit_tag "Envoyer", class: "button primary" %>
         <% end %>
-        <% find_comment(current_info).each do |comment| %>
-        <%= render partial: 'comment', locals: {comment: comment} %>
+        <div class="modal-footer">
+          <% find_comment(current_info).each do |comment| %>
+          <%= render partial: 'comment', locals: {comment: comment} %>
+        </div>
         <% end %>
         <% end %>
 

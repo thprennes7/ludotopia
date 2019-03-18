@@ -1,0 +1,32 @@
+$(document).ready(function(){
+	$("#home").click(function(){
+		clearAdminContainer();
+	});
+	$("#users").click(function(){
+		callAjax('users');
+	});
+	$("#articles").click(function(){
+		callAjax('articles?page=1');
+	});
+});
+
+function callAjax(path){
+	$.ajax({
+		url: 'admin/' + path,
+		type: "GET",
+		success: function(data){
+			let doc = document.documentElement.cloneNode();
+			doc.innerHTML = data;
+			clearAdminContainer();
+			fillAdminContainer(doc);
+		}
+	});
+}
+
+function clearAdminContainer(){
+	$("#admin-container").empty();
+}
+
+function fillAdminContainer(page){
+	$("#admin-container").html(page);
+}

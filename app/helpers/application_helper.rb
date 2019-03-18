@@ -2,7 +2,7 @@ module ApplicationHelper
 	include TictactoeUsersHelper
 
 	def is_admin?(user)
-		user_signed_in? && user.status == Status.last
+		user_signed_in? && user.status == Status.find_by(name: "Admin")
 	end
 
 

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :charges
   resources :banners do
     resources :banner_images
+    resources :games_liste
   end
   resources :donations, except: [:edit, :index, :show]
   resources :scores, except: [:edit]

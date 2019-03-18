@@ -33,7 +33,7 @@ function callAjax(path){
 			let doc = document.documentElement.cloneNode();
 			doc.innerHTML = data;
 			clearAdminContainer();
-			fillAdminContainer(doc);
+			fillAdminContainer($(doc.querySelector('body')).html());
 		}
 	});
 }

@@ -1,12 +1,13 @@
 class SupportsController < ApplicationController
-  respond_to :js, :html, :json
+  respond_to :html, :json
   before_action :set_support, except: [:index, :new, :create]
 
 
-  # def destroy
-  #   flash[:notice] = "Message supprimé" if @support.destroy
-  #   respond_with(@support)
-  # end
+  def create
+    @support = Support.new(support_params)
+    flash[:notice] = "Message envoyé !" if @support.save
+    redirect_to root_path
+  end
 
   private
 
@@ -15,7 +16,7 @@ class SupportsController < ApplicationController
   end
 
   def support_params
-    params.require(:support).permit(:title, :description, :email, :last_name)
+    params.permit(:title, :description, :email, :last_name)
   end
 
 end

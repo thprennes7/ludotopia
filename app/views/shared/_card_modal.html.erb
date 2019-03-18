@@ -8,17 +8,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <iframe class="modal-vid" src="https://www.youtube.com/watch?v=_TB_BLx5c3M" allowfullscreen></iframe>
-        <h2 class="short-hr-left">EXPLORE AN EXPANSIVE WORLD</h2>
-        <p><%= current_info.description %></p>
-        <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-        <br>
-        <h2 class="short-hr-left">ADAPT AND DEVELOP YOUR CHARACTER</h2>
-        <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
-        <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-        <br>
-        <h2 class="short-hr-left">GET IMMERSED IN A DEEP STORY</h2>
-        <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
+        <% if current_info.image.attached? %>
+        <%= image_tag current_info.image, alt: "#{current_info.title}", class: "modal-vid"  %>
+        <% end %>
+        <%= check_h2(markdown(current_info.description)).html_safe %>
       </div>
       <div class="modal-body">
         <!-- condition to write a comment on an article -->

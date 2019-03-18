@@ -23,4 +23,8 @@ module ApplicationHelper
 		"#{date.year}/#{date.month}/#{date.day} - #{date.hour}:#{date.min}"
 	end
 
+	def find_comment(article)
+		Comment.where(article_id: article.id)
+	end
+
 end

@@ -13,10 +13,11 @@ Rails.application.routes.draw do
   resources :donations, except: [:edit, :index, :show]
   resources :scores, except: [:edit]
   resources :likes, only: [:create, :edit, :new]
-  resources :comments, only: [:create, :edit, :new]
   resources :games, except: [:edit]
   resources :articles do
     resources :images
+    resources :comments, only: [:create, :edit, :new]
+
   end
   devise_for :users, except: [:index]
 

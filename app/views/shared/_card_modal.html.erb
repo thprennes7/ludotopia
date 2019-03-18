@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <iframe class="modal-vid" src="https://www.youtube.com/embed/DPBW_MFqeRs?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+        <iframe class="modal-vid" src="https://www.youtube.com/watch?v=_TB_BLx5c3M" allowfullscreen></iframe>
         <h2 class="short-hr-left">EXPLORE AN EXPANSIVE WORLD</h2>
         <p><%= current_info.description %></p>
         <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
@@ -24,15 +24,24 @@
         <!-- condition to write a comment on an article -->
         <% if current_info.class == Article %>
         <!-- add comment form -->
+        <% if user_signed_in? %>
         <%= form_tag(article_comments_path(current_info), method: :post, remote: true) do %>
         <%= hidden_field_tag "user_id", current_user.id %>
         <div class="row">
           <%= text_field_tag 'description', "", placeholder: "Votre commentaire...", class: "form-control"%>
           <%= submit_tag "Envoyer", class: "button primary flex-start" %>
+          <% end %>
+          <% else %>
+          <p><%= link_to 'Connectez-vous', new_user_session_path %> pour laissez un commentaire</p>
         </div>
         <% end %>
-        <!-- display to see comments -->
-        <p><%= find_like(current_info).length %> J'aime<% if find_like(current_info).length > 1 %>s<% end %></p>
+        <!-- display to see like -->
+      </div>
+      <div class="row">
+        <p><%= fa_icon "thumbs-up" %> <%= find_like(current_info).length %></p>
+      </div>
+      <!-- display to see comments -->
+      <div class="row">
         <% find_comment(current_info).each do |comment| %>
         <%= render partial: 'comment', locals: {comment: comment} %>
         <% end %>

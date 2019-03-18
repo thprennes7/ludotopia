@@ -7,7 +7,3 @@
 <%= render partial: 'update_article_form', locals: { article: article } %>
 <% end %>
 </div>
-
-<div id="infinite-scrolling">
-  <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
-</div>

@@ -1,5 +1,11 @@
 class AdminsController < ApplicationController
-  # before_action :require_admin
+  layout "admin"
+	before_action :authenticate_user!
+  before_action :require_admin
+
+  def index
+  	
+  end
 
   private
 

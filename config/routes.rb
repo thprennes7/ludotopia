@@ -21,11 +21,13 @@ Rails.application.routes.draw do
   devise_for :users, except: [:index]
 
   # Admin dashboard
+
+  resources :admins, only: [:index]
   namespace :admin do
     resources :supports, except: [:new, :create, :update, :edit]
     resources :banners
     resources :donations, only: [:edit, :index, :show]
-    resources :scores, only: [:edit]
+    resources :scores, only: [:index]
     resources :games, only: [:edit]
     resources :articles
     resources :users, only: [:index]

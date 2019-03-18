@@ -1,8 +1,8 @@
 class Article < ApplicationRecord
   has_many :comments
   has_many :likes
-  has_many_attached :article_imgs
-  after_create :send_news
+  has_one_attached :image
+  # after_create :send_news
 
   private
 

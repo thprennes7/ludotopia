@@ -1,0 +1,7 @@
+<%= form_tag  articles_path, method: :post, multipart: true, remote: true do %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= text_field_tag :title %>
+  <%= text_area_tag :description %>
+  <%= file_field_tag :image %>
+  <%= submit_tag "Créer" %>
+<% end %>

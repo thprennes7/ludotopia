@@ -1,1 +1,13 @@
-Vue article
+<h2>Créer un article :</h2>
+<%= render 'new_article_form' %>
+
+<h2>Modifier des articles :</h2>
+<div class="articles">
+<% @articles.each do |article| %>
+<%= render partial: 'update_article_form', locals: { article: article } %>
+<% end %>
+</div>
+
+<div id="infinite-scrolling">
+  <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
+</div>

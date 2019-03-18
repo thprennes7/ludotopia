@@ -43,13 +43,7 @@ puts 'Comment create'
 end
 puts "Like create"
 
-
-
-unless TictactoeGrid.all.any?
-	# Fill the grid if it's empty
-	i = 1
-	9.times do
-		TictactoeGrid.create!(case: i)
-		i+=1
-	end
+50.times do |i|
+  Support.create!(last_name: Faker::Name.last_name, email: "thprennes#{i}@yopmail.com", description: Faker::Books::Lovecraft.fhtagn, title: Faker::Movies::HarryPotter.book)
 end
+puts "Support messages created"

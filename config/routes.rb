@@ -40,9 +40,9 @@ Rails.application.routes.draw do
 
   # TicTacToe
   namespace :tictactoe do
-    resources :tictactoe_grids
-    resources :tictactoe_users
-    resources :tictactoes do
+    resources :tictactoe_grids, only: [:update]
+    resources :tictactoe_users, only: [:create, :destroy]
+    resources :tictactoes, only: [:show, :create, :update] do
       get 'get_status'
       get 'get_grid'
     end

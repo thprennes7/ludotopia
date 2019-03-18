@@ -1,0 +1,17 @@
+<div id="game<%= game.id %>_infos">
+<%= form_tag game_path(game), method: :patch, remote: true do %>
+  <%= label_tag "Titre" %>
+  <%= text_field_tag :title, game.title %>
+  <%= label_tag "Description" %>
+  <%= text_area_tag :description, game.description %>
+  <%= label_tag "Lien" %>
+  <%= text_field_tag :link, game.link %>
+  <%= submit_tag "Mettre à jour" %>
+<% end %>
+<%= link_to "Supprimer", game_path(game), method: :delete, remote: true %>
+<p>Prévisualisation</p>
+<h2><%= game.title  %></h2>
+<%= markdown(game.description) %>
+
+
+</div>

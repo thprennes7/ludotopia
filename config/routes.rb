@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   resources :charges
   resources :banners do
     resources :banner_images
+    resources :games_liste
   end
   resources :donations, except: [:edit, :index, :show]
   resources :scores, except: [:edit]
   resources :likes, only: [:create, :edit, :new]
   resources :comments, only: [:create, :edit, :new]
-  resources :games, except: [:edit]
+  resources :games, except: [:edit] do
+    resources :images
+  end
   resources :articles do
     resources :images
   end
@@ -25,7 +28,7 @@ Rails.application.routes.draw do
     resources :banners
     resources :donations, only: [:edit, :index, :show]
     resources :scores, only: [:edit]
-    resources :games, only: [:edit]
+    resources :games
     resources :articles
     resources :users, only: [:index]
   end

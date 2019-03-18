@@ -28,7 +28,7 @@ Table of contents
 -------------------------------------------------------------------
 [Color codes]
 
-Background:	#111; (black)
+Background:	#16161f; (black)
 Content:	#FFF; (white)
 Footer:		#070707; (black)
 
@@ -46,7 +46,7 @@ Primary Color: #E48632;
 @import url('https://fonts.googleapis.com/css?family=Open+Sans'); /* Open Sans Font */
 @font-face {
     font-family: 'Anurati';
-    src: url('../fonts/Anurati-Regular.otf');
+    src: url('Anurati-Regular.otf');
 }
 
 /* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
@@ -78,8 +78,8 @@ a:focus {
 }
 /* -Resets- */
 html, body { 
-    background-color: #111;
-    background: image-url("bg.png");
+    background-color: #16161f;
+    /*background: image-url("bg.png");*/
     background-repeat: repeat;
     color: #FFF;
     font-size: 16px;
@@ -372,7 +372,7 @@ button {
 /* -Hero Image- */
 .hero-unit {
     background-color: #111;
-    background: url(../images/bg.png);
+   /* background: url(../images/bg.png);*/
     background-repeat: repeat;
     min-height: 720px;
     height: 100vh;
@@ -489,7 +489,7 @@ button {
 }
 .game-modal .modal-header {
     height: 150px;
-    background-image: url(../images/modal_header_bg.png);
+    /*background-image: url(../images/modal_header_bg.png);*/
     background-position: bottom;
     background-size:  cover;
     border-bottom: 1px solid #555;

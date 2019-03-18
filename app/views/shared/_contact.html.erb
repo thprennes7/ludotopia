@@ -1,9 +1,10 @@
 <!-- /// CONTACT SECTION /// -->
+<div class="container">
         <div id="contact" class="large-margin">
             <a href="contact"></a><!-- Nav Anchor -->
             <div class="row heading tiny-margin">
                 <div class="col-md-auto">
-                    <h1 class="animation-element slide-down">GET IN <span class="colored">TOUCH</span></h1>
+                    <h1 class="animation-element slide-down">CONT<span class="colored">ACT</span></h1>
                 </div>
                 <div class="col">
                     <hr class="animation-element extend">
@@ -17,7 +18,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <h2 class="short-hr-left">LEAVE US A MESSAGE</h2>
+                        <h2 class="short-hr-left">NOUS ENVOYÉS UN MESSAGE</h2>
                         <form id="contactForm" data-toggle="validator">
                             <div class="form-group">
                                 <!-- Name Field -->
@@ -32,28 +33,32 @@
                             <div class="form-group">
                                 <!-- Message Field -->
                                 <textarea id="message" name="message" placeholder="Message*" required data-error="Message cannot be empty"></textarea>
-                                <p class="subtle">* required field</p>
+                                <p class="subtle">*Champs obligatoire</p>
                                 <div class="help-block with-errors"></div>
                                 <!-- Submit Button -->
-                                <button type="submit" class="button">SEND MESSAGE</button>
+                                <button type="submit" class="button">ENVOYÉ UN MESSAGE</button>
                                 <!-- Success Message -->
                                 <div id="msgSubmit" class="text-center hidden"></div>
                             </div>
                         </form>
                     </div>
                     <div class="col-md-6">
-                        <h2 class="short-hr-left">OUR DETAILS</h2>
+                        <h2 class="short-hr-left">AUTRES DÉTAILS</h2>
                         <div id="contact-info">
                             <ul>
-                                <li><i class="fa fa-phone"></i><p>Phone: <span class="colored"><a href="tel:+1(803)635585">+1 (803) 635 585</a></span></p></li>
-                                <li><i class="fa fa-envelope"></i><p>Email: <span class="colored"><a href="mailto:office@example.com">office@example.com</a></span></p></li>
-                                <li><i class="fa fa-globe"></i><p>Website: <span class="colored"><a href="www.atypicalthemes.com" target="_blank">www.atypicalthemes.com</a></span></p></li>
-                                <li><i class="fa fa-map-marker"></i><p>Address: <span class="colored">1168 12th Street East Oconomowoc, WI 53066</span></p></li>
+                                <li><i class="fa fa-phone"></i><p>Phone: <span class="colored"><a href="tel:+1(803)635585">????</a></span></p></li>
+                                <li><i class="fa fa-envelope"></i><p>Email: <span class="colored"><a href="mailto:office@example.com">????</a></span></p></li>
+                                <li><i class="fa fa-globe"></i><p>Website: <span class="colored"><a href="www.atypicalthemes.com" target="_blank">????</a></span></p></li>
+                                <li><i class="fa fa-map-marker"></i><p>Address: <span class="colored">14 Rue Saint Michel, 35000 Rennes</span></p></li>
                             </ul>
                         </div>
                         <!-- Google Map -->
+                        <div id="map-canvas"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div><!-- Main Container End -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB64kJJiSynOc9ZqkNMOyl94cvsw5Z2uno"></script>
+    <div style="visibility:hidden"><%= image_tag "map_marker.png", alt:"ybo_img" %></div>
+</div>

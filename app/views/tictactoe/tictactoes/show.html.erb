@@ -1,12 +1,13 @@
 <div id="game-board">
 	<div style="display: none;" id="party-id"><%= @party.id %></div>
+	<div style="display: none;" id="player"><%= @user_participation.player %></div>
 <% 
 case @party.status
-when 0 %>
+when "1" %>
 <%=	render 'init' %>
-<% when 1 %>
+<% when "2" %>
 <%=	render 'party' %>
-<% when 2 %>
+<% when "3" %>
 <%=	render 'ended' %>
 <% else
 
@@ -21,13 +22,13 @@ end
 	function changeStatus(status){
 	$gameBoard.empty();
 	switch(status) {
-		case '0' :
+		case '1' :
 		$gameBoard.html('<%= j render "init" %>');
 		break;
-		case '1' :
+		case '2' :
 		$gameBoard.html('<%= j render "party" %>');
 		break;
-		case '2' :
+		case '3' :
 		$gameBoard.html('<%= j render "ended" %>');
 		break;
 	}

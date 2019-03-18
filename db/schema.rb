@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_140410) do
+ActiveRecord::Schema.define(version: 2019_03_14_102522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,17 +115,44 @@ ActiveRecord::Schema.define(version: 2019_03_12_140410) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tictactoe_grids", force: :cascade do |t|
+  create_table "supports", force: :cascade do |t|
+    t.string "email"
+    t.string "title"
+    t.text "description"
+    t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tictactoe_grids", force: :cascade do |t|
+    t.bigint "tictactoe_id"
+    t.string "a1"
+    t.string "a2"
+    t.string "a3"
+    t.string "a4"
+    t.string "a5"
+    t.string "a6"
+    t.string "a7"
+    t.string "a8"
+    t.string "a9"
+    t.integer "player"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tictactoe_id"], name: "index_tictactoe_grids_on_tictactoe_id"
   end
 
   create_table "tictactoe_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "tictactoe_id"
+    t.integer "player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tictactoe_id"], name: "index_tictactoe_users_on_tictactoe_id"
+    t.index ["user_id"], name: "index_tictactoe_users_on_user_id"
   end
 
   create_table "tictactoes", force: :cascade do |t|
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,31 @@
+<div class="modal fade game-modal" id="<%= current_info.id + current_info.created_at.day %>" tabindex="-1" role="dialog" aria-labelledby="aurora" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="aurora"><%= current_info.title %></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+           <div class="modal-body">
+               <iframe class="modal-vid" src="https://www.youtube.com/embed/DPBW_MFqeRs?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+               <h2 class="short-hr-left">EXPLORE AN EXPANSIVE WORLD</h2>
+               <p><%= current_info.description %></p>
+               <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+               <br>
+               <h2 class="short-hr-left">ADAPT AND DEVELOP YOUR CHARACTER</h2>
+               <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
+               <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
+               <br>
+               <h2 class="short-hr-left">GET IMMERSED IN A DEEP STORY</h2>
+               <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
+            </div>
+            <div class="modal-footer">
+              <% if current_info.class == Game %>
+                <%= link_to "Jouer", current_info.link, class: "button primary" %>
+                <% end %>
+                <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+ </div>

@@ -4,21 +4,22 @@
 
 <%= form_tag(tictactoe_tictactoe_users_path, method: :post, class:"") do %>
 	<%= hidden_field_tag(:tictactoe, @party.id) %>
-	<%= select_tag(:participant) %>
-	<% @friends.each do |friend| %>
-		<%= option_for_select([friend.username, friend]) %>
-	<% end -%>
+	<select name="participant">
+		<% @contacts.each do |contact| %>
+			<option value="<%= contact.friend.id %>"><%= contact.friend.username %></option>
+		<% end -%>
+	</select>
 	<%= submit_tag("Ajouter") %>
 <% end -%>
 
 <h5>Personnes autorisées à jouer :</h5>
 <ul>
 	<% @participants.each do |participant| %>
-	<li><p><%= participant.user.username %> <% if current_user != participant.user %><%= link_to "Supprimer", tictactoe_tictactoe_users_path(participant.id), method: :delete %> <% end -%> </p></li>
+	<li><p><%= participant.user.username %> <% if current_user != participant.user %><%= link_to "Supprimer", tictactoe_tictactoe_user_path(participant.id), method: :delete %> <% end -%> </p></li>
 	<% end -%>
 </ul>
 
 <%= form_tag(tictactoe_tictacto_path(@party.id), method: :patch, class:"", remote: true) do %>
-	<%= hidden_field_tag "status", 1 %>
+	<%= hidden_field_tag "status", 2 %>
 	<%= submit_tag("Commencer la partie") %>
 <% end -%>

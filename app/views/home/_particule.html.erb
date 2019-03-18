@@ -9,3 +9,9 @@
             </div>
         </div>
     </div><!-- Hero Section End -->
+    <%= content_for :javascript_includes do %>
+        <%= javascript_include_tag 'particles' %>
+        <%= javascript_include_tag 'particle-dependance' %>
+    <% end -%>
+
+

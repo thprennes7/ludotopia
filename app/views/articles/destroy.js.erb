@@ -1,0 +1,6 @@
+$deletedArticle = $('#article<%= @article.id %>');
+
+$deletedArticle.slideUp(1500);
+setTimeout(function(){
+  $deletedArticle.remove()
+}, 1500);

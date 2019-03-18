@@ -1,5 +1,5 @@
 class Admin::GamesController < AdminsController
-  before_action :set_game, except: [:index]
+  before_action :set_game, except: [:index, :create, :new]
   respond_to :js, :html, :json
 
 
@@ -18,7 +18,7 @@ class Admin::GamesController < AdminsController
     @game = Game.find(params[:id])
   end
 
-  def article_params
-    params.require(:game).permit(:title, :description, :link)
+  def game_params
+    params.require(:game).permit(:title, :description, :link, :image)
   end
 end

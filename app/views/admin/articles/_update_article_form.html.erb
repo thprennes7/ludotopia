@@ -1,22 +1,24 @@
 <div id="article<%= article.id %>">
-<h3>Article n°<%= article.id %></h3>
+  <h3>Article n°<%= article.id %></h3>
   <%= form_tag article_path(article.id), method: :patch, remote: true do %>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <%= text_field_tag :title, article.title %>
-    <%= text_area_tag :description, article.description %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= text_field_tag :title, article.title %>
+  <%= text_area_tag :description, article.description %>
+  <div id="description<%= article.id %>">
     <p>Prévisualisation :</p>
     <%= markdown(article.description) %>
-    <%= submit_tag "Mettre à jour" %>
+  </div>
+  <%= submit_tag "Mettre à jour" %>
   <% end %>
   <%= link_to "Supprimer l'article", article_path(article), method: :delete, remote: true, class: "btn btn-danger", id: "delete#{article.id}"%>
 
   <% if article.image.attached? %>
-      <%= image_tag article.image, alt: "image#{article.id}", id: "image#{article.id}" %>
+  <%= image_tag article.image, alt: "image#{article.id}", id: "image#{article.id}" %>
   <% end %>
 
   <%= form_tag article_images_path(article), multipart: true, remote: true do %>
-    <%= file_field_tag :image %>
-    <%= submit_tag "Uploader l'image" %>
+  <%= file_field_tag :image %>
+  <%= submit_tag "Uploader l'image" %>
   <% end %>
 
 </div>

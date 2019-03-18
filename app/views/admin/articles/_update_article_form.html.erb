@@ -1,24 +1,31 @@
-<div id="article<%= article.id %>">
-  <h3>Article n°<%= article.id %></h3>
-  <%= form_tag article_path(article.id), method: :patch, remote: true do %>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= text_field_tag :title, article.title %>
-  <%= text_area_tag :description, article.description %>
-  <div id="description<%= article.id %>">
-    <p>Prévisualisation :</p>
-    <%= markdown(article.description) %>
+<div id="article<%= article.id %>" class="p-5 bg-secondary rounded">
+  <h3><%= article.title %></h3>
+  <div class="row">
+    <div class="p-2 col-8">
+      <%= form_tag article_path(article.id), method: :patch, remote: true, class:"d-flex flex-column mb-3" do %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= label_tag "title", "Titre" %>
+      <%= text_field_tag :title, article.title, class:"form-control mb-3" %>
+      <%= label_tag "description", "Description" %>
+      <%= text_area_tag :description, article.description, class:"form-control mb-3" %>
+      <div id="description<%= article.id %>">
+        <p>Prévisualisation :</p>
+        <%= markdown(article.description) %>
+      </div>
+      <%= submit_tag "Mettre à jour", class:"btn btn-info" %>
+      <% end %>
+      <%= link_to "Supprimer l'article", article_path(article), method: :delete, remote: true, class: "btn btn-danger", id: "delete#{article.id}"%>
+    </div>
+    <div class="p-2 col-4" style="max-width: 300px;">
+      <% if article.image.attached? %>
+      <%= image_tag article.image, alt: "image#{article.id}", id: "image#{article.id}" %>
+      <% end %>
+
+      <%= form_tag article_images_path(article), multipart: true, remote: true, class:"d-flex flex-column" do %>
+      <%= file_field_tag :image, class:"mb-2" %>
+      <%= submit_tag "Uploader l'image", class:"btn btn-info" %>
+      <% end %>
+    </div>
   </div>
-  <%= submit_tag "Mettre à jour" %>
-  <% end %>
-  <%= link_to "Supprimer l'article", article_path(article), method: :delete, remote: true, class: "btn btn-danger", id: "delete#{article.id}"%>
-
-  <% if article.image.attached? %>
-  <%= image_tag article.image, alt: "image#{article.id}", id: "image#{article.id}" %>
-  <% end %>
-
-  <%= form_tag article_images_path(article), multipart: true, remote: true do %>
-  <%= file_field_tag :image %>
-  <%= submit_tag "Uploader l'image" %>
-  <% end %>
-
+<hr class="m-2">
 </div>

@@ -125,11 +125,25 @@ ActiveRecord::Schema.define(version: 2019_03_14_102522) do
   end
 
   create_table "tictactoe_grids", force: :cascade do |t|
+    t.bigint "tictactoe_id"
+    t.string "a1"
+    t.string "a2"
+    t.string "a3"
+    t.string "a4"
+    t.string "a5"
+    t.string "a6"
+    t.string "a7"
+    t.string "a8"
+    t.string "a9"
+    t.integer "player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
+    t.index ["tictactoe_id"], name: "index_tictactoe_grids_on_tictactoe_id"
 
   create_table "tictactoe_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "tictactoe_id"
+    t.integer "player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

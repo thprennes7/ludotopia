@@ -1,5 +1,8 @@
 {
   "name": "ludotopia",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+  	"yarn": "1.15.2"
+  }
 }

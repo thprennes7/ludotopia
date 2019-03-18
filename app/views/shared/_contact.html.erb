@@ -61,4 +61,7 @@
     </div><!-- Main Container End -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB64kJJiSynOc9ZqkNMOyl94cvsw5Z2uno"></script>
     <div style="visibility:hidden"><%= image_tag "map_marker.png", alt:"ybo_img" %></div>
+    <%= content_for :javascript_includes do %>
+        <%= javascript_include_tag 'googleMap' %>
+    <% end -%>
 </div>

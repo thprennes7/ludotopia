@@ -20,4 +20,5 @@ Rails.application.config.assets.paths << Rails.root.join('vendor')
 Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 Rails.application.config.assets.precompile += %w( particles.js )
 Rails.application.config.assets.precompile += %w( particle-dependance.js )
+Rails.application.config.assets.precompile += %w( googleMap.js )
 

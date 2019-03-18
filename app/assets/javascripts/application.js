@@ -16,6 +16,7 @@
 //= require activestorage
 
 //= stub 'tictactoe/show'
+//= stub 'admin'
 
 //= require_tree 
 

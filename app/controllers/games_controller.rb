@@ -4,7 +4,8 @@ class GamesController < ApplicationController
 
 
   def index
-    @games = Game.all.sort.reverse
+    @games = Game.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+    respond_with(@articles)
   end
 
   def show
@@ -13,12 +14,17 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-    flash[:notice] = "Création de la partie."
+    flash[:notice] = "Création de la partie." if @game.save
     respond_with(@game)
   end
 
   def update
-    flash[:notice] = "Partie mise à jour."
+    flash[:notice] = "Partie mise à jour." if @game.update_attributes(game_params)
+    respond_with(@game)
+  end
+
+  def destroy
+    flash[:notice] = "Partie supprimée" if @game.destroy
     respond_with(@game)
   end
 
@@ -28,7 +34,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
-  def article_params
+  def game_params
     params.require(:game).permit(:title, :description, :link)
   end
 end

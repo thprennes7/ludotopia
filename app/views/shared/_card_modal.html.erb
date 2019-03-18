@@ -21,7 +21,9 @@
         <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
       </div>
       <div class="modal-body">
+        <!-- condition to write a comment on an article -->
         <% if current_info.class == Article %>
+        <!-- add comment form -->
         <%= form_tag(article_comments_path(current_info), method: :post, remote: true) do %>
         <%= hidden_field_tag "user_id", current_user.id %>
         <div class="row">
@@ -29,11 +31,13 @@
           <%= submit_tag "Envoyer", class: "button primary flex-start" %>
         </div>
         <% end %>
+        <!-- display to see comments -->
         <% find_comment(current_info).each do |comment| %>
         <%= render partial: 'comment', locals: {comment: comment} %>
         <% end %>
       </div>
       <div class="modal-footer">
+        <!-- condition to join a game -->
         <% if current_info.class == Game %>
         <%= link_to "Jouer", current_info.link, class: "button primary" %>
         <% end %>

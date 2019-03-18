@@ -16,8 +16,7 @@
 //= require activestorage
 
 //= stub 'tictactoe/show'
-
-//= require_tree 
+//= stub 'admin'
 
 //ybo: call js file of template
 //= require jquery-3.2.1.min.js
@@ -31,3 +30,7 @@
 //= require jquery-modal-video.min.js
 //= require strider.js
 //= require validator.min.js
+
+//= stub googleMap.js
+
+//= require_tree 

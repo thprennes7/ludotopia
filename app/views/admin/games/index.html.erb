@@ -1,14 +1,13 @@
+<h2>Créer un jeu :</h2>
 <%= render partial: 'new_game_form' %>
 
 <h2>Modifier les jeux</h2>
-
 <div id="games">
-
-<% @games.each do |game| %>
+  <% @games.each do |game| %>
   <%= render partial: 'update_game_form', locals: { game: game } %>
-<% end %>
-
+  <% end %>
 </div>
+
 <div class="infinite-scrolling">
   <%= will_paginate @games, renderer: BootstrapPagination::Rails %>
 </div>

@@ -11,8 +11,8 @@ class User < ApplicationRecord
   has_many :donations
   has_many :games, through: :score
   has_one_attached :avatar
-  after_create :set_status
   has_many :contact, foreign_key: "friend_id", class_name: "Contact"
+  before_save :set_status
   after_create :welcome_send
 
   private

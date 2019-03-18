@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   resources :donations, except: [:edit, :index, :show]
   resources :scores, except: [:edit]
   resources :likes, only: [:create, :edit, :new]
-  resources :games, except: [:edit]
+  resources :comments, only: [:create, :edit, :new]
+  resources :games, except: [:edit] do
+    resources :images
+  end
+
   resources :articles do
     resources :images
     resources :comments, only: [:create, :edit, :new]
@@ -28,8 +32,10 @@ Rails.application.routes.draw do
     resources :supports, except: [:new, :create, :update, :edit]
     resources :banners
     resources :donations, only: [:edit, :index, :show]
-    resources :scores, only: [:index]
-    resources :games, only: [:edit]
+
+    resources :scores, only: [:edit]
+    resources :games
+
     resources :articles
     resources :users, only: [:index]
   end

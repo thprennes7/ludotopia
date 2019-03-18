@@ -1,9 +1,13 @@
-<% @games.each do |game| %>
-  <ul class="game<%= game.id %>_infos">
-    <li><%= game.title %></li>
-    <li><%= game.description %></li>
-    <li><%= game.link %></li>
-  </ul>
-  <%= link_to "Modifier", "#" %>
-  <%= link_to "Supprimer", admin_game_path(game), method: :delete, remote: true %>
-<% end %>
+<h2>Créer un jeu :</h2>
+<%= render partial: 'new_game_form' %>
+
+<h2>Modifier les jeux</h2>
+<div id="games">
+  <% @games.each do |game| %>
+  <%= render partial: 'update_game_form', locals: { game: game } %>
+  <% end %>
+</div>
+
+<div class="infinite-scrolling">
+  <%= will_paginate @games, renderer: BootstrapPagination::Rails %>
+</div>

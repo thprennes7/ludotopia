@@ -1,0 +1,6 @@
+$deletedGame = $('#game<%= @game.id %>');
+
+$deletedGame.slideUp(1500);
+setTimeout(function(){
+  $deletedGame.remove()
+}, 1500);

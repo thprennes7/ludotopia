@@ -4,7 +4,8 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+    @articles = Article.all.sort.reverse
+    @comments = Comment.all.sort.reverse
   end
 
   def update

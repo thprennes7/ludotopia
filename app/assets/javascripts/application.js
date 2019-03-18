@@ -16,6 +16,7 @@
 //= require activestorage
 
 //= stub 'tictactoe/show'
+//= stub 'admin'
 
 //ybo: call js file of template
 //= require jquery-3.2.1.min.js

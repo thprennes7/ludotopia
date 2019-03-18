@@ -4,8 +4,7 @@ class Admin::ArticlesController < AdminsController
 
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 10).order('created_at DESC')
-    respond_with(@articles)
+    @articles = Article.all.order('created_at DESC')
   end
 
   def show

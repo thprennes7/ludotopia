@@ -27,7 +27,7 @@ $(document).ready(function(){
 				// Select the html in the div of the page
 				$oldStatus = $(doc.querySelector('#status')).html();
 
-				if ($oldStatus == 1){
+				if ($oldStatus == 2){
 					getGrid();
 				}
 
@@ -112,7 +112,7 @@ function endGame() {
 	$.ajax({
 		url: '/tictactoe/tictactoes/' + $partyId,
 		type: "PATCH",
-		data: "status=2"
+		data: "status=3"
 	});
 }
 

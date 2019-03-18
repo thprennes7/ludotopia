@@ -1,0 +1,9 @@
+console.log("Yay");
+
+if ( $('#image<%= params[:article_id] %>').length ) {
+  let $articleImage = $('#image<%= params[:article_id] %>');
+  $articleImage.fadeOut(1500).replaceWith("<%= j render 'image', article: @article %>").fadeIn(1500);
+} else {
+  let $button = $('#delete<%= @article.id %>');
+  $button.after("<%= j render 'image', article: @article %>").fadeIn(1500);
+};

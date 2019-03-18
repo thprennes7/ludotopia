@@ -4,11 +4,11 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = Article.all.sort.reverse
+    @articles = Article.paginate(page: params[:page], per_page: 10).order('created_at DESC')
   end
 
   def update
-    flash[:notice] = "Article mis à jour" if @article.update
+    flash[:notice] = "Article mis à jour" if @article.update_attributes(article_params)
     respond_with(@article)
   end
 

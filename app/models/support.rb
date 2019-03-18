@@ -1,6 +1,6 @@
 class Support < ApplicationRecord
-  validate :last_name, presence: true
-  validate :email, presence: true
-  validate :title, presence: true
-  validate :description, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
 end

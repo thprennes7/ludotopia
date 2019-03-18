@@ -32,6 +32,7 @@
         </div>
         <% end %>
         <!-- display to see comments -->
+        <p><%= find_like(current_info).length %> J'aime<% if find_like(current_info).length > 1 %>s<% end %></p>
         <% find_comment(current_info).each do |comment| %>
         <%= render partial: 'comment', locals: {comment: comment} %>
         <% end %>

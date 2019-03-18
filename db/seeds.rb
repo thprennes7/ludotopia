@@ -14,6 +14,8 @@ Article.destroy_all
 Comment.destroy_all
 Like.destroy_all
 Status.destroy_all
+Support.destroy_all
+Game.destroy_all
 
 Status.create!(name: "Membre")
 Status.create!(name: "Donateur")
@@ -47,3 +49,7 @@ puts "Like create"
   Support.create!(last_name: Faker::Name.last_name, email: "thprennes#{i}@yopmail.com", description: Faker::Books::Lovecraft.fhtagn, title: Faker::Movies::HarryPotter.book)
 end
 puts "Support messages created"
+
+50.times do |i|
+  Game.create!(title: "Game#{i}", description: Faker::Books::Lovecraft.fhtagn, link: "#")
+end

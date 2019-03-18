@@ -1,0 +1,2 @@
+$previewText = $('#preview<%= @game.id %>');
+$previewText.fadeOut(1000).replaceWith("<%= j render 'admin/games/preview_md', game: @game %>").fadeIn(1000)

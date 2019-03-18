@@ -1,11 +1,11 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
   <h2 class="short-hr-left">INSCRIPTION</h2>
 
-  <div id="contactForm" style="min-width: 30rem">
+  <div style="min-width: 30rem">
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-
+    <%= hidden_field_tag "status_id", Status.first.id %>
     <div class="form-group">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
       <div class="help-block with-errors"></div>

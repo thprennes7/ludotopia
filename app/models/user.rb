@@ -4,15 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
-  belongs_to :status
+  belongs_to :status, optional: true
   has_many :comments
   has_many :likes
   has_many :scores
   has_many :donations
   has_many :games, through: :score
   has_one_attached :avatar
-  after_create :set_status
   has_many :contact, foreign_key: "friend_id", class_name: "Contact"
+  after_create :set_status
   after_create :welcome_send
 
   private

@@ -1,14 +1,19 @@
 
     <!-- /// FOOTER /// -->
     <footer id="main-footer">
-        <div id="footer"> 
-           
+        <div id="footer">
+
                 <div class="row">
                     <div class="col-md-12">
                         <p id="copyright">&copy; Design by THP Rennes 7 <span id="year"> </span></p><!-- Copyright Text -->
                         <ul class="social-links"> <!-- Social Media Icons -->
-                            <li><a href="https://www.facebook.com/Ludotopia-258709275039675"><i class="fa fa-facebook fa-lg icon-social"></i></a></li>
-                            <li><a href="https://www.instagram.com/thprennes7/?hl=fr"><i class="fa fa-instagram fa-lg icon-social"></i></a>
+                            <li><%= link_to "https://www.instagram.com/thprennes7/?hl=fr", target: "_blank" do%>
+                              <%= fa_icon "facebook" %>
+                              <% end %>
+                            </li>
+                            <li><%= link_to "https://www.instagram.com/thprennes7/?hl=fr", target: "_blank" do%>
+                              <%= fa_icon "instagram" %>
+                              <% end %>
                         </ul>
                     </div>
                 </div>

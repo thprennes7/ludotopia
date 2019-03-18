@@ -1,7 +1,12 @@
-<%= form_tag  articles_path, method: :post, multipart: true, remote: true do %>
+<div class="p-5 mb-2 bg-secondary rounded">
+<%= form_tag  articles_path, method: :post, multipart: true, remote: true, class:"d-flex flex-column mb-3" do %>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= text_field_tag :title %>
-  <%= text_area_tag :description %>
+  <%= label_tag "title", "Titre" %>
+  <%= text_field_tag :title, nil, class:"form-control mb-3" %>
+	<%= label_tag "description", "Description" %>
+  <%= text_area_tag :description, nil, class:"form-control mb-3" %>
   <%= file_field_tag :image %>
-  <%= submit_tag "Créer" %>
-<% end %> 
+  <%= submit_tag "Créer", class:"btn btn-info mt-2" %>
+<% end %>
+</div>
+

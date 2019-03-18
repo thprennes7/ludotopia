@@ -27,4 +27,8 @@ module ApplicationHelper
 		Comment.where(article_id: article.id)
 	end
 
+	def find_like(article)
+		Like.where(article_id: article.id)
+	end
+
 end

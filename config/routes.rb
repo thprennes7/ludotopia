@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   end
   resources :donations, except: [:edit, :index, :show]
   resources :scores, except: [:edit]
-  resources :likes, only: [:create, :edit, :new]
   resources :games, except: [:edit] do
     resources :images
   end
@@ -19,6 +18,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :images
     resources :comments, only: [:create, :edit, :new]
+    resources :likes, only: [:create, :edit, :new]
   end
   devise_for :users, except: [:index]
 
@@ -29,8 +29,7 @@ Rails.application.routes.draw do
     resources :supports, except: [:new, :create, :update, :edit]
     resources :banners
     resources :donations, only: [:edit, :index, :show]
-
-    resources :scores, only: [:edit]
+    resources :scores, only: [:edit, :index]
     resources :games
     resources :articles do
       resources :comments
@@ -41,9 +40,9 @@ Rails.application.routes.draw do
 
   # TicTacToe
   namespace :tictactoe do
-    resources :tictactoe_grids
-    resources :tictactoe_users
-    resources :tictactoes do
+    resources :tictactoe_grids, only: [:update]
+    resources :tictactoe_users, only: [:create, :destroy]
+    resources :tictactoes, only: [:show, :create, :update] do
       get 'get_status'
       get 'get_grid'
     end

@@ -20,6 +20,6 @@
 </ul>
 
 <%= form_tag(tictactoe_tictacto_path(@party.id), method: :patch, class:"", remote: true) do %>
-	<%= hidden_field_tag "status", 1 %>
+	<%= hidden_field_tag "status", 2 %>
 	<%= submit_tag("Commencer la partie") %>
 <% end -%>

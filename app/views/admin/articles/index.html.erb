@@ -1,29 +1,13 @@
 <h2>Créer un article :</h2>
-<%= form_tag  articles_path, method: :post, multipart: true, remote: true do %>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= text_field_tag :title %>
-  <%= text_area_tag :description %>
-  <%= file_field_tag :image %>
-  <%= submit_tag "Créer" %>
-<% end %>
+<%= render 'new_article_form' %>
 
 <h2>Modifier des articles :</h2>
+<div class="articles">
 <% @articles.each do |article| %>
-<h3>Article n°<%= article.id %></h3>
-  <%= form_tag articles_path(article), method: :patch, multipart: true, remote: true do %>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <%= text_field_tag :title, article.title %>
-    <%= text_area_tag :description, article.description %>
-    <%= submit_tag "Mettre à jour" %>
-  <% end %>
-  <%= link_to "Supprimer l'article", article_path(article), method: :delete, remote: true %>
-
-  <% if article.image.attached? %>
-      <%= image_tag article.image, alt: "image#{article.id}" %>
-  <% end %>
-
-  <%= form_tag article_images_path(article), multipart: true, remote: true do %>
-    <%= file_field_tag :image %>
-    <%= submit_tag "Uploader l'image" %>
-  <% end %>
+<%= render partial: 'update_article_form', locals: { article: article } %>
 <% end %>
+</div>
+
+<div id="infinite-scrolling">
+  <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
+</div>

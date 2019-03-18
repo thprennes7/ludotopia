@@ -1,0 +1,2 @@
+$previewText = $('#description<%= @article.id %>');
+$previewText.fadeOut(1000).replaceWith("<%= j render 'admin/articles/preview_md', article: @article %>").fadeIn(1000)

@@ -43,4 +43,7 @@ puts 'Comment create'
 end
 puts "Like create"
 
-
+50.times do |i|
+  Support.create!(last_name: Faker::Name.last_name, email: "thprennes#{i}@yopmail.com", description: Faker::Books::Lovecraft.fhtagn, title: Faker::Movies::HarryPotter.book)
+end
+puts "Support messages created"

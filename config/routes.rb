@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   devise_for :users, except: [:index]
 
   # Admin dashboard
+
+  resources :admins, only: [:index]
   namespace :admin do
     resources :supports, except: [:new, :create, :update, :edit]
     resources :banners
@@ -29,7 +31,6 @@ Rails.application.routes.draw do
     resources :games, only: [:edit]
     resources :articles
     resources :users, only: [:index]
-    resources :admins, only: [:index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

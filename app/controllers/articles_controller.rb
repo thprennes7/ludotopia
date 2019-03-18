@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all.sort.reverse
     @comments = Comment.all.sort.reverse
+    @like = Like.all
   end
 
   def update

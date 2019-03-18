@@ -1,4 +1,4 @@
-<div id="game<%= game.id %>_infos">
+<div id="game<%= game.id %>">
   <%= form_tag game_path(game), method: :patch, remote: true do %>
   <%= label_tag "Titre" %>
   <%= text_field_tag :title, game.title %>
@@ -26,5 +26,5 @@
     <%= markdown(game.description) %>
 
   </div>
-  
+
 </div>

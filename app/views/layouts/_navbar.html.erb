@@ -15,17 +15,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#about">About</a>
+                            <%= link_to "Articles", articles_path, class:"nav-link"%>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#games">Games</a>
+                            <%= link_to "Jeux", games_path, class:"nav-link"%>
+                        </li>
+                        <% if user_signed_in? %>
+                         <li class="nav-item">
+                            <%= link_to "Profil", edit_user_registration_path, class:"nav-link"%>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#team">Team</a>
+                            <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"nav-link"%>
+                        </li>
+                        <% else %>
+                          <li class="nav-item">
+                            <%= link_to "Inscription",  new_user_registration_path, class:"nav-link"%>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#careers">Careers</a>
+                            <%= link_to "Connexion", new_user_session_path, class:"nav-link"%>
                         </li>
+                        <% end -%>
                         <li class="nav-item">
                             <%= link_to "Contact", new_support_path, class:"nav-link"%>
                         </li>
@@ -34,3 +43,4 @@
             </div>
         </nav>
     </header><!-- Header End -->
+    

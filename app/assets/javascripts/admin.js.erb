@@ -1,0 +1,47 @@
+$(document).ready(function(){
+	$("#home").click(function(){
+		clearAdminContainer();
+	});
+	$("#users").click(function(){
+		callAjax('users');
+	});
+	$("#articles").click(function(){
+		callAjax('articles');
+	});
+	$("#banners").click(function(){
+		callAjax('banners');
+	});
+	$("#games").click(function(){
+		callAjax('games');
+	});
+	$("#scores").click(function(){
+		callAjax('scores');
+	});
+	$("#donations").click(function(){
+		callAjax('donations');
+	});
+	$("#supports").click(function(){
+		callAjax('supports');
+	});
+});
+
+function callAjax(path){
+	$.ajax({
+		url: 'admin/' + path,
+		type: "GET",
+		success: function(data){
+			let doc = document.documentElement.cloneNode();
+			doc.innerHTML = data;
+			clearAdminContainer();
+			fillAdminContainer($(doc.querySelector('body')).html());
+		}
+	});
+}
+
+function clearAdminContainer(){
+	$("#admin-container").empty();
+}
+
+function fillAdminContainer(page){
+	$("#admin-container").html(page);
+}

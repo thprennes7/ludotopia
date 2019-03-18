@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resources :banners
     resources :donations, only: [:edit, :index, :show]
     resources :scores, only: [:index]
-    resources :games, only: [:edit]
+    resources :games, only: [:index]
     resources :articles
     resources :users, only: [:index]
   end

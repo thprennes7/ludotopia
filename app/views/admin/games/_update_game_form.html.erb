@@ -1,0 +1,30 @@
+<div id="game<%= game.id %>">
+  <%= form_tag game_path(game), method: :patch, remote: true do %>
+  <%= label_tag "Titre" %>
+  <%= text_field_tag :title, game.title %>
+  <%= label_tag "Description" %>
+  <%= text_area_tag :description, game.description %>
+  <%= label_tag "Lien" %>
+  <%= text_field_tag :link, game.link %>
+  <%= submit_tag "Mettre à jour" %>
+  <% end %>
+
+  <% if game.image.attached? %>
+  <%= image_tag game.image, alt: "image#{game.id}", id: "image#{game.id}" %>
+  <% end %>
+
+  <%= form_tag game_images_path(game), method: :post, multipart: true, remote: true do %>
+  <%= file_field_tag :image %>
+  <%= submit_tag "Uploader l'image" %>
+  <% end %>
+  <%= link_to "Supprimer le jeu", game_path(game), method: :delete, data: { confirm: "Supprimer le jeu n°#{game.id - 1} ?"}, remote: true %>
+
+  <div id="preview<%= game.id %>">
+
+    <p>Prévisualisation</p>
+    <h2><%= game.title  %></h2>
+    <%= markdown(game.description) %>
+
+  </div>
+
+</div>

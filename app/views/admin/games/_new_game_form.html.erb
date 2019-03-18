@@ -1,0 +1,15 @@
+<%= form_tag games_path, method: :post, multipart: true, remote: true do %>
+  <%= label_tag "Titre" %>
+  <%= text_field_tag :title %>
+
+  <%= label_tag "Description" %>
+  <%= text_area_tag :description %>
+
+  <%= label_tag "Lien" %>
+  <%= text_field_tag :link%>
+
+  <%= label_tag "Image" %>
+  <%= file_field_tag :image %>
+
+  <%= submit_tag "Créer" %>
+<% end %>

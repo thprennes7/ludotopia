@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     resources :games, only: [:edit]
     resources :articles, only: [:new, :edit, :create]
     resources :users, only: [:index]
-    resources :admin, only: [:index]
+    resources :admins, only: [:index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

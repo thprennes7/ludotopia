@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :supports, only: [:new, :create]
   resources :contacts
-  resources :landings, only: [:index]
+  resources :landings, only: [:show]
   resources :charges
   resources :banners do
     resources :banner_images

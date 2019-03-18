@@ -3,6 +3,7 @@ class CreateTictactoeUsers < ActiveRecord::Migration[5.2]
     create_table :tictactoe_users do |t|
     	t.belongs_to :user, index: true
     	t.belongs_to :tictactoe, index: true
+    	t.integer :player
       t.timestamps
     end
   end

@@ -29,8 +29,7 @@ Rails.application.routes.draw do
     resources :supports, except: [:new, :create, :update, :edit]
     resources :banners
     resources :donations, only: [:edit, :index, :show]
-
-    resources :scores, only: [:edit]
+    resources :scores, only: [:edit, :index]
     resources :games
     resources :articles do
       resources :comments

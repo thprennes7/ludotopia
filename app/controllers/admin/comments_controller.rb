@@ -1,4 +1,5 @@
 class Admin::CommentsController < AdminsController
+  layout "ajax_gets"
   before_action :set_comment, except: [:index, :new, :create]
   respond_to :js, :html, :json
 

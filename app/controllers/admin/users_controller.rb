@@ -1,4 +1,5 @@
 class Admin::UsersController < AdminsController
+  layout "ajax_gets"
   before_action :set_user, except: [:index]
   respond_to :js, :html, :json
 

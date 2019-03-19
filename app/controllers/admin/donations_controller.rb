@@ -1,4 +1,5 @@
 class Admin::DonationsController < AdminsController
+  layout "ajax_gets"
   before_action :set_donation, except: [:index]
   respond_to :js, :html, :json
 

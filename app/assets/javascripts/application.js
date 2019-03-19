@@ -33,4 +33,6 @@
 
 //= stub googleMap.js
 
-//= require_tree
+//= require_tree 
+
+//= stub 'stripe.js'

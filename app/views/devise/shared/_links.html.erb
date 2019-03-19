@@ -1,6 +1,6 @@
 <div class="">
   <%- if controller_name != 'sessions' %>
-    <%= link_to "Connexion", new_session_path(resource_name), class:"btn btn-secondary btn-block" %>
+    <%= link_to "Connexion", new_session_path(resource_name), class:"button-devise-second" %>
   <% end %>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>

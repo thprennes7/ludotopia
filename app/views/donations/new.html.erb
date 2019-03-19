@@ -10,12 +10,12 @@
   </article>
   <article>
     <%= label_tag(:game, 'jeu') %>
-    <%= collection_select :game_id, Game.all,:id ,:name, include_blank: true %> 
+    <%= collection_select :game_id, Game.all.id ,:name, include_blank: true %> 
   </article>
   <article>
     <%= hidden_field_tag(:stripeToken) %>
   </article>
-  <button id='donateButton'>Donate</button>
+  <button id='donateButton'>Donate X</button>
 <% end %>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>

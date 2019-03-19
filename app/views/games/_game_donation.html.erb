@@ -14,13 +14,11 @@
   <article>
     <%= hidden_field_tag(:stripeToken) %>
   </article>
-  <button id='donateButton'>Donate</button>
-<% end %>
+<!--  <button id='donateButton'>Donate</button> -->
 
 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
           data-amount="500"
           data-locale="auto"></script>
-
-
+<% end %>

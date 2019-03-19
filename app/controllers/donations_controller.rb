@@ -25,12 +25,23 @@ def create
     return
   end
 
-  Stripe::Charge.create({
-    amount: @amount,
-    currency: 'usd',
+ customer = Stripe::Customer.create({
+    email: params[:stripeEmail],
     source: params[:stripeToken],
-    description: 'Custom donation',
   })
+
+  charge = Stripe::Charge.create({
+    customer: customer.id,
+    amount: @amount,
+    description: 'Rails Stripe customer',
+    currency: 'usd',
+  })
+
+  donation = Donation.new(stripe_customer_id: customer.id, user_id: current_user.id, game_id: charge_params[:game_id] , amount: @amount)
+    if donation.save
+      redirect_to root_path
+      flash[:success] = "Votre donation a été validé !!!"
+   end
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -40,6 +51,6 @@ def create
   private
   
   def charge_params
-    params.permit(:user_id, :game, :stripeToken, :stripeEmail, :amount, :email  )
+    params.permit(:user_id, :game_id, :stripeToken, :stripeEmail, :amount, :email  )
   end
 end 

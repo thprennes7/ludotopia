@@ -1,4 +1,5 @@
 class Admin::BannersController < AdminsController
+  layout "ajax_gets"
   before_action :set_banner, except: [:index, :create]
   respond_to :js, :html, :json
 

@@ -1,4 +1,5 @@
 class Admin::BannerImagesController < AdminsController
+  layout "ajax_gets"
   respond_to :js, :html, :json
 
   private

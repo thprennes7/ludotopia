@@ -10,10 +10,13 @@
 
       <div class="modal-body">
         <% article.comments.each do |comment| %>
+        <div class="" id="comment<%= comment.id %>">
           <p><%= tidy_date(comment.created_at) %></p>
           <p><%= comment.user.first_name %></p>
           <p><%= comment.description  %></p>
-          <%= link_to "Supprimer le commentaire", admin_comments_path(comment), method: :delete, remote: true  %>
+          <%= link_to "Supprimer le commentaire", admin_article_comments_path(comment), method: :delete, remote: true %>
+        </div>
+        <hr>
         <% end %>
       </div>
 

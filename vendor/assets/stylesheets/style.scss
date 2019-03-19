@@ -423,8 +423,6 @@ button {
 /* --------------------------- /////////// IV. HERO SECTION /////////// --------------------------- */
 /* -Hero Image- */
 .hero-unit {
-    background-color: #111;
-   /* background: url(../images/bg.png);*/
     background-repeat: repeat;
     min-height: 720px;
     height: 100vh;
@@ -441,7 +439,7 @@ button {
 .hero-caption {
     display: block;
     position: relative;
-    margin-top: 40vh;
+    margin-top: 30vh;
     color: #FFF;
 	text-shadow: none;
     padding: 20px;

@@ -35,7 +35,7 @@
         <!-- display to see like -->
         <p><%= fa_icon "thumbs-up" %> <%= find_like(current_info).length %></p>
         <!-- display to see comments -->
-        <% find_comment(current_info).each do |comment| %>
+        <% current_info.comments.each do |comment| %>
         <%= render partial: 'comment', locals: {comment: comment} %>
         <% end %>
       </div>

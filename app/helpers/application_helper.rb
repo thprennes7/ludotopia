@@ -30,5 +30,4 @@ module ApplicationHelper
 	def find_like(article)
 		Like.where(article_id: article.id)
 	end
-
 end

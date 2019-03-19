@@ -2,3 +2,6 @@
 <% @games.each do |game| %>
 <%= render partial: 'shared/card_picture', locals: {info: game}  %>
 <% end %>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "stripe.js" %>
+<% end %>

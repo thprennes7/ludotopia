@@ -4,34 +4,42 @@ class DonationsController < ApplicationController
     @donation = Donation.find(params[:id])
   end
 
-  def create
-    @amount = (params[:amount] * 100).to_i
+def create
+  @amount = params[:amount]
 
-    customer = Stripe::Customer.create({
-      email: params[:stripeEmail],
-      source: params[:stripeToken],
-    })
+  @amount = @amount.gsub('$', '').gsub(',', '')
 
-    charge = Stripe::Charge.create({
-      customer: customer.id,
-      amount: @amount,
-      description: 'Rails Stripe customer',
-      currency: 'eur',
-    })
+  begin
+    @amount = Float(@amount).round(2)
+  rescue
+    flash[:error] = 'Charge not completed. Please enter a valid amount in USD ($).'
+    redirect_to new_charge_path
+    return
+  end
 
-    donation = Donation.new(stripe_customer_id: customer.id, user_id: current_user.id, game_id: charge_params[:game], amount: charge_params[:amount])
-    if donation.save
-      flash[:success] = "Merci pour votre don, vous avez reçus un mail le récapitulant."
+  @amount = (@amount * 100).to_i # Must be an integer!
 
-    end
+  if @amount < 500
+    flash[:error] = 'Charge not completed. Donation amount must be at least $5.'
+    redirect_to new_charge_path
+    return
+  end
+
+  Stripe::Charge.create({
+    amount: @amount,
+    currency: 'usd',
+    source: params[:stripeToken],
+    description: 'Custom donation',
+  })
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to game_path(current_user.id)
+    redirect_to new_charge_path
   end
 
   private
   
   def charge_params
-    params.permit(:user_id, :game, :stripe_customer_id, :amount  )
+    params.permit(:user_id, :game, :stripeToken, :stripeEmail, :amount, :email  )
   end
 end 

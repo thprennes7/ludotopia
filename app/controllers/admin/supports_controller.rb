@@ -1,4 +1,5 @@
 class Admin::SupportsController < AdminsController
+  layout "ajax_gets"
   before_action :set_support, except: [:index]
   respond_to :js, :html, :json
 

@@ -1,4 +1,5 @@
 class Admin::GamesController < AdminsController
+  layout "ajax_gets"
   before_action :set_game, except: [:index, :create, :new]
   respond_to :js, :html, :json
 

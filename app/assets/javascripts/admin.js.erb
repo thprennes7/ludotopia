@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 function callAjax(path){
 	$.ajax({
-		url: 'admin/' + path,
+		url: '/admin/' + path,
 		type: "GET",
 		success: function(data){
 			let doc = document.documentElement.cloneNode();

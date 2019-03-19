@@ -20,7 +20,7 @@ class Admin::CommentsController < AdminsController
 
   private
 
-  def set_article
+  def set_comment
     @comment = Comment.find(params[:id])
   end
 

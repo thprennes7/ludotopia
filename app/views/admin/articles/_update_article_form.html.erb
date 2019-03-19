@@ -14,7 +14,7 @@
       </div>
       <%= submit_tag "Mettre à jour", class:"btn btn-info" %>
       <% end %>
-      <%= link_to "Gestion des commentaires", article_comments_path(article), class:"btn btn-info" %>
+      <%= link_to "Gestion des commentaires", admin_article_comments_path(article), class:"btn btn-info" %>
       <%= link_to "Supprimer l'article", article_path(article), method: :delete, remote: true, class: "btn btn-danger", id: "delete#{article.id}"%>
     </div>
     <div class="p-2 col-4" style="max-width: 300px;">

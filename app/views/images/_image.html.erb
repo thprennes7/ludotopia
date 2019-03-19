@@ -1,1 +1,5 @@
-<%= image_tag article.image, alt: "image#{article.id}", id: "image#{article.id}" %>
+<% unless @article == nil %>
+<%= image_tag @article.image, alt: "image#{@article.id}", id: "image#{@article.id}" %>
+<% else %>
+<%= image_tag @game.image, alt: "image#{@game.id}", id: "image#{@game.id}" %>
+<% end %>

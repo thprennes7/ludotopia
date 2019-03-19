@@ -19,7 +19,7 @@
 //= stub 'admin'
 
 //ybo: call js file of template
-//= require jquery-3.2.1.min.js
+// require jquery-3.2.1.min.js
 //= require popper.min.js
 //= require bootstrap.min.js
 //= stub particles.js
@@ -33,4 +33,4 @@
 
 //= stub googleMap.js
 
-//= require_tree 
+//= require_tree

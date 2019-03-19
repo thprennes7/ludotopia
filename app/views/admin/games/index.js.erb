@@ -1,7 +1,0 @@
-$('#my-posts').append('<%= j render @games %>');
-<% if @games.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate @games %>');
-<% else %>
-  $(window).off('scroll');
-  $('.pagination').remove();
-<% end %>

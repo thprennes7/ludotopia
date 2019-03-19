@@ -45,7 +45,6 @@
       <div class="modal-footer">
         <!-- condition to join a game -->
         <% if current_info.class == Game %>
-          <%= render partial: 'games/game_donation', locals: {current_info: current_info} %>
           <%= link_to "Jouer", current_info.link, class: "button primary" %>
         <% end %>
       <button type="button" class="button secondary" data-dismiss="modal">Close</button>

@@ -28,7 +28,7 @@ module ApplicationHelper
 	end
 
 	def find_like(article)
-		Like.where(article_id: article.id)
+		like = Like.where(article_id: article.id, user_id: current_user.id)
 	end
 
 	def check_h2(text)

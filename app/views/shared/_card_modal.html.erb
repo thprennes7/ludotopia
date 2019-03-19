@@ -34,18 +34,24 @@
           <% end %>
         <!-- display to see like -->
           <% if user_signed_in? %>
+            <% unless user_liked?(current_info) %>
+            <p><%= link_to article_like_path(current_info, find_like(current_info)[0]), method: :delete, remote: true do %>
+              <% fa_icon 'thumbs-up' %>
+            <% end %>
+            <% else %>
             <p><%= link_to article_likes_path(current_info), method: :post, remote: true do %>
               <% fa_icon 'thumbs-up' %>
+            <% end %>
             <% end %>
           <% else %>
             <%= fa_icon "thumbs-up" %>
           <% end %>
           <%= find_like(current_info).length %></p>
-        <% end %>
           <!-- display to see comments -->
           <% current_info.comments.each do |comment| %>
             <%= render partial: 'comment', locals: {comment: comment} %>
           <% end %>
+        <% end %>
       </div>
 
       <div class="modal-footer">

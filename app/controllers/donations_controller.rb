@@ -4,6 +4,9 @@ class DonationsController < ApplicationController
     @donation = Donation.find(params[:id])
   end
 
+  def new
+  end
+
 def create
   @amount = params[:amount]
 

@@ -1,15 +1,17 @@
-<%= form_tag games_path, method: :post, multipart: true, remote: true do %>
+<div class="p-5 mb-2 bg-secondary rounded">
+<%= form_tag games_path, method: :post, multipart: true, remote: true, class:"d-flex flex-column mb-3" do %>
   <%= label_tag "Titre" %>
-  <%= text_field_tag :title %>
+  <%= text_field_tag :title, nil, class:"form-control mb-3" %>
 
-  <%= label_tag "Description" %>
-  <%= text_area_tag :description %>
+  <%= label_tag "Description (markdown)" %>
+  <%= text_area_tag :description, nil, class:"form-control mb-3" %>
 
   <%= label_tag "Lien" %>
-  <%= text_field_tag :link%>
+  <%= text_field_tag :link, nil, class:"form-control mb-3"%>
 
   <%= label_tag "Image" %>
-  <%= file_field_tag :image %>
+  <%= file_field_tag :image, class:"form-control mb-3" %>
 
-  <%= submit_tag "Créer" %>
+  <%= submit_tag "Créer", class:"btn btn-info mt-2" %>
 <% end %>
+</div>

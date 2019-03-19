@@ -17,8 +17,9 @@ Rails.application.config.assets.precompile += %w( tictactoe/show.js.erb )
 
 # ybo: add vendor/assets and pictures
 Rails.application.config.assets.paths << Rails.root.join('vendor')
-Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.otf)
 Rails.application.config.assets.precompile += %w( admin.js )
 Rails.application.config.assets.precompile += %w( particles.js )
 Rails.application.config.assets.precompile += %w( particle-dependance.js )
 Rails.application.config.assets.precompile += %w( googleMap.js )
+Rails.application.config.assets.precompile += %w( stripe.js )

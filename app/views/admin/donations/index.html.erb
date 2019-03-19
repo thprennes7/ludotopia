@@ -1,15 +1,59 @@
-<h1>Donnations</h1>
+<h1>Donations</h1>
 
+<!-- <table class="table table-dark"> -->
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Utilisateur</th>
+      <th scope="col">Jeu</th>
+      <th scope="col">Montant du don</th>
+    </tr>
+  </thead>
+
+  <tbody>
 <% @games.each do |game| %>
 
-<h2><%= game.title %></h2>
-
 <% find_donations(game).each do |donation| %>
-
-<ul class="donation<%= donation.id %>_infos">
-  <li><%= donation.user.username %></li>
-  <li><%= donation.amount %></li>
-</ul>
+  <tr>
+    <th scope="row"></th>
+    <td><%= donation.user.username %></td>
+    <td><%= game.title %></td>
+    <td><%= donation.amount %></td>
+  </tr>
 
 <% end %>
 <% end %>
+</tbody>
+</table>
+
+<!-- <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table> -->

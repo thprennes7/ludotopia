@@ -1,5 +1,5 @@
 var handler = StripeCheckout.configure({
-  key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+  key: <%= Rails.configuration.stripe[:publishable_key] %>,
   locale: 'auto',
   name: 'Sand Castles United',
   description: 'One-time donation',

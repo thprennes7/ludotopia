@@ -50,4 +50,5 @@ The link to find the app in production.
 
 ## Contact
 
-
+* [Facebook](https://www.facebook.com/Ludotopia-258709275039675/)
+* [Instagram](https://www.facebook.com/Ludotopia-258709275039675/)

@@ -54,6 +54,7 @@ def create
   private
   
   def charge_params
-    params.permit(:user_id, :game_id, :stripeToken, :stripeEmail, :amount, :email  )
+#   params.permit(:user_id, :game_id, :stripeToken, :stripeEmail, :amount )
+    params.permit(:game_id, :stripeToken, :amount )
   end
 end 

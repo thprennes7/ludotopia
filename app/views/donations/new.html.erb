@@ -10,7 +10,8 @@
   </article>
   <article>
     <%= label_tag(:game_id, 'jeu') %>
-    <%= collection_select(:post, :game_id, Game.all, :id, :title, {:prompt => 'Please select a Game'}) %>
+    <% @game=Game.all %>
+    <%= select_tag "game_id", options_from_collection_for_select(@game, "id", "title") %>
   </article>
   <article>
     <%= hidden_field_tag(:stripeToken) %>

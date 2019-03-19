@@ -19,12 +19,17 @@
       <div class="col-lg-12 col-xl-7 game-card-right">
         <h2 class="short-hr-left"><%= info.title %></h2>
         <p class="tags"><span class="subtle">Action RPG | PC</span> </p>
-        <p class="game-description"><%= info.description[0..50] + "..."%><span class="expand colored strong" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>">Voir plus</span></p>
-        <div class="reviews">
+        <p class="game-description"><%= strip_tags(markdown(info.description)[0..50]) + "..."%><span class="expand colored strong" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>">Voir plus</span></p>
+        <div class="reviews d-flex align-items-baseline">
           <!-- condition to see the number of comments of the article-->
           <% if info.class == Article %>
-          <p class="score"><%= find_comment(info).length %></p>
-          <p>Commentaire<%if find_comment(info).length > 1 %>s<% end %> </p>
+          <div class="score-card">
+            <p class="score"><%= fa_icon "thumbs-up" %> <%= find_like(info).length %></p>
+          </div>
+          <div class="score-card">
+            <p class="score"><%= find_comment(info).length %></p>
+            <p>Commentaire<%if find_comment(info).length > 1 %>s<% end %> </p>
+          </div>
           <% end %>
           <% if info.class == Game %>
           <div class="steam-btn">
@@ -50,4 +55,5 @@
       </div>
       <!-- Modal -->
       <%= render partial: 'shared/card_modal', locals: {current_info: info} %>
-    </div><!-- Game Card End -->
+    </div>
+    <!-- Game Card End -->

@@ -8,51 +8,46 @@
         </button>
       </div>
       <div class="modal-body">
-        <iframe class="modal-vid" src="https://www.youtube.com/watch?v=_TB_BLx5c3M" allowfullscreen></iframe>
-        <h2 class="short-hr-left">EXPLORE AN EXPANSIVE WORLD</h2>
-        <p><%= current_info.description %></p>
-        <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-        <br>
-        <h2 class="short-hr-left">ADAPT AND DEVELOP YOUR CHARACTER</h2>
-        <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
-        <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-        <br>
-        <h2 class="short-hr-left">GET IMMERSED IN A DEEP STORY</h2>
-        <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
+        <% if current_info.image.attached? %>
+        <%= image_tag current_info.image, alt: "#{current_info.title}", class: "modal-vid"  %>
+        <% end %>
+        <%= check_h2(markdown(current_info.description)).html_safe %>
       </div>
       <div class="modal-body">
         <!-- condition to write a comment on an article -->
         <% if current_info.class == Article %>
         <!-- add comment form -->
-          <% if user_signed_in? %>
-            <div class="row">
-              <%= form_tag(article_comments_path(current_info), method: :post, remote: true) do %>
+        <% if user_signed_in? %>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-12" id="contactForm">
+              <%= form_tag(article_comments_path(current_info), method: :post, remote: true, class: "d-flex flex-column") do %>
               <%= hidden_field_tag "user_id", current_user.id %>
-              <%= text_field_tag 'description', "", placeholder: "Votre commentaire...", class: "form-control"%>
-              <%= submit_tag "Envoyer", class: "button primary flex-start" %>
+                <%= text_area_tag 'description', "", placeholder: "Votre commentaire...", row: "3", class: "form-control"%>
+              <%= button_tag "Envoyer", class: "button primary text-align-right" %>
             </div>
-              <% end %>
-            <% else %>
-              <p><%= link_to 'Connectez-vous', new_user_session_path %> pour laissez un commentaire</p>
-            </div>
+          </div>
+        </div>
         <% end %>
-      <!-- display to see like -->
-          <p><%= fa_icon "thumbs-up" %> <%= find_like(current_info).length %></p>
-      <!-- display to see comments -->
-          <% find_comment(current_info).each do |comment| %>
-          <%= render partial: 'comment', locals: {comment: comment} %>
+        <% else %>
+        <p><%= link_to 'Connectez-vous', new_user_session_path %> pour laissez un commentaire</p>
         <% end %>
-    </div>
+        <!-- display to see like -->
+        <p><%= fa_icon "thumbs-up" %> <%= find_like(current_info).length %></p>
+        <!-- display to see comments -->
+        <% find_comment(current_info).each do |comment| %>
+        <%= render partial: 'comment', locals: {comment: comment} %>
+        <% end %>
+      </div>
 
-    <div class="modal-footer">
-      <!-- condition to join a game -->
-      <% if current_info.class == Game %>
-      <%= link_to "Jouer", current_info.link, class: "button primary" %>
+      <div class="modal-footer">
+        <!-- condition to join a game -->
+        <% if current_info.class == Game %>
+        <%= link_to "Jouer", current_info.link, class: "button primary" %>
+        <% end %>
+      </div>
       <% end %>
+      <button type="button" class="button secondary" data-dismiss="modal">Close</button>
     </div>
-    <% end %>
-    <button type="button" class="button secondary" data-dismiss="modal">Close</button>
   </div>
-</div>
-</div>
 </div>

@@ -30,4 +30,10 @@ module ApplicationHelper
 	def find_like(article)
 		Like.where(article_id: article.id)
 	end
+
+	def check_h2(text)
+		md_to_html = text.gsub! '<h2>', '<h2 class="short-hr-left">'
+		md_to_html.to_s
+	end
+
 end

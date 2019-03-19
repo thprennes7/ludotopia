@@ -7,7 +7,3 @@
   <%= render partial: 'update_game_form', locals: { game: game } %>
   <% end %>
 </div>
-
-<div class="infinite-scrolling">
-  <%= will_paginate @games, renderer: BootstrapPagination::Rails %>
-</div>

@@ -10,20 +10,23 @@
 
       <div class="modal-body">
         <% article.comments.each do |comment| %>
-        <div class="" id="comment<%= comment.id %>">
-          <p><%= tidy_date(comment.created_at) %></p>
-          <p><%= comment.user.first_name %></p>
-          <p><%= comment.description  %></p>
-          <%= link_to "Supprimer le commentaire", admin_article_comments_path(comment), method: :delete, remote: true %>
+        <div id="comment<%= comment.id %>">
+
+          <div class="list-group m-2">
+            <p class="list-group-item"><%= tidy_date(comment.created_at) %></p>
+            <p class="list-group-item">Auteur : <%= comment.user.first_name %></p>
+            <p class="list-group-item"><%= comment.description  %></p>
+          </div>
+          <%= link_to "Supprimer le commentaire", admin_article_comment_path(comment.article, comment), method: :delete, remote: true, class: "btn btn-outline-danger m-2" %>
+          <hr class="m-2">
         </div>
-        <hr>
         <% end %>
       </div>
 
       <div class="modal-footer">
 
       </div>
-      <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
     </div>
   </div>
 </div>

@@ -5,7 +5,7 @@ class Admin::GamesController < AdminsController
 
 
   def index
-    @games = Game.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+    @games = Game.all.order('created_at DESC')
     respond_with(@articles)
   end
 

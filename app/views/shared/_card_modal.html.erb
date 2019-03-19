@@ -41,8 +41,10 @@
           <% end %>
 
           <!-- display to see comments -->
-          <% current_info.comments.each do |comment| %>
+          <% current_info.comments.reverse.each do |comment| %>
+          <div id="comments">
             <%= render partial: 'comment', locals: {comment: comment} %>
+          </div>
           <% end %>
         <% end %>
       </div>

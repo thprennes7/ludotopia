@@ -1,4 +1,4 @@
-<%= form_tag charges_path do %>
+<%= form_tag donations_path do %>
   <div id="error_explanation">
     <% if flash[:error].present? %>
       <p><%= flash[:error] %></p>
@@ -9,8 +9,7 @@
     <%= text_field_tag(:amount) %>
   </article>
   <article>
-    <%= label_tag(:game, 'jeu') %>
-    <%= collection_select :game_id, Game.all,:id ,:name, include_blank: true %> 
+    <%= hidden_field_tag :game_id, current_info.id %>
   </article>
   <article>
     <%= hidden_field_tag(:stripeToken) %>

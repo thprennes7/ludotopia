@@ -2,7 +2,7 @@
 <%= render partial: 'new_game_form' %>
 
 <h2>Modifier les jeux</h2>
-<div id="games">
+<div id="gamesContainer">
   <% @games.each do |game| %>
   <%= render partial: 'update_game_form', locals: { game: game } %>
   <% end %>

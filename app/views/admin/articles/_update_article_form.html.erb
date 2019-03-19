@@ -1,4 +1,4 @@
-<div id="article<%= article.id %>" class="p-5 bg-secondary rounded">
+<div id="article<%= article.id %>" class="p-5 bg-secondary rounded mb-4">
   <h3><%= article.title %> - n°<%= article.id %></h3>
   <div class="row">
 
@@ -8,7 +8,7 @@
       <%= label_tag "title", "Titre" %>
       <%= text_field_tag :title, article.title, class:"form-control mb-3" %>
       <%= label_tag "description", "Description" %>
-      <%= text_area_tag :description, article.description, class:"form-control mb-3" %>
+      <%= text_area_tag :description, article.description, class:"form-control mb-3", row: "5" %>
       <div id="description<%= article.id %>">
         <p>Prévisualisation :</p>
         <%= markdown(article.description) %>
@@ -29,7 +29,7 @@
       <% end %>
 
       <%= form_tag article_images_path(article), multipart: true, remote: true, class:"d-flex flex-column" do %>
-      <%= file_field_tag :image, class:"mb-2" %>
+      <%= file_field_tag :image, class:"form-control mb-3 mt-3" %>
       <%= submit_tag "Uploader l'image", class:"btn btn-info" %>
       <% end %>
     </div>

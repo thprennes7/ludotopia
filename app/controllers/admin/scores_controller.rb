@@ -1,4 +1,5 @@
 class Admin::ScoresController < AdminsController
+  layout "ajax_gets"
   before_action :set_score, except: [:index]
   respond_to :js, :html, :json
 

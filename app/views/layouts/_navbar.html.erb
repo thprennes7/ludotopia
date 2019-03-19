@@ -26,6 +26,9 @@
                             <%= link_to "Jeux", games_path, class:"nav-link"%>
                         </li>
                         <% if user_signed_in? %>
+                        <li class="nav-item">
+                            <%= link_to "Donation", new_donation_path, class:"nav-link"%>
+                        </li>
                          <li class="nav-item">
                             <%= link_to "Profil", edit_user_registration_path, class:"nav-link"%>
                         </li>

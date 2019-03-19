@@ -1,30 +1,38 @@
-<div id="game<%= game.id %>">
-  <%= form_tag game_path(game), method: :patch, remote: true do %>
-  <%= label_tag "Titre" %>
-  <%= text_field_tag :title, game.title %>
-  <%= label_tag "Description" %>
-  <%= text_area_tag :description, game.description %>
-  <%= label_tag "Lien" %>
-  <%= text_field_tag :link, game.link %>
-  <%= submit_tag "Mettre à jour" %>
-  <% end %>
+<div id="game<%= game.id %>" class="p-5 bg-secondary rounded mb-4">
+  <h3><%= game.title %> - n°<%= game.id %></h3>
+  <div class="row">
 
-  <% if game.image.attached? %>
-  <%= image_tag game.image, alt: "image#{game.id}", id: "image#{game.id}" %>
-  <% end %>
+    <div class="p-2 col-8">
+      <%= form_tag game_path(game), method: :patch, remote: true, class:"d-flex flex-column mb-3" do %>
+      <%= label_tag "Titre" %>
+      <%= text_field_tag :title, game.title, class:"form-control mb-3" %>
+      <%= label_tag "Description (markdown)" %>
+      <%= text_area_tag :description, game.description, class:"form-control mb-3", row: "4" %>
+      <%= label_tag "Lien" %>
+      <%= text_field_tag :link, game.link, class:"form-control mb-3" %>
+      <div id="preview<%= game.id %>">
 
-  <%= form_tag game_images_path(game), method: :post, multipart: true, remote: true do %>
-  <%= file_field_tag :image %>
-  <%= submit_tag "Uploader l'image" %>
-  <% end %>
-  <%= link_to "Supprimer le jeu", game_path(game), method: :delete, data: { confirm: "Supprimer le jeu n°#{game.id - 1} ?"}, remote: true %>
+        <p>Prévisualisation</p>
+        <%= markdown(game.description) %>
 
-  <div id="preview<%= game.id %>">
+      </div>
+      <%= submit_tag "Mettre à jour", class: "btn btn-info" %>
+      <% end %>
 
-    <p>Prévisualisation</p>
-    <h2><%= game.title  %></h2>
-    <%= markdown(game.description) %>
+      <%= link_to "Supprimer le jeu", game_path(game), method: :delete, data: { confirm: "Supprimer le jeu n°#{game.id - 1} ?"}, remote: true, class: "btn btn-danger" %>
+    </div>
 
+    <div class="p-2 col-4" id="imageContainer<%= game.id %>" style="max-width: 300px;">
+      <% if game.image.attached? %>
+      <%= image_tag game.image, alt: "image#{game.id}", id: "image#{game.id}" %>
+      <% end %>
+
+      <%= form_tag game_images_path(game), method: :post, multipart: true, remote: true, class:"d-flex flex-column" do %>
+      <%= file_field_tag :image, class:"form-control mb-3 mt-3" %>
+      <%= submit_tag "Uploader l'image", class:"btn btn-info" %>
+      <% end %>
+
+    </div>
+    <hr class="m-2">
   </div>
-
 </div>

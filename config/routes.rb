@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :images
     resources :comments, only: [:create, :edit, :new]
-    resources :likes, only: [:create, :edit, :new]
+    resources :likes, only: [:create, :edit, :new, :destroy]
   end
   devise_for :users, except: [:index]
 

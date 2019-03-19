@@ -1,4 +1,5 @@
 class Admin::ArticlesController < AdminsController
+  layout "ajax_gets"
   before_action :set_article, except: [:index]
   respond_to :js, :html, :json
 

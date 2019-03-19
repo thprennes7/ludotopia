@@ -7,7 +7,22 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="form-group">
-      <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email", placeholder:"Email" %>
+      <%= f.text_field :first_name, class: "form-control", autofocus:true, autocomplete: "first-name", placeholder: "Prénom" %>
+      <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :last_name, class: "form-control", autocomplete: "last-name", placeholder: "Nom" %>
+      <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :username, class: "form-control", autocomplete: "username", placeholder: "Pseudo" %>
+      <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-group">
+      <%= f.email_field :email, class:"form-control", autocomplete: "email", placeholder:"Email" %>
       <div class="help-block with-errors"></div>
     </div>
 
@@ -36,14 +51,14 @@
       <div class="help-block with-errors"></div>
     </div>
 
-    <%= f.submit "Modifier" ,class:"button" %>  
-
-    <p>Vous n'êtes pas satisfait ? <br />
-      <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes vous sûr(e) ?" }, method: :delete ,class:"btn btn-danger" %></p>
-      <%= link_to "retour", :back %>
+    <div class="form-group">
+      <%= f.submit "Modifier", class:"button primary" %>
     </div>
+
+    
   </div>
 </div>
+
 
 
 

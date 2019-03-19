@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Banner, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  before(:each) do
+  	@banner = FactoryBot.create(:banner)
+  end
+
+  context "validation" do
+  	it "is valid with valid attributes" do
+  		expect(@banner).to be_a(Banner)
+  		expect(@banner).to be_valid
+  	end
+  end
 end

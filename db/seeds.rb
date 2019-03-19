@@ -16,6 +16,7 @@ Like.destroy_all
 Status.destroy_all
 Support.destroy_all
 Game.destroy_all
+# Donation.destroy.all
 
 Status.create!(name: "Membre")
 Status.create!(name: "Donateur")
@@ -53,3 +54,8 @@ puts "Support messages created"
 50.times do |i|
   Game.create!(title: "Game#{i}", description: Faker::Books::Lovecraft.fhtagn, link: "#")
 end
+puts "Game create"
+50.times do
+  Donation.create!(game_id: Game.all.sample.id, user_id: User.all.sample.id, stripe_customer_id: "lol", amount: rand(10..50))
+end
+puts "Donation create"

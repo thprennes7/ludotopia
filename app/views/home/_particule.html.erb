@@ -1,17 +1,34 @@
     <!-- /// HERO SECTION /// -->
     <div id="hero-section" class="small-margin">
-        <div id="particles-web"></div>
-        <div class="row hero-unit">
-            <div class="container">
-                <div class="hero-caption"><!-- Main Tagline -->
-                    <h1>We Make <span class="colored">Awesome Games</span></h1>
-                </div>
+        <div id="hero-slider" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <% @banners.each_with_index do |banner, i| %>
+                <li data-target="#hero-slider" data-slide-to="<%= i %>" <% if i == 0 %>class="active" <% end %>></li>
+                <% end %>
+            </ol>
+            <div class="carousel-inner">
+              <% @banners.each_with_index do |banner, i| %>
+                <div class="carousel-item <% if i == 0 %>active<% end %>"><!--  Slide -->
+                    <div class="hero-overlay"></div>
+                    <img class="img-fluid" src="<%= url_for(banner.banner_image) %>" alt="First slide">
+                    <div class="carousel-caption">
+                        <h1><%= banner.title %></h1>
+                        <p><%= banner.subtitle %></p>
+                    </div>
+                </div><!-- End of Slide -->
+              <% end %>
             </div>
+             
+            <div id="progress-bar"></div> <!-- Carousel Progress Bar -->
         </div>
+        <div id="particles-web"></div>
+
     </div><!-- Hero Section End -->
     <%= content_for :javascript_includes do %>
         <%= javascript_include_tag 'particles' %>
         <%= javascript_include_tag 'particle-dependance' %>
     <% end -%>
 
-
+    <!-- /// HERO SECTION /// -->
+    <div id="hero-section" class="medium-margin">
+            </div><!-- Hero Section End -->

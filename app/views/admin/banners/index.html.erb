@@ -1,30 +1,12 @@
-<%= form_tag banners_path, method: :post, multipart: true, remote: true do %>
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-<%= text_field_tag :title %>
-<%= text_field_tag :subtitle %>
-<%= file_field_tag :banner_image %>
-<%= submit_tag "Créer"  %>
-<% end %>
+<h2>Créer une bannière :</h2>
+<%= render 'new_banner_form' %>
 
-<% @banners.each do |banner| %>
-
-<% if banner.banner_image.attached? %>
-<%= image_tag banner.banner_image %>
-<% end %>
-
-<%= form_tag(banner_banner_images_path(banner), remote: true, multipart: true) do %>
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-<%= file_field_tag :banner_image %>
-<%= submit_tag "Uploader" %>
-<% end %>
-
-<%= form_tag(banner_path(banner.id), method: :put, remote: true) do%>
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-<%= text_field_tag :title, banner.title %>
-<%= text_field_tag :subtitle, banner.subtitle %>
-<%= submit_tag "Mettre à jour"  %>
-<% end %>
-
-<%= link_to "Supprimer", banner_path(banner), method: :delete, remote: true %>
-
-<% end %>
+<h2>Modifier les bannières :</h2>
+<div class="banners">
+  <% @banners.each do |banner| %>
+  <% @banner = banner %>
+  <% puts "*" * 60 %>
+  <% puts banner.id %>
+  <%= render partial: 'update_banner_form', locals: { banner: @banner } %>
+  <% end %>
+</div>

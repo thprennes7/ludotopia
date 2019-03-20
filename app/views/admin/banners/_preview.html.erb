@@ -1,0 +1,6 @@
+<div id="preview<%= @banner.id %>">
+  <div class="jumbotron d-flex justify-content-center flex-column align-items-center" id="banner_custom" style="background: url('<%= url_for(@banner.banner_image) %>'); background-size: cover; background-position: center">
+    <h1 class="display-2"><%= @banner.title %></h1>
+    <p class="lead"><%= @banner.subtitle %></p>
+  </div>
+</div>

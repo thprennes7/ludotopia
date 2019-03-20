@@ -1,7 +1,9 @@
 class ContactsController < ApplicationController
+	before_action :authenticate_user!
 	def create
-		if Contact.find_by(me: current_user, friend: params[:user]) && params[:user] != current_user
-			contact = Contact.create(me: current_user, friend: params[:user])
+		user = User.find_by(username: params[:user])
+		if Contact.find_by(me: current_user, friend: user) && user != current_user
+			contact = Contact.create(me: current_user, friend: user)
 		end
 	end
 

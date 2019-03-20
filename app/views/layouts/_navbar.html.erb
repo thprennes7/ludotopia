@@ -31,6 +31,7 @@
                             <div class="dropdown-menu">
                                 <% if user_signed_in? %>
                                     <%= link_to "Profil", edit_user_registration_path, class:"dropdown-item colored"%>
+                                    <%= link_to "Donation", new_donation_path, class:"dropdown-item colored"%>
                                     <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"dropdown-item colored"%>
                                 <% else %>
                                     <%= link_to "Inscription",  new_user_registration_path, class:"dropdown-item colored"%>

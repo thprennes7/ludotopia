@@ -18,4 +18,9 @@ RSpec.describe Game, type: :model do
 	    end
 	end
 
+	 context 'associations' do
+    it { should have_many(:donations) }
+    it { should have_many(:scores) }
+    it { should have_many(:users).through(:scores) }
+  end
 end

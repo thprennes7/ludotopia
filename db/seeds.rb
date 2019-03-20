@@ -59,3 +59,6 @@ puts "Game create"
   Donation.create!(game_id: Game.all.sample.id, user_id: User.all.sample.id, stripe_customer_id: "lol", amount: rand(10..50))
 end
 puts "Donation create"
+
+ Score.create!(game_id: Game.all.sample.id, user_id: User.all.sample.id, victory: true)
+ puts "score"

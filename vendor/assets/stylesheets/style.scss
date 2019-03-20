@@ -53,7 +53,7 @@ Primary Color: var(--primary);
   --primary: #E48632 !important;
   --secondary: #222 !important;
   --white: #FFF !important;
-  --black: #16161f !important;
+  --black: #1b1b28 !important;
   --standard: #F5F5F5 !important;
   --footer: #070707 !important;
   --silence: #999 !important;
@@ -469,7 +469,7 @@ button {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, var(--black), transparent, var(--black)), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWMQEZFLYyAK4FQJADsQAVlhb1ZUAAAAAElFTkSuQmCC) repeat;
+  background: linear-gradient(to bottom, var(--black), transparent, var(--black)), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAF0lEQVQImWOQktLzhWEGZEC6BGW6kSUAlYgMT0+lD+UAAAAASUVORK5CYII=) repeat;
 }
 /* -Progress Bar- */
 #progress-bar {
@@ -483,9 +483,17 @@ button {
   top: 35%;
 }
 #hero-slider .carousel-caption h1 {
-  font-weight: 300;
+  font-weight: bold;
   font-size: 3rem;
+  color: var(--primary)
 }
+
+#hero-slider .carousel-caption p {
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--standard)
+}
+
 #hero-slider h1 {
   font-family: Raleway, sans-serif;
 }
@@ -501,6 +509,12 @@ button {
 .carousel-caption-left a {
   display: inline-block;
 }
+
+.carousel-item {
+  object-fit: cover;
+  height:100vh;
+}
+
 .carousel-inner > .carousel-item > img {
   width: 100%;
 }
@@ -603,7 +617,7 @@ button {
 .game-modal img {
   margin: 5px 0 50px 0;
 }
-.modal-vid {
+  .modal-vid {
   width: 100%;
   max-width: 768px;
   height: 415px;

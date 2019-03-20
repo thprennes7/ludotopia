@@ -1,0 +1,6 @@
+$deletedSupport = $('#support<%= @support.id %>');
+
+$deletedSupport.slideUp(1500);
+setTimeout(function(){
+  $deletedSupport.remove()
+}, 1500);

@@ -18,6 +18,10 @@ context "validation" do
 	      expect(@user).to be_valid
 	    end
 	end
-	
+
+context 'associations' do
+    it { should have_many(:users) }
+  end
+
 end
  

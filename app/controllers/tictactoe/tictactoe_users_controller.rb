@@ -18,9 +18,6 @@ class Tictactoe::TictactoeUsersController < ApplicationController
 	end
 
 	def destroy
-		puts "==============================="
-		puts @participant
-		puts "==============================="
 		@participant.destroy
 		redirect_to request.referer
 	end

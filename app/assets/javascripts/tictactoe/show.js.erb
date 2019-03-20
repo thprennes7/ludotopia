@@ -7,6 +7,7 @@ $(document).ready(function(){
 	$gameBoard = $("#game-board");
 	$partyId = $("#party-id").html();
 	$player = $("#player").html();
+	$user = $("#user").html();
 	if ($player == "1") {
 		$play = "x";
 	}else{
@@ -114,17 +115,30 @@ function endGame() {
 		type: "PATCH",
 		data: "status=3"
 	});
+	if ($play == $oldGrid[column]) {
+		$.ajax({
+			url: '/scores',
+			type: "GET",
+			data: "user=" + $user + "&winner=true&game_id=1"
+		});
+	}else{
+		$.ajax({
+			url: '/scores',
+			type: "GET",
+			data: "user=" + $user + "&winner=false&game_id=1"
+		});
+	}
 }
 
 function checkWinner(column) {
 	changeGrid();
 	if ($oldGrid[column] == "x"){
 		alert("Partie terminée ! Les X sont victorieux !");
-		endGame();
+		endGame($oldGrid[column]);
 	}
 	else{
 		alert("Partie terminée ! Les O ont vaincus !");
-		endGame();
+		endGame($oldGrid[column]);
 	}
 }
 

@@ -13,7 +13,6 @@
 */
 
 #main-header {
-  position: absolute;
   width: 100%;
 }
 
@@ -31,4 +30,21 @@
 
 .carousel-inner {
   height: 100vh;
+}
+
+.modal-pic {
+  object-fit: cover;
+  width: 100%;
+  max-width: 768px;
+  margin: 20px 0 20px 0;
+  border: none;
+  border-radius: 3px;
+}
+
+.card-pic {
+  object-fit: cover;
+}
+
+.game-modal img{
+  width: 100%;
 }

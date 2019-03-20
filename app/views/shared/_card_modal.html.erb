@@ -8,53 +8,55 @@
         </button>
       </div>
       <div class="modal-body">
-        <% if current_info.image.attached? %>
-          <%= image_tag current_info.image, alt: "#{current_info.title}", class: "modal-vid"  %>
-        <% end %>
+            <!-- <div class="modal-pic"> -->
+              <% if current_info.image.attached? %>
+              <%= image_tag current_info.image, alt: "#{current_info.title}", class: "modal-pic"%>
+              <% end %>
+        <!-- </div> -->
         <%= check_h2(markdown(current_info.description)).html_safe %>
       </div>
       <div class="modal-body">
         <!-- condition to write a comment on an article -->
         <% if current_info.class == Article %>
         <!-- add comment form -->
-          <% if user_signed_in? %>
-          <div class="container">
-            <div class="row d-flex justify-content-center">
-              <div class="col-12" id="contactForm">
-                <%= form_tag(article_comments_path(current_info), method: :post, remote: true, class: "d-flex flex-column") do %>
-                <%= hidden_field_tag "user_id", current_user.id %>
-                <%= text_area_tag 'description', "", placeholder: "Votre commentaire...", row: "3", class: "form-control"%>
-                <%= button_tag "Envoyer", class: "button primary text-align-right" %>
-                <% end %>
-              </div>
+        <% if user_signed_in? %>
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-12" id="contactForm">
+              <%= form_tag(article_comments_path(current_info), method: :post, remote: true, class: "d-flex flex-column") do %>
+              <%= hidden_field_tag "user_id", current_user.id %>
+              <%= text_area_tag 'description', "", placeholder: "Votre commentaire...", row: "3", class: "form-control"%>
+              <%= button_tag "Envoyer", class: "button primary text-align-right" %>
+              <% end %>
             </div>
           </div>
-          <% else %>
-          <p><%= link_to 'Connectez-vous', new_user_session_path %> pour laisser un commentaire</p>
-          <% end %>
-          <!-- display to see like -->
-          <% if user_signed_in? %>
-          <div id="likes<%=current_info.id %>">
+        </div>
+        <% else %>
+        <p><%= link_to 'Connectez-vous', new_user_session_path %> pour laisser un commentaire</p>
+        <% end %>
+        <!-- display to see like -->
+        <% if user_signed_in? %>
+        <div id="likes<%=current_info.id %>">
           <%= render partial: 'articles/like', locals: {current_info: current_info} %>
-          </div>
-          <% else %>
-            <%= fa_icon "thumbs-up"%>
-            <p><%= current_info.likes.length %></p>
-          <% end %>
-          <!-- display to see comments -->
-          <% current_info.comments.reverse.each do |comment| %>
-          <div id="comments">
-            <%= render partial: 'comment', locals: {comment: comment} %>
-          </div>
-          <% end %>
+        </div>
+        <% else %>
+        <%= fa_icon "thumbs-up"%>
+        <p><%= current_info.likes.length %></p>
+        <% end %>
+        <!-- display to see comments -->
+        <% current_info.comments.reverse.each do |comment| %>
+        <div id="comments">
+          <%= render partial: 'comment', locals: {comment: comment} %>
+        </div>
+        <% end %>
         <% end %>
       </div>
       <div class="modal-footer">
         <!-- condition to join a game -->
         <% if current_info.class == Game %>
-          <%= link_to "Jouer", current_info.link, class: "button primary" %>
+        <%= link_to "Jouer", current_info.link, method: :post, class: "button primary" %>
         <% end %>
-      <button type="button" class="button secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="button secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

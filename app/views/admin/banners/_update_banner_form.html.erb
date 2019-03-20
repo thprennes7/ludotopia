@@ -7,7 +7,7 @@
       <%= label_tag "title", "Titre" %>
       <%= text_field_tag :title, @banner.title, class:"form-control mb-3" %>
       <%= label_tag "subtitle", "Sous-titre" %>
-      <%= text_field_tag :subtitle, @banner.subtitle %>
+      <%= text_field_tag :subtitle, @banner.subtitle, class:"form-control mb-3" %>
       <p>Prévisualisation :</p>
       <div id="preview<%= @banner.id %>">
         <div class="jumbotron d-flex justify-content-center flex-column align-items-center" id="banner_custom" style="background: url('<%= url_for(@banner.banner_image) %>'); background-size: cover; background-position: center;">

@@ -1,1 +1,10 @@
-console.log("du banner iamges");
+$previewText = $('#preview<%= @banner.id %>');
+$previewText.fadeOut(1000).replaceWith("<%= j render 'admin/banners/preview', banner: @banner %>").fadeIn(1000)
+
+if ( $('#image<%= params[:banner_id] %>').length ) {
+  let $bannerImage = $('#image<%= params[:banner_id] %>');
+  $bannerImage.fadeOut(1500).replaceWith("<%= j render 'image', banner: @banner %>").fadeIn(1500);
+} else {
+  let $button = $('#delete<%= @banner.id %>');
+  $button.after("<%= j render 'image', banner: @banner %>").fadeIn(1500);
+};

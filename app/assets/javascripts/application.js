@@ -29,6 +29,7 @@
 //= require lightbox.min.js
 //= require jquery-modal-video.min.js
 //= require strider.js
+//= require slide-bar.js
 //= require validator.min.js
 
 //= stub googleMap.js

@@ -1,19 +1,24 @@
 console.log("Yay");
 
 // Upload de l'image des articles
+<% unless @article == nil  %>
+
 if ( $('#image<%= params[:article_id] %>').length ) {
-  let $articleImage = $('#image<%= params[:article_id] %>');
+  $articleImage = $('#image<%= params[:article_id] %>');
   $articleImage.fadeOut(1500).replaceWith("<%= j render 'image', article: @article %>").fadeIn(1500);
 } else {
-  let $button = $('#delete<%= @article.id %>');
-  $button.after("<%= j render 'image', article: @article %>").fadeIn(1500);
+  $imgContainer = $('#imageContainer<%= @article.id %>');
+  console.log('<%= @article.id %>');
+  $imgContainer.prepend("<%= j render 'image', article: @article %>").fadeIn(1500);
 };
 
-// Upload de l'image des jeux
-// if ( $('#image<%= params[:game_id] %>').length ) {
-//   let $gameImage = $('#image<%= params[:game_id] %>');
-//   $gameImage.fadeOut(1500).replaceWith("<%= j render 'image', game: @game %>").fadeIn(1500);
-// } else {
-//   let $button = $('#delete<%= @game.id %>');
-//   $button.after("<%= j render 'image', game: @game %>").fadeIn(1500);
-// };
+<% else %>
+
+if ( $('#image<%= params[:game_id] %>').length ) {
+  $gameImage = $('#image<%= params[:game_id] %>');
+  $gameImage.fadeOut(1500).replaceWith("<%= j render 'image', game: @game %>").fadeIn(1500);
+} else {
+  $imgContainer = $('#imageContainer<%= @game.id %>');
+  $imgContainer.prepend("<%= j render 'image', game: @game %>").fadeIn(1500);
+};
+<% end %>

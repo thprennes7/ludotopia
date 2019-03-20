@@ -28,12 +28,20 @@ module ApplicationHelper
 	end
 
 	def find_like(article)
-		Like.where(article_id: article.id)
+		like = Like.where(article_id: article.id, user_id: current_user.id)
 	end
 
 	def check_h2(text)
 		md_to_html = text.gsub! '<h2>', '<h2 class="short-hr-left">'
 		md_to_html.to_s
 	end
+
+	def user_liked?(article)
+  article.likes.each do |like|
+    if like.user == current_user
+      return false
+    end
+  end
+end
 
 end

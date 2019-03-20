@@ -2,15 +2,17 @@
 <div class="container">
 <div class="row game-card pc">
   <div class="col-lg-12 col-xl-5 game-card-left">
-    <div class="mb-2">
-      <% if info.image.attached? %>
-        <%= image_tag info.image, alt: "#{info.title}", class: "modal-vid"  %>
-      <% end %>
-      <div class="overlay">
-        <i class="fa fa-picture-o fa-3x"></i>
-      </div>
-    </div>
+
+
+
+  <div class="">
+    <% if info.image.attached? %>
+      <%= image_tag info.image, alt: "#{info.title}", class: "modal-vid"  %>
+    <% end %>
+
   </div>
+  </div>
+
   <div class="col-lg-12 col-xl-7 game-card-right">
     <h2 class="short-hr-left"><%= info.title %></h2>
       <p class="game-description"><%= strip_tags(markdown(info.description)[0..50]) + "..."%><span class="expand colored strong" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>">Voir plus</span></p>

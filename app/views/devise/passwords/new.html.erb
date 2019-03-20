@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
   <h2 class="short-hr-center">MOT DE PASSE OUBLIÉ ?</h2>
 
-  <div id="contactForm" style="min-width: 30rem">
+  <div id="contactForm" class="mb-5" style="min-width: 30rem">
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 

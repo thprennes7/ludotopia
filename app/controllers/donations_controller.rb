@@ -37,7 +37,7 @@ def create
     customer: customer.id,
     amount: @amount,
     description: 'Rails Stripe customer',
-    currency: 'usd',
+    currency: 'EUR',
   })
 
   donation = Donation.new(stripe_customer_id: customer.id, user_id: current_user.id, game_id: charge_params[:game_id] , amount: @amount)

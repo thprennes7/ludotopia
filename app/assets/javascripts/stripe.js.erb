@@ -4,6 +4,7 @@ var handler = StripeCheckout.configure({
   locale: 'auto',
   name: 'Ludotopia',
   description: 'Donnation Unique',
+  currency: 'eur',
   token: function(token) {
     $('input#stripeToken').val(token.id);
     $('form').submit();

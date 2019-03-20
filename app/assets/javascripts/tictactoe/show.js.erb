@@ -7,6 +7,7 @@ $(document).ready(function(){
 	$gameBoard = $("#game-board");
 	$partyId = $("#party-id").html();
 	$player = $("#player").html();
+	$user = $("#user").html();
 	if ($player == "1") {
 		$play = "x";
 	}else{
@@ -118,13 +119,13 @@ function endGame() {
 		$.ajax({
 			url: '/scores',
 			type: "GET",
-			data: "user=" + <%= current_user %> + "&winner=true&game_id=1"
+			data: "user=" + $user + "&winner=true&game_id=1"
 		});
 	}else{
 		$.ajax({
 			url: '/scores',
 			type: "GET",
-			data: "user=" + <%= current_user %> + "&winner=false&game_id=1"
+			data: "user=" + $user + "&winner=false&game_id=1"
 		});
 	}
 }

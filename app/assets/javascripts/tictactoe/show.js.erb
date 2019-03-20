@@ -114,17 +114,30 @@ function endGame() {
 		type: "PATCH",
 		data: "status=3"
 	});
+	if ($play == $oldGrid[column]) {
+		$.ajax({
+			url: '/scores',
+			type: "GET",
+			data: "user=" + <%= current_user %> + "&winner=true"
+		});
+	}else{
+		$.ajax({
+			url: '/scores',
+			type: "GET",
+			data: "user=" + <%= current_user %> + "&winner=false"
+		});
+	}
 }
 
 function checkWinner(column) {
 	changeGrid();
 	if ($oldGrid[column] == "x"){
 		alert("Partie terminée ! Les X sont victorieux !");
-		endGame();
+		endGame($oldGrid[column]);
 	}
 	else{
 		alert("Partie terminée ! Les O ont vaincus !");
-		endGame();
+		endGame($oldGrid[column]);
 	}
 }
 

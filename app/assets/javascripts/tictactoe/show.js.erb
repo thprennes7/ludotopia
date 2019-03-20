@@ -118,13 +118,13 @@ function endGame() {
 		$.ajax({
 			url: '/scores',
 			type: "GET",
-			data: "user=" + <%= current_user %> + "&winner=true&game=1"
+			data: "user=" + <%= current_user %> + "&winner=true&game_id=1"
 		});
 	}else{
 		$.ajax({
 			url: '/scores',
 			type: "GET",
-			data: "user=" + <%= current_user %> + "&winner=false&game=1"
+			data: "user=" + <%= current_user %> + "&winner=false&game_id=1"
 		});
 	}
 }

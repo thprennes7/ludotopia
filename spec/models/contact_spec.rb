@@ -18,5 +18,10 @@ RSpec.describe Contact, type: :model do
 	      expect(@contact).to be_valid
 	    end
 	end
+
+	context 'associations' do
+		it { should belong_to(:me).class_name('User') }
+		it { should belong_to(:friend).class_name('User') }
+	end
 end
  

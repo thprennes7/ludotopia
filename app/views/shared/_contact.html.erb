@@ -1,11 +1,10 @@
 <!-- /// CONTACT SECTION /// -->
 <div class="container">
-        <div id="contact" class="large-margin">
-            <a href="contact"></a><!-- Nav Anchor -->
-            <div class="row heading tiny-margin">
-                <div class="col-md-auto">
-                    <h1 class="animation-element slide-down">CONT<span class="colored">ACT</span></h1>
-                </div>
+    <div id="contact" class="large-margin">
+        <div class="row heading tiny-margin">
+            <div class="col-md-auto">
+                <h1 class="animation-element slide-down">CONT<span class="colored">ACT</span></h1>
+            </div>
                 <div class="col">
                     <hr class="animation-element extend">
                 </div>
@@ -18,7 +17,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <h2 class="short-hr-left">NOUS ENVOYÉS UN MESSAGE</h2>
+                        <h2 class="short-hr-left">NOUS ENVOYER UN MESSAGE</h2>
                         <div id="contactForm">
                             <%= form_tag supports_path, method: :post do %>
 
@@ -43,7 +42,7 @@
                                 <p class="subtle">*Champs obligatoire</p>
                                 
                                 <!-- Submit Button -->
-                                <%= submit_tag "ENVOYER UN MESSAGE", class:"button" %>
+                                <%= button_tag "ENVOYER UN MESSAGE", class:"button-devise-first", type:"submit" %>
                                 <% end %> 
                                 <!-- Success Message -->
                                 
@@ -63,7 +62,6 @@
                         <div id="map-canvas"></div>
                     </div>
                 </div>
-            </div>
         </div>
     </div><!-- Main Container End -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB64kJJiSynOc9ZqkNMOyl94cvsw5Z2uno"></script>

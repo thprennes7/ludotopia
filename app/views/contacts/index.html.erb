@@ -1,8 +1,18 @@
 <div class="row">
 	<div class="col-sm-6">
-		<h2 class="short-hr-left">Ajouter un amis d'amis</h2>
+		<h2 class="short-hr-left">Ajouter un amis.</h2>
+		<%= form_tag contacts_path do |f| %>
+			<%= label_tag :user, "Utilisateurs : " %>
+			<%= text_field_tag :user, nil, list:'pseudos' %>
+			<datalist id="pseudos">
+				<% @users.each do |user| %>
+					<option value="<%= user.username %>"></option>
+				<% end -%>				
+			</datalist>
+			<%= submit_tag "Ajouter" %>
+		<% end -%>
 	</div>
 	<div class="col-sm-6">
-		<h2 class="short-hr-left">Liste d'amis</h2>
+		<h2 class="short-hr-left">Liste d'amis.</h2>
 	</div>
 </div>

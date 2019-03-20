@@ -16,5 +16,8 @@
   <%= render 'layouts/footer' %>
   <%= javascript_include_tag 'application'%>
   <%= yield :javascript_includes %>
+
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <%= javascript_include_tag 'stripe.js' %>
 </body>
 </html>

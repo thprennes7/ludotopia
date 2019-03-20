@@ -1,6 +1,6 @@
 <%= render 'shared/about' %>
 <div class="container">
-<% @articles.each do |article| %>
-<%= render partial: 'shared/card_picture', locals: {info: article}  %>
-<% end %>
+  <% @articles.each do |article| %>
+  <%= render partial: 'shared/card_picture', locals: {info: article}  %>
+  <% end %>
 </div>

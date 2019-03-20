@@ -1,1 +1,8 @@
 console.log("du banners");
+
+$deletedBanner = $('#banner<%= @banner.id %>');
+
+$deletedBanner.slideUp(1500);
+setTimeout(function(){
+  $deletedBanner.remove()
+}, 1500);

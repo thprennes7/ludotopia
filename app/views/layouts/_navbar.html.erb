@@ -1,11 +1,13 @@
 <!-- //// HEADER //// -->
-    <header id="main-header">
+    <header id="main-header" style="<% if current_page?(root_path)  %>position: absolute;<% else %>margin-bottom: 3vh;<% end %>">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <!-- Site Logo -->
-                
-                
-                <a href="<%= root_path %>" class="text-white"><h1>Ludo<span class="colored">topia</span></h1></a>
+
+
+                <%= link_to root_path do %>
+               <h1 class="text-white">Ludo<span class="colored">topia</span></h1>
+               <% end -%>
                 <!-- Dropdown Button -->
                 <button id="hamburger" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
@@ -13,7 +15,7 @@
                         <span class="icon-bar"></span>
                 </button>
                 <!-- Navigation Links -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse align-baseline" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <% if is_admin?(current_user) %>
                         <li>
@@ -31,6 +33,7 @@
                             <div class="dropdown-menu">
                                 <% if user_signed_in? %>
                                     <%= link_to "Profil", edit_user_registration_path, class:"dropdown-item colored"%>
+                                    <%= link_to "Donation", new_donation_path, class:"dropdown-item colored"%>
                                     <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"dropdown-item colored"%>
                                 <% else %>
                                     <%= link_to "Inscription",  new_user_registration_path, class:"dropdown-item colored"%>
@@ -46,4 +49,3 @@
             </div>
         </nav>
     </header><!-- Header End -->
-    

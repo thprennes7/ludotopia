@@ -1,1 +1,2 @@
-console.log("du banner update");
+$previewText = $('#preview<%= @banner.id %>');
+$previewText.fadeOut(1000).replaceWith("<%= j render 'admin/banners/preview', banner: @banner %>").fadeIn(1000)

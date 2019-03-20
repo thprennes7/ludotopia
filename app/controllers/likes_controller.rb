@@ -10,8 +10,9 @@ class LikesController < ApplicationController
 
   def destroy
     @current_like = Like.find(params[:id])
+    @article = @current_like.article
     flash[:success] = "Le like a été supprimé !" if @current_like.destroy
-    respond_with(@current_like)
+    respond_with(@article)
   end
 end
 

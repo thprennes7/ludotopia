@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   respond_to :js, :html, :json
 
   def index
-    @comments = Comment.all.sort.reverse
+    @comments = Comment.all.sort
   end
 
   def create

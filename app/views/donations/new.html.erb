@@ -1,18 +1,20 @@
-<%= form_tag charges_path do %>
-  <article>
+<%= form_tag donations_path do %>
+  <div id="error_explanation">
     <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
+      <p><%= flash[:error] %></p>
     <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
+  </div>
+  <article>
+    <%= label_tag(:amount, 'Donation Amount:') %>
+    <%= text_field_tag(:amount) %>
   </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
+  <article>
+    <%= label_tag(:game_id, 'jeu') %>
+    <% @game=Game.all %>
+    <%= select_tag "game_id", options_from_collection_for_select(@game, "id", "title") %>
+  </article>
+  <article>
+    <%= hidden_field_tag(:stripeToken) %>
+  </article>
+  <button id='donateButton'>Donate X</button>
 <% end %>

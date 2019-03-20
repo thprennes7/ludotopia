@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  before(:each) do
+  	@article = FactoryBot.create(:article)
+  	FactoryBot.create(:status)
+  	@users = FactoryBot.create(:user)
+  end
+
+  
 end

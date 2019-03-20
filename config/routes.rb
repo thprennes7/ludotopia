@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :supports, only: [:new, :create]
-  resources :contacts
+  resources :contacts, only: [:create, :index, :destroy]
   resources :landings, only: [:show]
-  resources :charges
   resources :banners do
     resources :banner_images
   end

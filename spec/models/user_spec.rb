@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before(:all) do
 
-  	@user    = FactoryBot.create(:user)
+  	@user     = FactoryBot.create(:user)
   	@article  = FactoryBot.create(:article)
   	@comment  = FactoryBot.create(:comment)
   	@game     = FactoryBot.create(:game)

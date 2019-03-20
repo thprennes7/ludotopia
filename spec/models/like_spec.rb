@@ -18,5 +18,9 @@ RSpec.describe Like, type: :model do
 	    end
 	end
 
+  context 'associations' do
+    it { should belong_to(:user) }
+  end
+
 end
  

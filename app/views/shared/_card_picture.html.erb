@@ -22,7 +22,7 @@
           <!-- condition to see the number of comments of the article-->
           <% if info.class == Article %>
           <div class="score-card">
-          <p class="score"><%= fa_icon "thumbs-up" %> <%= find_like(info).length %></p>
+          <p class="score" id="score<%= info.id %>"><%= fa_icon "thumbs-up" %> <%= info.likes.length %></p>
             </div>
           <div class="score-card">
             <p class="score"><%= find_comment(info).length %></p>

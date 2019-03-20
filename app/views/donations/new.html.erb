@@ -1,20 +1,52 @@
-<%= form_tag donations_path do %>
-  <div id="error_explanation">
-    <% if flash[:error].present? %>
-      <p><%= flash[:error] %></p>
-    <% end %>
-  </div>
-  <article>
-    <%= label_tag(:amount, 'Donation Amount:') %>
-    <%= text_field_tag(:amount) %>
-  </article>
-  <article>
-    <%= label_tag(:game_id, 'jeu') %>
-    <% @game=Game.all %>
-    <%= select_tag "game_id", options_from_collection_for_select(@game, "id", "title") %>
-  </article>
-  <article>
-    <%= hidden_field_tag(:stripeToken) %>
-  </article>
-  <button id='donateButton'>Donate X</button>
-<% end %>
+<div class="container">
+    <div id="contact" class="large-margin">
+        <div class="row heading tiny-margin">
+            <div class="col-md-auto">
+                <h1 class="animation-element slide-down">Dona<span class="colored">tion</span></h1>
+            </div>
+                <div class="col">
+                    <hr class="animation-element extend">
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <div class="row small-margin">
+                    <div class="col-md-11">
+                        <p>Ici vous pouvez soutenir les développeurs des jeux de société que nous hébergeons. Développer un jeu ou une application peux vite prendre du temps, et es souvent coder par des petits groupes de personne qui cherche à se lancer. N’hésitez pas à soutenir les projets que vous préférez.</p>
+                    </div>
+                  </div>
+
+                  <h2 class="short-hr-left">FAIRE UNE DONATION</h2>
+                    <div id="contactForm">
+                      <%= form_tag donations_path do %>
+                      <div id="error_explanation">
+                        <% if flash[:error].present? %>
+                          <p><%= flash[:error] %></p>
+                        <% end %>
+                      </div>
+
+                      <div class="form-group">
+                        <%= text_field_tag :amount, nil, placeholder:"Montant de la donations" %>
+                      </div>
+
+                      <div class="form-group w-100 d-flex flex-column align-items-center">
+                        <%= label_tag(:game_id, 'Choisir le jeu', class: "mb-4") %>
+                        <% @game=Game.all %>
+                        <%= select_tag "game_id", options_from_collection_for_select(@game, "id", "title"), class:"form-control form-control-lg text-light bg-dark" %>
+                      </div>
+
+                      <article>
+                        <%= hidden_field_tag(:stripeToken) %>
+                      </article>
+                      <button  class='button-devise-first' id='donateButton'>Faire un Don</button>
+                      <% end %>
+                    </div>
+                  
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

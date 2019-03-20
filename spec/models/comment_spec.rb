@@ -15,8 +15,14 @@ RSpec.describe Comment, type: :model do
    context "validation" do
   	it "is valid with valid attributes" do
   		expect(@comment).to be_a(Comment)
-  		expect(@comment).to be_valid
+  		expect(@comment).to be_valid 
   	end
   end
-  
+
+  context "associations" do
+  	it { should belong_to (:article) }
+  	it { should belong_to (:user) }
+  	it { should have_many(:likes) }
+  end
+
 end

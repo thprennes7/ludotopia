@@ -11,3 +11,24 @@
 *= require style.css
 
 */
+
+#main-header {
+  position: absolute;
+  width: 100%;
+}
+
+.notice {
+  position: absolute !important;
+}
+
+.alert {
+  position: absolute !important;
+}
+
+.carousel {
+  height: 100vh;
+}
+
+.carousel-inner {
+  height: 100vh;
+}

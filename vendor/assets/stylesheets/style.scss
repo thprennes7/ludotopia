@@ -469,7 +469,7 @@ button {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, var(--black), transparent, var(--black)), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWMQEZFLYyAK4FQJADsQAVlhb1ZUAAAAAElFTkSuQmCC) repeat;
+  background: linear-gradient(to bottom, var(--black), transparent, var(--black)), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAF0lEQVQImWOQktLzhWEGZEC6BGW6kSUAlYgMT0+lD+UAAAAASUVORK5CYII=) repeat;
 }
 /* -Progress Bar- */
 #progress-bar {
@@ -509,6 +509,12 @@ button {
 .carousel-caption-left a {
   display: inline-block;
 }
+
+.carousel-item {
+  object-fit: cover;
+  height:100vh;
+}
+
 .carousel-inner > .carousel-item > img {
   width: 100%;
 }

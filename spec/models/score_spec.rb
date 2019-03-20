@@ -17,4 +17,10 @@ RSpec.describe Score, type: :model do
 	      expect(@score).to be_valid
 	    end
 	end
+
+	context 'associations' do
+    it { should belong_to(:game) }
+    it { should belong_to(:user) }
+  end
+
 end

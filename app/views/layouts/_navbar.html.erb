@@ -3,9 +3,17 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <!-- Site Logo -->
+<<<<<<< HEAD
 
 
                 <a href="<%= root_path %>" class="text-white align-baseline"><h1>Ludo<span class="colored">topia</span></h1></a>
+=======
+                
+                
+                <%= link_to root_path do %>
+               <h1 class="text-white">Ludo<span class="colored">topia</span></h1>
+               <% end -%>
+>>>>>>> master
                 <!-- Dropdown Button -->
                 <button id="hamburger" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
@@ -31,6 +39,7 @@
                             <div class="dropdown-menu">
                                 <% if user_signed_in? %>
                                     <%= link_to "Profil", edit_user_registration_path, class:"dropdown-item colored"%>
+                                    <%= link_to "Donation", new_donation_path, class:"dropdown-item colored"%>
                                     <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"dropdown-item colored"%>
                                 <% else %>
                                     <%= link_to "Inscription",  new_user_registration_path, class:"dropdown-item colored"%>

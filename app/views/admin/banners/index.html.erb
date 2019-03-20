@@ -5,8 +5,6 @@
 <div class="banners">
   <% @banners.each do |banner| %>
   <% @banner = banner %>
-  <% puts "*" * 60 %>
-  <% puts banner.id %>
   <%= render partial: 'update_banner_form', locals: { banner: @banner } %>
   <% end %>
 </div>

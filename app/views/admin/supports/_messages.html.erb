@@ -1,7 +1,18 @@
-<%= tidy_date(support.created_at)  %>
+<div id="support<%= @support.id %>" class="card mb-4 mr-3 ml-3  border border-dark rounded">
+  <div class="card-header">
+    <%= tidy_date(@support.created_at)  %>
+  </div>
+  <div class="card-body p-0 bg-light">
+    <ul class="list-group list-group-flush">
+      <li class= "list-group-item border-light"><h2><%= @support.title %></h2></li>
+      <li class="list-group-item border-light"">Créé par : <%= @support.last_name %> - <%= @support.email %></li>
+      <li class="list-group-item border-light""><%= truncate(@support.description, length: 25, separator: ' ') %> <span class="expand colored strong" data-toggle="modal" data-target="#<%= @support.id + @support.created_at.day %>">Voir plus</span></li>
+    </ul>
+  </div>
+  <div class="card-footer">
+    <%= link_to "Supprimer", admin_support_path(@support), method: :delete, remote: true, data: { confirm: "Supprimer le message n°#{@support.id} ?" }, class:"btn btn-danger" %>
+  </div>
 
-<h2><%= support.title %></h2>
-<p><%= support.last_name %></p>
-<p><%= support.email %></p>
-<p><%= truncate(support.description, length: 25, separator: ' ') { link_to "Voir plus", admin_support_path(support) } %></p>
-<%= link_to "Supprimer", admin_support_path(support), method: :delete, remote: true, data: { confirm: "Supprimer le message n°#{support.id} ?" } %>
+  <!-- Modal -->
+  <%= render partial: 'admin/supports/show', locals: {current_support: @support} %>
+</div>

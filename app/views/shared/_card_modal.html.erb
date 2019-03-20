@@ -18,7 +18,6 @@
         <% if current_info.class == Article %>
         <!-- add comment form -->
           <% if user_signed_in? %>
-
           <div class="container">
             <div class="row d-flex justify-content-center">
               <div class="col-12" id="contactForm">
@@ -33,16 +32,15 @@
           <% else %>
           <p><%= link_to 'Connectez-vous', new_user_session_path %> pour laisser un commentaire</p>
           <% end %>
-        <!-- display to see like -->
+          <!-- display to see like -->
           <% if user_signed_in? %>
           <div id="likes<%=current_info.id %>">
-            <%= render partial: 'articles/like', locals: {current_info: current_info} %>
+          <%= render partial: 'articles/like', locals: {current_info: current_info} %>
           </div>
           <% else %>
             <%= fa_icon "thumbs-up"%>
             <p><%= current_info.likes.length %></p>
           <% end %>
-
           <!-- display to see comments -->
           <% current_info.comments.reverse.each do |comment| %>
           <div id="comments">
@@ -51,13 +49,11 @@
           <% end %>
         <% end %>
       </div>
-
       <div class="modal-footer">
         <!-- condition to join a game -->
         <% if current_info.class == Game %>
           <%= link_to "Jouer", current_info.link, class: "button primary" %>
         <% end %>
-
       </div>
       <button type="button" class="button secondary" data-dismiss="modal">Close</button>
       </div>

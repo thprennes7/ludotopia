@@ -1,5 +1,5 @@
 <!-- /// GAMES SECTION /// -->
-<% unless info.class == Game %>
+<% if info.class == Game %>
 <div class="container">
   <div id="games" class="large-margin">
     <a href="games"></a><!-- Nav Anchor -->
@@ -18,10 +18,8 @@
     </div>
   </div>
 </div>
-<% end %>
-
 <!-- /// ARTICLES SECTION /// -->
-<% if info.class == Article %>
+<% elsif info.class == Article %>
 <div class="container">
   <div class="row heading tiny-margin">
     <div class="col-md-auto">

@@ -1,15 +1,28 @@
-<h1>Donnations</h1>
+<h1>Donations</h1>
 
+<!-- <table class="table table-dark"> -->
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Utilisateur</th>
+      <th scope="col">Jeu</th>
+      <th scope="col">Montant du don</th>
+    </tr>
+  </thead>
+
+  <tbody>
 <% @games.each do |game| %>
 
-<h2><%= game.title %></h2>
-
 <% find_donations(game).each do |donation| %>
-
-<ul class="donation<%= donation.id %>_infos">
-  <li><%= donation.user.username %></li>
-  <li><%= donation.amount %></li>
-</ul>
+  <tr>
+    <th scope="row"></th>
+    <td><%= donation.user.username %></td>
+    <td><%= game.title %></td>
+    <td><%= donation.amount %></td>
+  </tr>
 
 <% end %>
 <% end %>
+</tbody>
+</table>

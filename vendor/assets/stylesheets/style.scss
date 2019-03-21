@@ -212,6 +212,15 @@ hr {
   width: 60px;
   margin: 13px auto 0 auto;
 }
+
+.border-comment {
+  border: 1px solid var(--black);
+}
+
+.background-comment {
+  background-color: var(--secondary);
+}
+
 /* General input fields */
 input {
   height: 45px;
@@ -588,7 +597,7 @@ button {
   min-height: 270px;
 }
 .game-card-right {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
   padding: 20px 40px;
   margin: 0;
 }
@@ -709,14 +718,14 @@ button {
   min-width: 90px;
   width: auto;
   height: auto;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  // background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   text-align: center;
   margin: 0 5px 0 0;
   padding: 5px;
   border-radius: 2px;
 }
 .score-card:hover {
-  background: #000;
+  // background: #000;
 }
 .score-card:hover .score {
   color: var(--primary);
@@ -939,6 +948,7 @@ button {
   background: var(--footer);
   border-top: 2px solid var(--primary);
   padding: 20px 0 0 0;
+  bottom: 0;
 }
 .social-links {
   float: right;
@@ -979,7 +989,7 @@ button {
   text-decoration: none;
 }
 /* --------------------------- /////////// XII. RESPONSIVE STYLES /////////// --------------------------- */
-@media (max-width : 991px) {
+@media screen and (max-width : 991px) {
   .nav-item > a::first-letter {
     color: var(--primary);
   }
@@ -1013,7 +1023,7 @@ button {
     margin-top: 40%;
   }
 }
-@media (max-width : 767px) {
+@media screen and (max-width : 767px) {
   .large-margin {
     margin-bottom: 4em; /* 96px */
   }
@@ -1079,7 +1089,7 @@ button {
     font-size: 3.5rem;
   }
 }
-@media (max-width : 480px) {
+@media screen and (max-width : 480px) {
   .game-card-left img {
     min-height: 0;
   }

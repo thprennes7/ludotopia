@@ -37,6 +37,7 @@ module ApplicationHelper
 	end
 
 	def user_liked?(article)
+
   	article.likes.each do |like|
     	if like.user == current_user
       	return false
@@ -65,6 +66,7 @@ module ApplicationHelper
         	scores_list << {game: score.game, player: score.user, win: 1}
       	end
     	end
+
     end
     puts "============================================="
     puts scores_list

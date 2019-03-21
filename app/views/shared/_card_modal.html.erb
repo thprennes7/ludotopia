@@ -36,12 +36,12 @@
         <% end %>
         <!-- display to see like -->
         <% if user_signed_in? %>
-        <div id="likes<%=current_info.id %>">
+        <div id="likes<%=current_info.id %>" class="mb-3">
           <%= render partial: 'articles/like', locals: {current_info: current_info} %>
         </div>
         <% else %>
-        <%= fa_icon "thumbs-up"%>
-        <p><%= current_info.likes.length %></p>
+
+        <p class="mb-3"><%= fa_icon "thumbs-up"%> <%= current_info.likes.length %></p>
         <% end %>
         <!-- display to see comments -->
         <% current_info.comments.reverse.each do |comment| %>

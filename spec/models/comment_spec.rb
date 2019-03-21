@@ -22,7 +22,6 @@ RSpec.describe Comment, type: :model do
   context "associations" do
   	it { should belong_to (:article) }
   	it { should belong_to (:user) }
-  	it { should have_many(:likes) }
   end
 
 end

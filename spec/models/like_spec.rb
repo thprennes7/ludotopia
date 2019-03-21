@@ -19,6 +19,7 @@ RSpec.describe Like, type: :model do
 	end
 
   context 'associations' do
+    it { should belong_to(:article) }
     it { should belong_to(:user) }
   end
 

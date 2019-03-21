@@ -1,0 +1,29 @@
+<div class="modal fade game-modal" id="<%= current_support.id + current_support.created_at.day %>" tabindex="-1" role="dialog" aria-labelledby="aurora" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="aurora"><%= current_support.title %></h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container">
+          <div class="row d-flex justify-content-start">
+            <div class="list-group list-group-flush">
+              <ul>
+                <li class= "list-group-item border-light">Créé par : <%= "#{@support.last_name} - #{@support.email}" %></li>
+                <li class= "list-group-item border-light">Commentaire : <%= @support.description %></li>
+                <li class= "list-group-item border-light"><%= tidy_date(@support.created_at) %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= mail_to @support.email, "Répondre", subject: "RE:#{@support.title}", class: "btn btn-light" %>
+      </div>
+    </div>
+  </div>
+</div>

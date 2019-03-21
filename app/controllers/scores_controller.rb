@@ -1,4 +1,5 @@
 class ScoresController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_score, except: [:index]
   respond_to :js, :html, :json
 

@@ -1,5 +1,0 @@
-<h1><%= @support.title %></h1>
-<p><%= tidy_date(@support.created_at) %></p>
-<p><%= "#{@support.last_name} - #{@support.email}" %></p>
-<p><%= @support.description %></p>
-<%= mail_to @support.email, "Répondre", subject: "RE:#{@support.title}" %>

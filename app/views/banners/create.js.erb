@@ -1,5 +1,3 @@
-console.log("du banner");
-
 $bannerContainer = $('.banners');
 
 $bannerContainer.prepend("<%= j render 'admin/banners/update_banner_form', banner: @banner %>").hide().slideDown(1500);

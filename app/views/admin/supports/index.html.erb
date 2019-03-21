@@ -1,6 +1,6 @@
 <h1>Requêtes utilisateurs :</h1>
 
 <% @supports.each do |support| %>
-<%= render partial: 'messages', locals: { support: support } %>
+<% @support = support %>
+<%= render partial: 'messages', locals: { support: @support } %>
 <% end %>
-

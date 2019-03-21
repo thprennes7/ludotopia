@@ -1,2 +1,2 @@
-$comments = $("#comments");
+$comments = $("#comments<%= @comment.article.id %>");
 $comments.prepend('<%= j render "articles/comment", comment: @comment %>');

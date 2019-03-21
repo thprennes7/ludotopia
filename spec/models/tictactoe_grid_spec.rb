@@ -21,5 +21,9 @@ RSpec.describe TictactoeGrid, type: :model do
 	    end
 	end
 
+	context "associations" do
+  	it { should belong_to (:tictactoe) }
+  end
+
 end
  

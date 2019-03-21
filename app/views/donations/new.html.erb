@@ -25,11 +25,12 @@
                       </div>
 
                       <div class="form-group">
-                        <%= text_field_tag :amount, nil, placeholder:"Montant de la donations" %>
+                        <h3 class="mb-4" >Saisir le montant de la donation</h3>
+                        <%= text_field_tag :amount, nil, placeholder:"montant en valeur décimal" %>
                       </div>
 
                       <div class="form-group w-100 d-flex flex-column align-items-center">
-                        <%= label_tag(:game_id, 'Choisir le jeu', class: "mb-4") %>
+                        <h3 class="mb-4" >Selectionnez le jeu<h3>
                         <% @game=Game.all %>
                         <%= select_tag "game_id", options_from_collection_for_select(@game, "id", "title"), class:"form-control form-control-lg text-light bg-dark" %>
                       </div>

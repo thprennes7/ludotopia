@@ -1,12 +1,4 @@
-<div class="container">
-	<div class="row heading tiny-margin">
-                <div class="col-md-auto">
-                    <h1 class="animation-element slide-down">ARTIC<span class="colored">LES</span></h1>
-                </div>
-                <div class="col">
-                    <hr class="animation-element extend">
-                </div>
-            </div>
+<%= render partial: 'shared/card_nav', locals: {info: @articles[0]} %>
 <% @articles.each do |article| %>
 <%= render partial: 'shared/card_picture', locals: {info: article}  %>
 <% end %>

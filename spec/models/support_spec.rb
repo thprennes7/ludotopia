@@ -19,4 +19,11 @@ RSpec.describe Support, type: :model do
 	    end
 	end
 
+	context 'associations' do
+		it { should validate_presence_of(:last_name) }
+		it { should validate_presence_of(:email) }
+		it { should validate_presence_of(:title) }
+		it { should validate_presence_of(:description) }
+	end
+	
 end

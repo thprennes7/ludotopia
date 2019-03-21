@@ -15,7 +15,8 @@ Comment.destroy_all
 Like.destroy_all
 Support.destroy_all
 Game.destroy_all
-# Donation.destroy.all
+Donation.destroy.all
+
 unless Status.all.any?
 	Status.create!(name: "Membre")
 	Status.create!(name: "Donateur")

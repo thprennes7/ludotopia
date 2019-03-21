@@ -21,5 +21,10 @@ RSpec.describe TictactoeUser, type: :model do
 	    end
 	end
 
-end
+	context "associations" do
+  	it { should belong_to (:user) }
+  	it { should belong_to (:user) }
+  end
+  
+end 
  

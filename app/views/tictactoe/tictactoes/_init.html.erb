@@ -1,15 +1,17 @@
-<p class="">Partagez le lien de la page et ajoutez vos amis pour jouer.</p>
+<div class="d-flex flex-column align-items-center">
+
+<h3 class="colored">Partagez le lien de la page et ajoutez vos amis pour jouer.</h3>
 
 <h5>Ajouter un participant :</h5>
 
-<%= form_tag(tictactoe_tictactoe_users_path, method: :post, class:"") do %>
+<%= form_tag(tictactoe_tictactoe_users_path, method: :post, class:"d-flex align-items-center justify-content-between") do %>
 	<%= hidden_field_tag(:tictactoe, @party.id) %>
-	<select name="participant">
+	<select name="participant" class="form-control m-2 bg-dark">
 		<% @contacts.each do |contact| %>
-			<option value="<%= contact.friend.id %>"><%= contact.friend.username %></option>
+			<option value="<%= contact.friend.id %>" class="text-white"><%= contact.friend.username %></option>
 		<% end -%>
 	</select>
-	<%= submit_tag("Ajouter") %>
+	<%= submit_tag("Ajouter", class:"button secondary m-2") %>
 <% end -%>
 
 <h5>Personnes autorisées à jouer :</h5>
@@ -21,5 +23,7 @@
 
 <%= form_tag(tictactoe_tictacto_path(@party.id), method: :patch, class:"", remote: true) do %>
 	<%= hidden_field_tag "status", 2 %>
-	<%= submit_tag("Commencer la partie") %>
+	<%= submit_tag("Commencer la partie", class:"button primary m-2") %>
 <% end -%>
+
+</div>

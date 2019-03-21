@@ -14,7 +14,7 @@
             <div class="list-group list-group-flush">
               <ul>
                 <li class= "list-group-item border-light">Créé par : <%= "#{@support.last_name} - #{@support.email}" %></li>
-                <li class= "list-group-item border-light">Commentaire : <%= @support.description %></li>
+                <li class= "list-group-item border-light">Message : <%= @support.description %></li>
                 <li class= "list-group-item border-light"><%= tidy_date(@support.created_at) %></li>
               </ul>
             </div>

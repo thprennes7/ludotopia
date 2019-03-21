@@ -337,19 +337,19 @@ button {
 .loader-logo {
   position: relative;
   color: var(--white);
-  top: 43%;
+  top: 20%;
 }
 #progress {
   width: 0;
   height: 2px;
   background: var(--primary);
   position: relative;
-  top: 45%;
+  top: 25%;
 }
 .loader-text {
   position: relative;
   color: var(--white);
-  top: 48%;
+  top: 27%;
 }
 
 /* -Loading Screen Animation- */
@@ -525,8 +525,12 @@ button {
 }
 
 .carousel-item {
-  object-fit: cover;
   height:100vh;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
 }
 
 .carousel-inner > .carousel-item > img {
@@ -718,14 +722,12 @@ button {
   min-width: 90px;
   width: auto;
   height: auto;
-  // background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   text-align: center;
   margin: 0 5px 0 0;
   padding: 5px;
   border-radius: 2px;
 }
 .score-card:hover {
-  // background: #000;
 }
 .score-card:hover .score {
   color: var(--primary);

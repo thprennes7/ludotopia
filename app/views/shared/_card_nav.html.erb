@@ -1,19 +1,32 @@
-        <!-- /// GAMES SECTION /// -->
-    <div class="container">
-        <div id="games" class="">
-            <a href="games"></a><!-- Nav Anchor -->
-            <div class="row heading tiny-margin">
-                <div class="col-md-auto">
-                    <h1 class="animation-element slide-down">NOS <span class="colored">JEUX</span></h1>
-                </div>
-                <div class="col">
-                    <hr class="animation-element extend">
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col-md-11 mb-5">
-                   <p>Nous disposons d'un panel de jeux, tous à votre disposition pour votre bonheur. Le catalogue ne cessera de s'agrandir avec le temps</p>
-                </div>
-            </div>
-        </div>
+<!-- /// GAMES SECTION /// -->
+<% if info.class == Game %>
+<div class="container">
+  <div id="games" class="">
+    <a href="games"></a><!-- Nav Anchor -->
+    <div class="row heading tiny-margin">
+      <div class="col-md-auto">
+        <h1 class="animation-element slide-down">NOS <span class="colored">JEUX</span></h1>
+      </div>
+      <div class="col">
+        <hr class="animation-element extend">
+      </div>
     </div>
+    <div class="row ">
+      <div class="col-md-11 small-margin">
+        <p>Nous disposons d'un panel de jeux, tous à votre disposition pour votre bonheur. Le catalogue ne cessera de s'agrandir avec le temps</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /// ARTICLES SECTION /// -->
+<% elsif info.class == Article %>
+<div class="container">
+  <div class="row heading tiny-margin">
+    <div class="col-md-auto">
+      <h1 class="animation-element slide-down">ARTIC<span class="colored">LES</span></h1>
+    </div>
+    <div class="col">
+      <hr class="animation-element extend">
+    </div>
+  </div>
+  <% end %>

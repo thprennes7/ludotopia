@@ -1,10 +1,20 @@
 <!--ybo: test render for integration -->
 <%= render 'particule' %>
 <%= render 'shared/about' %>
-<%= render 'shared/card_nav' %>
+<%= render partial: 'shared/card_nav', locals: {info: @articles[0]} %>
 <% x = 0 %>
 <% 3.times do %>
+<% unless @articles[x] == nil %>
+<%= render partial: 'shared/card_picture', locals: {info: @articles[x]} %>
+<% end -%>
+<% x += 1 %>
+<% end %>
+<%= render partial: 'shared/card_nav', locals: {info: @games[0]} %>
+<% x = 0 %>
+<% 3.times do %>
+	<% unless @games[x] == nil %>
 	<%= render partial: 'shared/card_picture', locals: {info: @games[x]}  %>
+	<% end -%>
 	<% x += 1 %>
 <% end %>
 <%= render 'team' %>

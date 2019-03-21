@@ -1,4 +1,4 @@
-<%= render 'shared/card_nav' %>
+<%= render partial: 'shared/card_nav', locals: {info: @games} %>
 <% @games.each do |game| %>
 <%= render partial: 'shared/card_picture', locals: {info: game}  %>
 <% end %>

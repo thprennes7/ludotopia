@@ -1,2 +1,5 @@
 $comments = $("#comments<%= @comment.article.id %>");
 $comments.prepend('<%= j render "articles/comment", comment: @comment %>');
+
+$commentsDisplay = $('#score-card<%=@comment.article.id %>');
+$commentsDisplay.replaceWith('<%= j render "comment_display", info: @comment %>');

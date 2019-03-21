@@ -12,7 +12,7 @@ class Tictactoe::TictactoesController < ApplicationController
 		if game.save
 			TictactoeUser.create!(tictactoe_id: game.id, user_id: current_user.id, player: 1)
 			TictactoeGrid.create!(tictactoe_id: game.id, player: 1)
-			redirect_to Tictactoe_path(game.id)
+			redirect_to tictactoe_tictacto_path(game.id)
 		else
 			flash[:error] = "Une erreur est survenue. Si le problème persiste, contactez un admin."
 			redirect_to request.referer

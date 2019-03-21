@@ -728,14 +728,12 @@ button {
   min-width: 90px;
   width: auto;
   height: auto;
-  // background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   text-align: center;
   margin: 0 5px 0 0;
   padding: 5px;
   border-radius: 2px;
 }
 .score-card:hover {
-  // background: #000;
 }
 .score-card:hover .score {
   color: var(--primary);

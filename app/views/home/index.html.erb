@@ -4,6 +4,7 @@
 <%= render partial: 'shared/card_nav', locals: {info: @articles[0]} %>
 <% x = 0 %>
 <% 3.times do %>
+<% unless @articles[x] == nil %>
 <%= render partial: 'shared/card_picture', locals: {info: @articles[x]} %>
 <% x += 1 %>
 <% end %>

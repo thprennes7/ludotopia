@@ -13,6 +13,8 @@
   <p class="alert"><%= alert %></p>
 
   <%= yield %>
+  <!-- Return to Top -->
+  <p id="return-to-top"><%= fa_icon "chevron-up" %></p>
   <%= render 'layouts/footer' %>
   <%= javascript_include_tag 'application'%>
   <%= yield :javascript_includes %>
@@ -21,5 +23,6 @@
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <%= javascript_include_tag 'stripe.js' %>
   <% end %>
+
 </body>
 </html>

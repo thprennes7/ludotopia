@@ -1,11 +1,11 @@
 <% unless user_liked?(current_info) %>
-  <button class="btn-outline-warning rounded"><%= link_to article_like_path(current_info, find_like(current_info)[0]), method: :delete, remote: true do %>
-    <% fa_icon 'thumbs-down' %>
+  <button class="btn-warning rounded"><%= link_to article_like_path(current_info, find_like(current_info)[0]), method: :delete, remote: true do %>
+    <% fa_icon 'thumbs-up' %>
   <% end %>
   <%= current_info.likes.length %></button>
 <% else %>
   <button class="btn-outline-warning rounded"><%= link_to article_likes_path(current_info), method: :post, remote: true do %>
-    <% fa_icon 'thumbs-up', class: "text-grey"%>
+    <% fa_icon 'thumbs-up'%>
     <% end %>
     <%= current_info.likes.length %></button>
 <% end %>

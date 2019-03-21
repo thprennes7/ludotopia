@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_14_102522) do
+ActiveRecord::Schema.define(version: 2019_03_21_104643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,11 +91,9 @@ ActiveRecord::Schema.define(version: 2019_03_14_102522) do
   create_table "likes", force: :cascade do |t|
     t.bigint "article_id"
     t.bigint "user_id"
-    t.bigint "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_likes_on_article_id"
-    t.index ["comment_id"], name: "index_likes_on_comment_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -125,26 +123,14 @@ ActiveRecord::Schema.define(version: 2019_03_14_102522) do
   end
 
   create_table "tictactoe_grids", force: :cascade do |t|
-    t.bigint "tictactoe_id"
-    t.string "a1"
-    t.string "a2"
-    t.string "a3"
-    t.string "a4"
-    t.string "a5"
-    t.string "a6"
-    t.string "a7"
-    t.string "a8"
-    t.string "a9"
-    t.integer "player"
+    t.integer "case"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tictactoe_id"], name: "index_tictactoe_grids_on_tictactoe_id"
   end
 
   create_table "tictactoe_users", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "tictactoe_id"
-    t.integer "player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tictactoe_id"], name: "index_tictactoe_users_on_tictactoe_id"
@@ -172,7 +158,6 @@ ActiveRecord::Schema.define(version: 2019_03_14_102522) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["status_id"], name: "index_users_on_status_id"
-    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

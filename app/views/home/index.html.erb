@@ -1,5 +1,27 @@
 <!--ybo: test render for integration -->
 <%= render 'particule' %>
+<div class="container">
+	<!-- view 3 last articles -->
+	<%= render partial: 'shared/card_nav', locals: {info: @articles[0]} %>
+	<% x = 0 %>
+	<% 3.times do %>
+	<% unless @articles[x] == nil %>
+	<%= render partial: 'shared/card_picture', locals: {info: @articles[x]} %>
+	<% end -%>
+	<% x += 1 %>
+	<% end %>
+	<%= link_to "Plus d'articles", articles_path, class: "d-flex justify-content-end p-3 mb-3" %>
+
+	<!-- view 3 last games -->
+	<%= render partial: 'shared/card_nav', locals: {info: @games[0]} %>
+	<% x = 0 %>
+	<% 3.times do %>
+	<% unless @games[x] == nil %>
+	<%= render partial: 'shared/card_picture', locals: {info: @games[x]}  %>
+	<% end -%>
+	<% x += 1 %>
+	<% end %>
+	<%= link_to "Plus de jeux", games_path, class: "d-flex justify-content-end p-3 mb-3" %>
+</div>
 <%= render 'shared/about' %>
-<%= render 'shared/card_nav' %>
 <%= render 'team' %>

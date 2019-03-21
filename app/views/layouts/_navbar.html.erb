@@ -6,7 +6,7 @@
 
 
       <%= link_to root_path do %>
-      <div class="logo">        
+      <div class="logo">
         <%= render 'layouts/svg_logo' %>
       </div>
       <% end -%>
@@ -34,12 +34,25 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
             <div class="dropdown-menu">
               <% if user_signed_in? %>
-              <%= link_to "Profil", edit_user_registration_path, class:"dropdown-item colored"%>
-              <%= link_to "Donation", new_donation_path, class:"dropdown-item colored"%>
-              <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"dropdown-item colored"%>
+              <%= link_to contacts_path do %>
+              <p class="dropdown-item colored">Amis</p>
+              <% end -%>
+              <%= link_to edit_user_registration_path do %>
+              <p class="dropdown-item colored">Profil</p>
+              <% end -%>
+              <%= link_to new_donation_path do %>
+              <p class="dropdown-item colored">Donation</p>
+              <% end -%>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <p class="dropdown-item colored">Déconnexion</p>
+              <% end -%>
               <% else %>
-              <%= link_to "Inscription",  new_user_registration_path, class:"dropdown-item colored"%>
-              <%= link_to "Connexion", new_user_session_path, class:"dropdown-item colored"%>
+              <%= link_to new_user_registration_path do %>
+              <p class="dropdown-item colored">Inscription</p>
+              <% end -%>
+              <%= link_to new_user_session_path do %>
+              <p class="dropdown-item colored">Connexion</p>
+              <% end -%>
               <% end -%>
             </div>
           </li>

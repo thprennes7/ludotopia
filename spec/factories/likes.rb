@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :like do
-    article {Article.last}
-    user {User.last}
-    comment {Comment.last}
+    article_id {Article.last.id}
+    user_id {User.last.id}
   end
 end

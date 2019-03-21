@@ -1,25 +1,24 @@
 <!-- Game Card -->
-<div class="container">
+<div class="container mt-5">
   <div class="row game-card pc">
     <div class="col-lg-12 col-xl-5 game-card-left">
       <div class="card-pic">
         <% if info.image.attached? %>
-        <%= image_tag info.image, alt: "#{info.title}" %>
+        <%= image_tag info.image, alt: "#{info.title}", class: "border-radius-left" %>
         <% end %>
       </div>
     </div>
-    <div class="col-lg-12 col-xl-7 game-card-right">
+    <div class="col-lg-12 col-xl-7 game-card-right border-radius-right">
       <h2 class="short-hr-left"><%= info.title %></h2>
       <p class="game-description"><%= strip_tags(markdown(info.description)[0..50]) + "..."%><span class="expand colored strong" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>">Voir plus</span></p>
       <div class="reviews d-flex align-items-baseline">
         <!-- condition to see the number of comments of the article-->
         <% if info.class == Article %>
-        <div class="score-card">
-          <p class="score" id="score<%= info.id %>"><%= fa_icon "thumbs-up" %> <%= info.likes.length %></p>
+        <div class="score-card mt-5 ">
+          <p class="score expand strong" id="score<%= info.id %>" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>"><%= fa_icon "thumbs-up" %> <%= info.likes.count %></p>
         </div>
-        <div class="score-card">
-          <p class="score"><%= find_comment(info).length %></p>
-          <p>Commentaire<%if find_comment(info).length > 1 %>s<% end %> </p>
+        <div class="score-card" id="score-card<%=info.id %>">
+          <p class="score expand strong" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>"><%= fa_icon "comment" %> <%= find_comment(info).count %></p>
         </div>
         <% end %>
       </div>

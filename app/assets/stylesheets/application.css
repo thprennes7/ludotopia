@@ -90,6 +90,10 @@
     top: 5px;
 }
 
+.logo {
+  height: 75px;
+}
 
-/* Extra Things */
-body{background: #eee ;font-family: 'Open Sans', sans-serif;}h3{font-size: 30px; font-weight: 400;text-align: center;margin-top: 50px;}h3 i{color: #444;}
+.loader-logo {
+  height: 55vh;
+}

@@ -42,7 +42,7 @@ end
 puts 'Comment create'
 
 50.times do
-  Like.create!(article_id: Article.all.sample.id, user_id: User.all.sample.id, comment_id: Comment.all.sample.id)
+  Like.create!(article_id: Article.all.sample.id, user_id: User.all.sample.id)
 end
 puts "Like create"
 

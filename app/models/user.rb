@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :scores
   has_many :donations
-  has_many :games, through: :score
+  has_many :games, through: :scores
   has_one_attached :avatar
   has_many :contact, foreign_key: "friend_id", class_name: "Contact"
   after_create :set_status

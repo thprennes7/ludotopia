@@ -1,3 +1,5 @@
-<h3 class="short-hr-left"><%= comment.user.username %></h3>
-<p><%= comment.description %></p>
-<p><%= tidy_date(comment.created_at) %></p>
+<div class="d-block p-3 background-comment border-comment m-4 rounded">
+  <h3 class=""><%= comment.user.username %></h3>
+  <p><%= comment.description %></p>
+  <p><%= tidy_date(comment.created_at) %></p>
+</div>

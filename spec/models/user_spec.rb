@@ -24,6 +24,8 @@ RSpec.describe User, type: :model do
     it { should have_many(:scores) }
     it { should have_many(:donations) }
     it { should have_many(:games).through(:scores) } 
+    it { should have_many(:contact).with_foreign_key('friend_id') }
+    it { should have_many(:contact).class_name('Contact') }
   end
 
 end

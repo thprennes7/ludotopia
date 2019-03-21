@@ -991,7 +991,7 @@ button {
   text-decoration: none;
 }
 /* --------------------------- /////////// XII. RESPONSIVE STYLES /////////// --------------------------- */
-@media screen and (max-width : 991px) {
+@media handheld and (max-width : 991px) {
   .nav-item > a::first-letter {
     color: var(--primary);
   }
@@ -1025,7 +1025,7 @@ button {
     margin-top: 40%;
   }
 }
-@media screen and (max-width : 767px) {
+@media handheld and (max-width : 767px) {
   .large-margin {
     margin-bottom: 4em; /* 96px */
   }
@@ -1091,7 +1091,7 @@ button {
     font-size: 3.5rem;
   }
 }
-@media screen and (max-width : 480px) {
+@media handheld and (max-width : 480px) {
   .game-card-left img {
     min-height: 0;
   }

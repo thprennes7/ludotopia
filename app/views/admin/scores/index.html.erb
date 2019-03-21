@@ -1,23 +1,23 @@
 <h1>Scores</h1>
 <table class="table table-dark">
   <thead>
-        <tr>
-      <th scope="col"></th>
-      <th scope="col">Game</th>
-      <th scope="col">utilisateur</th>
-      <th scope="col">Score</th>
+      <tr>
+      	<th scope="col"></th>
+      	<th scope="col">Game</th>
+      	<th scope="col">utilisateur</th>
+      	<th scope="col">Score</th>
     </tr>
   </thead>
   <tbody>
-<% @scores_list.each do |score| %>
-<tr>
-  <th scope="row"></th>
-  <td><%= score[:player].username %></td>
-  <td><%= score[:game].title %></td>
-  <td><%= score[:win] %></td>
- 
-</tr>
 
-<% end %>
-</tbody>
+		<% @scores_list.each do |score| %>
+			<tr>
+  			<th scope="row"></th>
+  			<td><%= score[:player].username %></td>
+  			<td><%= score[:game].title %></td>
+  			<td><%= score[:win] %></td>
+			</tr>
+		<% end %>
+	</tbody>
+
 </table>

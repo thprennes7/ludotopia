@@ -15,16 +15,16 @@ def create
   begin
     @amount = Float(@amount).round(2)
   rescue
-    flash[:error] = 'Charge not completed. Please enter a valid amount in USD ($).'
-    redirect_to new_charge_path
+    flash[:error] = 'Merci de bien vouloir rentré un valeur décimale'
+    redirect_to new_donation_path
     return
   end
 
   @amount = (@amount * 100).to_i 
 
   if @amount < 500
-    flash[:error] = 'Charge not completed. Donation amount must be at least $5.'
-    redirect_to new_charge_path
+    flash[:error] = "Le montant minimum d'une donation es de 1€"
+    redirect_to new_donation_path
     return
   end
 
@@ -42,14 +42,13 @@ def create
 
   donation = Donation.new(stripe_customer_id: customer.id, user_id: current_user.id, game_id: charge_params[:game_id] , amount: @amount)
     if donation.save
-      redirect_to root_path
       current_user.update(status_id: 2)
-      flash[:success] = "Votre donation a été validé !!!"
+      flash[:notice] = "Votre donation a été validé !!!"
    end
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to new_charge_path
+    redirect_to new_donation_path
   end
 
   private

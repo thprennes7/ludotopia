@@ -1,3 +1,32 @@
-<h2>Merci</h2>
-<p>Votre donations de  <strong><%= number_to_currency(@amount * 0.01) %></strong>
- as bien été reçu.</p>
+<div class="container">
+    <div id="contact" class="large-margin">
+        <div class="row heading tiny-margin">
+            <div class="col-md-auto">
+                <h1 class="animation-element slide-down">Merci bea<span class="colored">ucoups !!</span></h1>
+            </div>
+            <div class="col">
+                <hr class="animation-element extend">
+            </div>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <div class="row small-margin">
+                <div class="col-md-11">
+                    <p>Vos soutiens nous permettent de continuer de développé et amélioré le site. Toutes l’équipes de Ludotopia, ainsi que les différent développeurs de jeux, vous remercie grandement pour votre donation . Votre don de <strong><%= number_to_currency(@amount * 0.01, :locale => :fr) %></strong>, as bien reçu, merci à vous. </p>
+                </div>
+            </div>
+            
+        </div>
+        <%=  link_to "Accueil", root_path, class:"button primary text-center", style:"width: 100px;" %>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

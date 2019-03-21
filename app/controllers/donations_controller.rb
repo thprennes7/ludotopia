@@ -20,7 +20,7 @@ def create
     return
   end
 
-  @amount = (@amount * 100).to_i # Must be an integer!
+  @amount = (@amount * 100).to_i 
 
   if @amount < 500
     flash[:error] = 'Charge not completed. Donation amount must be at least $5.'
@@ -43,6 +43,7 @@ def create
   donation = Donation.new(stripe_customer_id: customer.id, user_id: current_user.id, game_id: charge_params[:game_id] , amount: @amount)
     if donation.save
       redirect_to root_path
+      current_user.update(status_id: 2)
       flash[:success] = "Votre donation a été validé !!!"
    end
 
@@ -54,7 +55,6 @@ def create
   private
   
   def charge_params
-#   params.permit(:user_id, :game_id, :stripeToken, :stripeEmail, :amount )
     params.permit(:game_id, :stripeToken, :amount )
   end
 end 

@@ -16,7 +16,7 @@ Like.destroy_all
 Support.destroy_all
 Game.destroy_all
 # Donation.destroy.all
-if Status.all.any?
+unless Status.all.any?
 	Status.create!(name: "Membre")
 	Status.create!(name: "Donateur")
 	Status.create!(name: "Admin")

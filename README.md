@@ -19,7 +19,7 @@ A personal project as part of the formation : https://www.thehackingproject.org/
 
 - HTML5, CSS3
 - JavaScript, jQuery, AJAX
-- Ruby on rails, MySQL ( avec tables relationnelles )
+- Ruby on rails, MySQL ( With relational tables)
 
 ### Language version
 

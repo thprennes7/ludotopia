@@ -1,5 +1,6 @@
 #  Welcome to Ludotopia !
 
+![logo](https://image.noelshack.com/fichiers/2019/12/5/1553211285-design-ludotopia-logo-v1.png)
 ## Who and Why ?
 
 ### Team : 
@@ -46,7 +47,7 @@ The link to find the app in production.
 
 ## Screenshots
 
-![Landing_page](https://image.noelshack.com/fichiers/2019/12/4/1553208196-gemfi.png)
+![Victoire](https://image.noelshack.com/fichiers/2019/12/4/1553208196-gemfi.png)
 
 ## Contact
 

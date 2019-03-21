@@ -42,7 +42,7 @@ Games and a lot of functionality.
 
 The link to find the app in production.
 
-* [Ludotopia](https://ludotopia.herokuapp.com/?fbclid=IwAR0GrqLdRcVM2cbIAskACmH2tPFOWwpHwSR7qb9TlPiKiF_1XhG5f51sZoQ)
+* [Ludotopia](https://prod-ludotopia.herokuapp.com/)
 
 ## Screenshots
 

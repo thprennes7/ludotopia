@@ -173,6 +173,14 @@ ul {
 .large-margin {
   margin-bottom: 12em; /* 192px */
 }
+
+.border-radius-left {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.border-radius-right {
+  border-radius: 0px 6px 6px 0px;
+}
 /* -<hr>- */
 hr {
   width: 100%;
@@ -866,6 +874,7 @@ button {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   padding: 5%;
   margin-top: 25px;
+  border-radius: 6px;
 }
 #contactForm input {
   width: 100%;
@@ -902,6 +911,7 @@ button {
 }
 #contact-info {
   margin-top: 25px;
+  border-radius: 6px;
 }
 #contact ul li i {
   color: var(--primary);
@@ -979,6 +989,15 @@ button {
   .scrolled {
     background-color: rgba(0,0,0,0.8); /* navbar background gradient */
   }
+
+  .border-radius-right {
+    border-radius: 0px 0px 6px 6px;
+  }
+
+  .border-radius-left {
+    border-radius: 4px 4px 0px 0px;
+  }
+
   #footer {
     text-align: center;
     padding: 10px 0 0 0;

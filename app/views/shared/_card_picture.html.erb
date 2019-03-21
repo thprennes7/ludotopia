@@ -20,6 +20,10 @@
         <div class="score-card" id="score-card<%=info.id %>">
           <p class="score expand strong" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>"><%= fa_icon "comment" %> <%= find_comment(info).count %></p>
         </div>
+        <% elsif info.class == Game %>
+        <div class="score-card mt-5">
+          <p >Don<% if sum_amount(info.donations) > 1%>s<% end %> : <%= sum_amount(info.donations) %> €</p>
+        </div>
         <% end %>
       </div>
     </div>

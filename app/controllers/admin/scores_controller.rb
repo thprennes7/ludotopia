@@ -20,6 +20,6 @@ class Admin::ScoresController < AdminsController
   end
 
   def article_params
-    params.require(:score).permit(:user_id, :game_id, :victory)
+    params.require(:score).permit(:user_id, :game_id, :victory) 
   end
 end

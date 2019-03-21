@@ -37,7 +37,7 @@ module ApplicationHelper
 	end
 
 	def user_liked?(article)
-  article.likes.each do |like|
+  article.likes.each do |like| 
     if like.user == current_user
       return false
     end

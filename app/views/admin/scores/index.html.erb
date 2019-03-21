@@ -1,10 +1,23 @@
 <h1>Scores</h1>
-<% @games.each do |game| %>
-<h2><%= game.title  %></h2>
-<%= find_scores(game).each do |score| %>
-<ul class="score<%= score.id %>_infos">
-  <li><%= score.user.username %></li>
-  <li><%= score.victory %></li>
-</ul>
+<table class="table table-dark">
+  <thead>
+        <tr>
+      <th scope="col"></th>
+      <th scope="col">Game</th>
+      <th scope="col">utilisateur</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @scores_list.each do |score| %>
+<tr>
+  <th scope="row"></th>
+  <td><%= score[:player].username %></td>
+  <td><%= score[:game].title %></td>
+  <td><%= score[:win] %></td>
+
+</tr>
+
 <% end %>
-<% end %>
+</tbody>
+</table>

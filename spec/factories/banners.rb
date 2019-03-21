@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :banner do
     title {"MyString"}
-    description {"MyText"}
+    subtitle {"MyText"}
   end
 end

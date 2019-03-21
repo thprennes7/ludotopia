@@ -9,3 +9,4 @@ class Donation < ApplicationRecord
     UserMailer.confirm_donation(self).deliver_now
   end
 end
+ 

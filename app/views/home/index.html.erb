@@ -6,6 +6,7 @@
 <% 3.times do %>
 <% unless @articles[x] == nil %>
 <%= render partial: 'shared/card_picture', locals: {info: @articles[x]} %>
+<% end -%>
 <% x += 1 %>
 <% end %>
 <%= render partial: 'shared/card_nav', locals: {info: @games[0]} %>

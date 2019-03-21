@@ -15,11 +15,11 @@
         <!-- condition to see the number of comments of the article-->
         <% if info.class == Article %>
         <div class="score-card">
-          <p class="score" id="score<%= info.id %>"><%= fa_icon "thumbs-up" %> <%= info.likes.length %></p>
+          <p class="score" id="score<%= info.id %>"><%= fa_icon "thumbs-up" %> <%= info.likes.count %></p>
         </div>
-        <div class="score-card">
-          <p class="score"><%= find_comment(info).length %></p>
-          <p>Commentaire<%if find_comment(info).length > 1 %>s<% end %> </p>
+        <div class="score-card" id="score-card<%=info.id %>">
+          <p class="score"><%= find_comment(info).count %></p>
+          <p>Commentaire<%if find_comment(info).count > 1 %>s<% end %> </p>
         </div>
         <% end %>
       </div>

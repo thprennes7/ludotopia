@@ -37,11 +37,39 @@ module ApplicationHelper
 	end
 
 	def user_liked?(article)
-  article.likes.each do |like|
-    if like.user == current_user
-      return false
+  	article.likes.each do |like|
+    	if like.user == current_user
+      	return false
+    	end
+  	end
+	end
+
+	def find_scores(scores)
+    scores_list = Array.new
+    scores.each do |score|
+    	indice = 0
+    	puts score.victory
+    	if score.victory == true
+      	scores_list.each_with_index do |list, index|
+      		puts "-------------tic-------------"
+        	
+        	if list[:game] == score.game && list[:player] == score.user
+          	if score.victory == true
+            	scores_list[index][:win] += 1
+          	end
+          	indice = 1
+        	end
+      	end
+      	if indice == 0
+        	puts "---------------tac------------"
+        	scores_list << {game: score.game, player: score.user, win: 1}
+      	end
+    	end
     end
+    puts "============================================="
+    puts scores_list
+    puts "============================================="
+    return scores_list
   end
-end
 
 end

@@ -1,0 +1,2 @@
+class HomeTab < ApplicationRecord
+end

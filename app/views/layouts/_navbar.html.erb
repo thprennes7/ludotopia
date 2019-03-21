@@ -1,51 +1,53 @@
 <!-- //// HEADER //// -->
-    <header id="main-header" style="<% if current_page?(root_path)  %>position: absolute;<% else %>margin-bottom: 3vh;<% end %>">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <!-- Site Logo -->
+<header id="main-header" style="<% if current_page?(root_path)  %>position: absolute;<% else %>margin-bottom: 3vh;<% end %>">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <!-- Site Logo -->
 
 
-                <%= link_to root_path do %>
-               <h1 class="text-white">Ludo<span class="colored">topia</span></h1>
-               <% end -%>
-                <!-- Dropdown Button -->
-                <button id="hamburger" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                </button>
-                <!-- Navigation Links -->
-                <div class="collapse navbar-collapse align-baseline" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <% if is_admin?(current_user) %>
-                        <li>
-                            <%= link_to "Panel admin", admins_path, class:"nav-link" %>
-                        </li>
-                        <% end -%>
-                        <li class="nav-item active">
-                            <%= link_to "Articles", articles_path, class:"nav-link"%>
-                        </li>
-                        <li class="nav-item">
-                            <%= link_to "Jeux", games_path, class:"nav-link"%>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
-                            <div class="dropdown-menu">
-                                <% if user_signed_in? %>
-                                    <%= link_to "Profil", edit_user_registration_path, class:"dropdown-item colored"%>
-                                    <%= link_to "Donation", new_donation_path, class:"dropdown-item colored"%>
-                                    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"dropdown-item colored"%>
-                                <% else %>
-                                    <%= link_to "Inscription",  new_user_registration_path, class:"dropdown-item colored"%>
-                                    <%= link_to "Connexion", new_user_session_path, class:"dropdown-item colored"%>
-                                <% end -%>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <%= link_to "Contact", new_support_path, class:"nav-link"%>
-                        </li>
-                    </ul>
-                </div>
+      <%= link_to root_path do %>
+      <div class="logo">        
+        <%= render 'layouts/svg_logo' %>
+      </div>
+      <% end -%>
+      <!-- Dropdown Button -->
+      <button id="hamburger" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse align-baseline" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <% if is_admin?(current_user) %>
+          <li>
+            <%= link_to "Panel admin", admins_path, class:"nav-link" %>
+          </li>
+          <% end -%>
+          <li class="nav-item active">
+            <%= link_to "Articles", articles_path, class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Jeux", games_path, class:"nav-link"%>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
+            <div class="dropdown-menu">
+              <% if user_signed_in? %>
+              <%= link_to "Profil", edit_user_registration_path, class:"dropdown-item colored"%>
+              <%= link_to "Donation", new_donation_path, class:"dropdown-item colored"%>
+              <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"dropdown-item colored"%>
+              <% else %>
+              <%= link_to "Inscription",  new_user_registration_path, class:"dropdown-item colored"%>
+              <%= link_to "Connexion", new_user_session_path, class:"dropdown-item colored"%>
+              <% end -%>
             </div>
-        </nav>
-    </header><!-- Header End -->
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contact", new_support_path, class:"nav-link"%>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header><!-- Header End -->

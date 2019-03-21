@@ -48,3 +48,11 @@
 .game-modal img{
   width: 100%;
 }
+
+.logo {
+  height: 75px;
+}
+
+.loader-logo {
+  height: 55vh;
+}

@@ -118,13 +118,13 @@ function endGame() {
 	if ($play == $oldGrid[column]) {
 		$.ajax({
 			url: '/scores',
-			type: "GET",
+			type: "POST",
 			data: "user=" + $user + "&winner=true&game_id=1"
 		});
 	}else{
 		$.ajax({
 			url: '/scores',
-			type: "GET",
+			type: "POST",
 			data: "user=" + $user + "&winner=false&game_id=1"
 		});
 	}

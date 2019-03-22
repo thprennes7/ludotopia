@@ -6,6 +6,9 @@ class SupportsController < ApplicationController
   def create
     @support = Support.new(support_params)
     flash[:notice] = "Message envoyé !" if @support.save
+    else
+      flash[:alert] = "email invalide"
+
     redirect_to root_path
   end
 

@@ -1,23 +1,10 @@
-
-var handler = StripeCheckout.configure({
-  key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-  locale: 'auto',
-  name: 'Ludotopia',
-  description: 'Donnation Unique',
-  currency: 'eur',
-  token: function(token) {
-    $('input#stripeToken').val(token.id);
-    $('form').submit();
-  }
-});
-
 $('#donateButton').on('click', function(e) {
   e.preventDefault();
 
   $('#error_explanation').html('');
 
   var amount = $('input#amount').val();
-  amount = amount.replace(/\$/g, '').replace(/\,/g, '')
+  amount = amount.replace(/\$/g, '').replace(/\,/g, '.')
 
   amount = parseFloat(amount);
 

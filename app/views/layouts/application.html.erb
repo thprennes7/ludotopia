@@ -5,6 +5,9 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all'%>
+  <% if cookies[:theme].to_i == 0 %>
+  <%= stylesheet_link_tag "light_colors" %>
+  <% end %>
 </head>
 <body>
   <%= render 'layouts/loading' %>
@@ -24,6 +27,19 @@
 
   <% if controller_name == "donations" %>
   <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script>
+    var handler = StripeCheckout.configure({
+      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+      locale: 'auto',
+      name: 'Ludotopia',
+      description: 'Donnation Unique',
+      currency: 'eur',
+      token: function(token) {
+        $('input#stripeToken').val(token.id);
+        $('form').submit();
+      }
+    });
+  </script>
   <%= javascript_include_tag 'stripe.js' %>
   <% end %>
 

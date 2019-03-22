@@ -1,7 +1,7 @@
 <div id="game-board" class="d-flex justify-content-center">
 	<div style="display: none;" id="party-id"><%= @party.id %></div>
 	<div style="display: none;" id="player"><%= @user_participation.player %></div>
-	<div style="display: none;" id="user"><%= current_user %></div>
+	<div style="display: none;" id="user"><%= current_user.id %></div>
 <% 
 case @party.status
 when "1" %>

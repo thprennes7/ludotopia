@@ -21,7 +21,7 @@ A personal project as part of the formation : https://www.thehackingproject.org/
 
 - HTML5, CSS3
 - JavaScript, jQuery, AJAX
-- Ruby on rails, MySQL ( With relational tables)
+- Ruby on rails, postgresql ( With relational tables)
 
 ### Language version
 
@@ -32,9 +32,6 @@ Rails version: 5.1.2
 
 A platform meant to host multiple board games made playable online.
 
-## Responsive ? 
-
-yes, the site is responsive.
 
 ## To come up
 
@@ -54,3 +51,7 @@ The link to find the app in production.
 
 * [Facebook](https://www.facebook.com/Ludotopia-258709275039675/)
 * [Instagram](https://www.instagram.com/Ludotopiaa/)
+
+### Advertising video
+
+* [Video](https://www.youtube.com/watch?v=WOUGLRvEyLY&feature=youtu.be)

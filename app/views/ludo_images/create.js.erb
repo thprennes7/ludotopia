@@ -1,0 +1,7 @@
+if ( $('#image<%= params[:home_tab_id] %>').length ) {
+  let $bannerImage = $('#image<%= params[:home_tab_id] %>');
+  $bannerImage.fadeOut(1500).replaceWith("<%= j render 'image', home_tab: @home_tab %>").fadeIn(1500);
+} else {
+  let $button = $('#delete<%= home_tab.id %>');
+  $button.after("<%= j render 'image', home_tab: @home_tab %>").fadeIn(1500);
+};

@@ -1,0 +1,2 @@
+$previewText = $('#home_tab<%= @home_tab.id %>');
+$previewText.fadeOut(1000).replaceWith("<%= j render 'admin/home_tabs/ludo_img', home_tab: @home_tab %>").fadeIn(1000)

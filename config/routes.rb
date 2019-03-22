@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :images
   end
 
-  resources :home_tabs, only: [:create, :destroy] do
+  resources :home_tabs, only: [:create, :destroy, :update] do
     resources :ludo_images
   end
 

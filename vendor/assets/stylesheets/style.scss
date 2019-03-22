@@ -54,6 +54,10 @@ Primary Color: var(--primary);
   --standard: #F5F5F5 !important;
   --footer: #070707 !important;
   --silence: #999 !important;
+  --card1: rgba(0, 0, 0, 0.2);
+  --card2: rgba(0, 0, 0, 0.2);
+  --dark-grey: rgba(0, 0, 0, 0.6);
+  --modal: rgba(0, 0, 0, 0.9);
 }
 
 /* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
@@ -609,7 +613,7 @@ button {
   min-height: 270px;
 }
 .game-card-right {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(var(--card1), var(--card2));
   padding: 20px 40px;
   margin: 0;
 }
@@ -735,8 +739,6 @@ button {
   padding: 5px;
   border-radius: 2px;
 }
-.score-card:hover {
-}
 .score-card:hover .score {
   color: var(--primary);
 }
@@ -798,7 +800,7 @@ button {
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background: linear-gradient(var(--dark-grey), var(--dark-grey));
   text-align: center;
   padding: 40% 20px 20px 20px;
   z-index: 5;
@@ -829,13 +831,13 @@ button {
 /* --------------------------- /////////// VIII. CAREERS SECTION /////////// --------------------------- */
 .job-card {
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(var(--card1), var(--card2));
   border-left: 2px solid var(--primary);
   padding: 25px 35px;
   margin: 10px 0;
 }
 .modal-content {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+  background: linear-gradient(var(--modal), var(--modal));
 }
 .modal-header {
   border-bottom: 1px solid var(--primary);
@@ -890,7 +892,7 @@ button {
 }
 /* --------------------------- /////////// IX. CONTACT SECTION /////////// --------------------------- */
 #contactForm {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(var(--card1), var(--card2));
   padding: 5%;
   margin-top: 25px;
   border-radius: 6px;
@@ -934,7 +936,7 @@ button {
 }
 #contact ul li i {
   color: var(--primary);
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(var(--card1), var(--card2));
   padding: 10px;
 
 }
@@ -999,7 +1001,7 @@ button {
   text-decoration: none;
 }
 /* --------------------------- /////////// XII. RESPONSIVE STYLES /////////// --------------------------- */
-@media screen and (max-width : 991px) {
+@media handheld and (max-width : 991px) {
   .nav-item > a::first-letter {
     color: var(--primary);
   }
@@ -1033,7 +1035,7 @@ button {
     margin-top: 40%;
   }
 }
-@media screen and (max-width : 767px) {
+@media handheld and (max-width : 767px) {
   .large-margin {
     margin-bottom: 4em; /* 96px */
   }
@@ -1099,7 +1101,7 @@ button {
     font-size: 3.5rem;
   }
 }
-@media screen and (max-width : 480px) {
+@media handheld and (max-width : 480px) {
   .game-card-left img {
     min-height: 0;
   }

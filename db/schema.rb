@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_104643) do
+ActiveRecord::Schema.define(version: 2019_03_21_223406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,12 @@ ActiveRecord::Schema.define(version: 2019_03_21_104643) do
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "home_tabs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
   end
 
   create_table "likes", force: :cascade do |t|

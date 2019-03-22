@@ -1,16 +1,3 @@
-
-var handler = StripeCheckout.configure({
-  key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-  locale: 'auto',
-  name: 'Ludotopia',
-  description: 'Donnation Unique',
-  currency: 'eur',
-  token: function(token) {
-    $('input#stripeToken').val(token.id);
-    $('form').submit();
-  }
-});
-
 $('#donateButton').on('click', function(e) {
   e.preventDefault();
 

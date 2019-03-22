@@ -53,7 +53,7 @@ module ApplicationHelper
     	if score.victory == true
       	scores_list.each_with_index do |list, index|
       		puts "-------------tic-------------"
-        	
+
         	if list[:game] == score.game && list[:player] == score.user
           	if score.victory == true
             	scores_list[index][:win] += 1
@@ -74,4 +74,11 @@ module ApplicationHelper
     return scores_list
   end
 
+	def sum_amount(donations)
+		x = 0
+		donations.each do |donation|
+			x += donation.amount
+		end
+		return x
+	end
 end

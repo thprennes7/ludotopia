@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+ <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all'%>
+  
+</head>
+
+<body>
+  <%= render 'layouts/navbar' %>
+ <div id="container-404" class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-12 text-center text-404">
+                 <h1 class="animation-element slide-down">GAME<span class="colored"> OVER</span></h1>
+                <h3>Error 404 this page could not be found.</h3>
+                <%= link_to "Retour a l'acceuil", root_path, class:"button primary" %>
+           </div>
+        </div>
+    </div>
+    <%= javascript_include_tag 'application'%>
+</body>
+</html>

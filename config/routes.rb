@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  # Theme switching route !!not a page!!
+  get 'theme', to: 'home#index'
+
   resources :supports, only: [:new, :create]
   resources :contacts, only: [:create, :index, :destroy]
   resources :landings, only: [:show]
@@ -12,6 +15,10 @@ Rails.application.routes.draw do
   resources :scores, except: [:edit]
   resources :games, except: [:edit] do
     resources :images
+  end
+
+  resources :home_tabs, only: [:create, :destroy] do
+    resources :ludo_images
   end
 
   resources :articles do
@@ -25,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :admins, only: [:index]
   namespace :admin do
+    resources :home_tabs, only: [:index]
     resources :supports, except: [:new, :create, :update, :edit]
     resources :banners
     resources :donations, only: [:edit, :index, :show]

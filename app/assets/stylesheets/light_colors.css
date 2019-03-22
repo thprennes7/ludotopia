@@ -1,0 +1,13 @@
+:root {
+  --primary: #E48632 !important;
+  --secondary: #f0f0f0 !important;
+  --white: #1b1b28 !important;
+  --black: #e3e9f0 !important;
+  --standard: #F5F5F5 !important;
+  --footer: #adadad !important;
+  --silence: #999 !important;
+  --card1: rgba(255, 255, 255, 1);
+  --card2: rgba(255, 255, 255, 1);
+  --dark-grey: rgba(255, 255, 255, 0.6);
+  --modal: rgba(255, 255, 255, 0.9);
+}

@@ -11,7 +11,7 @@
 - Guillaume zaugg
 - Salomé Marzin
 - Samir Kettani
-- Marc Bonnard notre mentor
+- Marc Bonnard Our mentor
 
 ### for
 

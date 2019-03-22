@@ -1,5 +1,6 @@
 #  Welcome to Ludotopia !
 
+![logo](https://image.noelshack.com/fichiers/2019/12/5/1553211285-design-ludotopia-logo-v1.png)
 ## Who and Why ?
 
 ### Team : 
@@ -19,7 +20,7 @@ A personal project as part of the formation : https://www.thehackingproject.org/
 
 - HTML5, CSS3
 - JavaScript, jQuery, AJAX
-- Ruby on rails, MySQL ( avec tables relationnelles )
+- Ruby on rails, MySQL ( With relational tables)
 
 ### Language version
 
@@ -42,13 +43,13 @@ Games and a lot of functionality.
 
 The link to find the app in production.
 
-* [Ludotopia](https://ludotopia.herokuapp.com/?fbclid=IwAR0GrqLdRcVM2cbIAskACmH2tPFOWwpHwSR7qb9TlPiKiF_1XhG5f51sZoQ)
+* [Ludotopia](https://prod-ludotopia.herokuapp.com/)
 
 ## Screenshots
 
-![Landing_page](https://image.noelshack.com/fichiers/2019/12/1/1552944301-capture-d-ecran-de-2019-03-18-22-14-33.png)
+![Victoire](https://image.noelshack.com/fichiers/2019/12/4/1553208196-gemfi.png)
 
 ## Contact
 
 * [Facebook](https://www.facebook.com/Ludotopia-258709275039675/)
-* [Instagram](https://www.facebook.com/Ludotopia-258709275039675/)
+* [Instagram](https://www.instagram.com/Ludotopiaa/)

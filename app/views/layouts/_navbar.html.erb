@@ -30,11 +30,6 @@
           <li class="nav-item">
             <%= link_to "Jeux", games_path, class:"nav-link"%>
           </li>   
-          <li class="nav-item">
-          <%= link_to theme_path do %>
-              <p class="nav-link">Theme</p>
-              <% end -%>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
             <div class="dropdown-menu">
@@ -63,6 +58,11 @@
           </li>
           <li class="nav-item">
             <%= link_to "Contact", new_support_path, class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+          <%= link_to theme_path do %>
+            <p class="nav-link button primary">Theme</p>
+          <% end -%>
           </li>
         </ul>
       </div>

@@ -1,0 +1,4 @@
+<li class="list-group-item friend" id="friend<%= friend.id %>" style="background: none;"><%= friend.friend.username %>
+<%= link_to contact_path(friend.id), method: :delete, data: {confirm: "Êtes vous sûr(e)?"}, remote: true do %>
+<p>Supprimer mon copain</p></li>
+<% end %>

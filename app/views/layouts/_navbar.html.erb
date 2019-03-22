@@ -18,20 +18,20 @@
       </button>
       <!-- Navigation Links -->
       <div class="collapse navbar-collapse align-baseline" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
           <% if is_admin?(current_user) %>
           <li>
-            <%= link_to "Panel admin", admins_path, class:"nav-link" %>
+            <%= link_to "Panel admin", admins_path, class:"nav-link m-0" %>
           </li>
           <% end -%>
           <li class="nav-item">
-            <%= link_to "Articles", articles_path, class:"nav-link"%>
+            <%= link_to "Articles", articles_path, class:"nav-link m-0"%>
           </li>
           <li class="nav-item">
-            <%= link_to "Jeux", games_path, class:"nav-link"%>
+            <%= link_to "Jeux", games_path, class:"nav-link m-0"%>
           </li>   
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
+            <a class="nav-link dropdown-toggle m-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
             <div class="dropdown-menu">
               <% if user_signed_in? %>
               <%= link_to contacts_path do %>
@@ -57,12 +57,10 @@
             </div>
           </li>
           <li class="nav-item">
-            <%= link_to "Contact", new_support_path, class:"nav-link"%>
+            <%= link_to "Contact", new_support_path, class:"nav-link m-0"%>
           </li>
           <li class="nav-item">
-          <%= link_to theme_path do %>
-            <p class="nav-link button primary">Theme</p>
-          <% end -%>
+          <%= link_to "Theme", theme_path, class:"nav-link button primary m-0" %>
           </li>
         </ul>
       </div>

@@ -1,8 +1,8 @@
-<%= form_tag home_tabs_path, method: :post, multipart: true, remote: true do %>
-	
-	<%= text_field_tag :title, nil, placeholder: "Nom de l'image" %>
-
+<div class="p-5 mb-2 bg-secondary rounded">
+<%= form_tag home_tabs_path, method: :post, multipart: true, remote: true, class:"d-flex flex-column mb-3" do %>
+	<%= label_tag "title", "Titre" %>
+	<%= text_field_tag :title, nil, class:"form-control mb-3" %>
 	<%= file_field_tag :ludo_image %>
-
-	<%= submit_tag "Uploader l'image" %>
+	<%= submit_tag "Charger l'image", class:"btn btn-info mt-2"%>
 <% end %>
+</div>

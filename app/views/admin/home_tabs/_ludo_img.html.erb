@@ -1,5 +1,18 @@
-<%= home_tab.title %>
+<div id="home_tab<%= home_tab.id %>" class="pg-5 bg-secondary rounded mb-4">
 
-<%= image_tag home_tab.ludo_image %>
+  <h3><%= home_tab.title %></h3>
 
-<%= link_to "Supprimer", home_tab_path(home_tab), method: :delete, remote: true %>
+  <div class="p-2 col-4" id="imageContainer<%= home_tab.id %>" style="max-width: 300px">
+    <% if home_tab.ludo_image.attached? %>
+    <%= image_tag home_tab.ludo_image, alt: "image#{home_tab.id}", id: "image#{home_tab.id}" %>
+    <% end %>
+
+    <%= form_tag home_tab_path(home_tab), method: :patch, remote: true, multipart: true, class:"d-flex flex-column" do %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= file_field_tag :ludo_image, class:"mb-2" %>
+    <%= submit_tag "Mettre à jour l'image", class:"btn btn-info" %>
+    <% end %>
+    <%= link_to "Supprimer", home_tab_path(home_tab), method: :delete, remote: true, class:"btn btn-danger"%>
+
+  </div>
+</div>

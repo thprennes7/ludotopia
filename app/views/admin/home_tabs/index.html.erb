@@ -1,7 +1,9 @@
+<h2>Charger une image :</h2>
 <%= render 'new_ludo' %>
 
-<% @home_tabs.each do |home_tab| %>
-
-<%= render partial: 'ludo_img', locals: { home_tab: home_tab } %>
-
-<% end %>
+<h2>Modifier une image :</h2>
+<div class="ludoimg">
+  <% @home_tabs.each do |home_tab| %>
+  <%= render partial: 'ludo_img', locals: { home_tab: home_tab } %>
+  <% end %>
+</div>

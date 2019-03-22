@@ -1,6 +1,6 @@
 class ScoresController < ApplicationController
   protect_from_forgery with: :null_session
-  before_action :set_score, except: [:index]
+  before_action :set_score, except: [:index, :create]
   respond_to :js, :html, :json
 
 
@@ -14,7 +14,7 @@ class ScoresController < ApplicationController
   end
 
   def create
-    @score = Score.new(score_params)
+    @score = Score.create!(game: Game.find_by(title: params[:game]), victory: params[:winner], user_id: params[:user])
     flash[:notice] = "Création de la partie."
     respond_with(@score)
   end

@@ -10,7 +10,7 @@ class DonationsController < ApplicationController
 def create
   @amount = params[:amount]
 
-  @amount = @amount.gsub('$', '').gsub(',', '') / 100
+  @amount = @amount.gsub('$', '').gsub(',', '')
 
   begin
     @amount = Float(@amount).round(2)
@@ -20,7 +20,7 @@ def create
     return
   end
 
-  @amount = (@amount * 100).to_i 
+  @amount = (@amount * 100).to_i
 
   if @amount < 500
     flash[:error] = "Le montant minimum d'une donation es de 1€"
@@ -40,7 +40,7 @@ def create
     currency: 'eur',
   })
 
-  donation = Donation.new(stripe_customer_id: customer.id, user_id: current_user.id, game_id: charge_params[:game_id] , amount: @amount)
+  donation = Donation.new(stripe_customer_id: customer.id, user_id: current_user.id, game_id: charge_params[:game_id] , amount: @amount / 100.00)
     if donation.save
       current_user.update(status_id: 2)
       flash[:notice] = "Votre donation a été validé !!!"

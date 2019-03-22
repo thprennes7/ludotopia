@@ -4,7 +4,7 @@ class GamesController < ApplicationController
 
 
   def index
-    @games = Game.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+    @games = Game.all
     respond_with(@articles)
   end
 

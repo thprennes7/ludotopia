@@ -11,8 +11,8 @@
             <div class="d-flex flex-column align-items-center">
                 <div class="row small-margin">
                     <div class="col-md-11">
-                        <p>Ici vous pouvez soutenir les développeurs des jeux de société que nous hébergeons. Développer un jeu ou une application peux vite prendre du temps, et es souvent coder par des petits groupes de personne qui cherche à se lancer. N’hésitez pas à soutenir les projets que vous préférez.</p>
-                    </div> 
+                        <p>Ici vous pouvez soutenir les développeurs des jeux de société que nous hébergeons. Développer un jeu ou une application peut vite prendre du temps, et est souvent codé par des petits groupes de personnes qui cherchent à se lancer. N’hésitez pas à soutenir les projets que vous préférez.</p>
+                    </div>
                   </div>
                   <h2 class="short-hr-center">FAIRE UNE DONATION</h2>
                     <div id="contactForm">
@@ -29,7 +29,7 @@
                       </div>
 
                       <div class="form-group w-100 d-flex flex-column align-items-center">
-                        <h3 class="mb-4" >Selectionnez le jeu<h3>
+                        <h3 class="mb-4" >Selectionner le jeu<h3>
                         <% @game=Game.all %>
                         <%= select_tag "game_id", options_from_collection_for_select(@game, "id", "title"), class:"form-control form-control-lg text-light bg-dark" %>
                       </div>

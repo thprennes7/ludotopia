@@ -13,3 +13,4 @@ RSpec.describe Banner, type: :model do
   	end
   end
 end
+ 

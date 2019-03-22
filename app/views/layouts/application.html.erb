@@ -13,10 +13,12 @@
   <%= render 'layouts/loading' %>
   <%= render 'layouts/navbar' %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <p class="notice colored w-100 text-right p-2"><%= notice %></p>
+  <p class="alert colored w-100 text-right p-2"><%= alert %></p>
 
+  <main>
   <%= yield %>
+  </main>
   <!-- Return to Top -->
   <p id="return-to-top"><%= fa_icon "chevron-up" %></p>
   <%= render 'layouts/footer' %>
@@ -25,6 +27,19 @@
 
   <% if controller_name == "donations" %>
   <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script>
+    var handler = StripeCheckout.configure({
+      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+      locale: 'auto',
+      name: 'Ludotopia',
+      description: 'Donnation Unique',
+      currency: 'eur',
+      token: function(token) {
+        $('input#stripeToken').val(token.id);
+        $('form').submit();
+      }
+    });
+  </script>
   <%= javascript_include_tag 'stripe.js' %>
   <% end %>
 

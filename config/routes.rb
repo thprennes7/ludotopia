@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     resources :images
   end
 
+  resources :home_tabs, only: [:create, :destroy] do
+    resources :ludo_images
+  end
+
   resources :articles do
     resources :images
     resources :comments, only: [:create, :edit, :new]
@@ -28,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :admins, only: [:index]
   namespace :admin do
+    resources :home_tabs, only: [:index]
     resources :supports, except: [:new, :create, :update, :edit]
     resources :banners
     resources :donations, only: [:edit, :index, :show]

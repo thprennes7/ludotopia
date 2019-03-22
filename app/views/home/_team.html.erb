@@ -19,9 +19,11 @@
                 <div id="full-row" class="row text-center">
                     <div class="col-md-4 team-card">
                         <figure>
-                            <img src="<%= image_url("download.jpg")%>" data-src="<%= image_url("download.jpg")%>" class="img-fluid b-lazy" alt="teammember">
+                          <% if guillaume != nil && guillaume.ludo_image.attached? %>
+                          <%= image_tag guillaume.ludo_image, class: "img-fluid b-lazy", alt: "teammember" %>
+                          <% end %>
                             <figcaption class="team-caption">
-                                <p>“Vivre d'amour et d'eau fraiche !”</p>
+                                <p>“À l'occasion, je vous mettrai un petit coup de polish...”</p>
                                 <hr class="hr-short">
                             </figcaption>
                         </figure>
@@ -30,7 +32,9 @@
                     </div>
                     <div class="col-md-4 team-card">
                         <figure>
-                            <img src="<%= image_url("download.jpg")%>" data-src="<%= image_url("download.jpg")%>" class="img-fluid b-lazy" alt="teammember">
+                          <% if salome != nil && salome.ludo_image.attached? %>
+                          <%= image_tag salome.ludo_image, class: "img-fluid b-lazy", alt: "teammember" %>
+                          <% end %>
                             <figcaption class="team-caption">
                                 <p>“Les week-ends sont durs en Bretagne !”</p>
                                 <hr class="hr-short">
@@ -41,7 +45,9 @@
                     </div>
                     <div class="col-md-4 team-card">
                         <figure>
-                            <img src="<%= image_url("download.jpg")%>" data-src="<%= image_url("download.jpg")%>" class="img-fluid b-lazy" alt="teammember">
+                          <% if florian != nil && florian.ludo_image.attached? %>
+                          <%= image_tag florian.ludo_image, class: "img-fluid b-lazy", alt: "teammember" %>
+                          <% end %>
                             <figcaption class="team-caption">
                                 <p>“Si t'y arrives pas, fais une boucle !”</p>
                                 <hr class="hr-short">
@@ -52,7 +58,9 @@
                     </div>
                     <div class="col-md-4 team-card">
                         <figure>
-                            <img src="<%= image_url("download.jpg")%>" data-src="<%= image_url("download.jpg")%>" class="img-fluid b-lazy" alt="teammember">
+                          <% if samir != nil && samir.ludo_image.attached? %>
+                          <%= image_tag samir.ludo_image, class: "img-fluid b-lazy", alt: "teammember" %>
+                          <% end %>
                             <figcaption class="team-caption">
                                 <p>"Grand est celui qui n'a pas perdu son cœur d'enfant."</p>
                                 <hr class="hr-short">
@@ -63,7 +71,9 @@
                     </div>
                     <div class="col-md-4 team-card">
                         <figure>
-                            <img src="<%= image_url("download.jpg")%>" data-src="<%= image_url("download.jpg")%>" class="img-fluid b-lazy" alt="teammember">
+                          <% if yann != nil && yann.ludo_image.attached? %>
+                          <%= image_tag yann.ludo_image, class: "img-fluid b-lazy", alt: "teammember" %>
+                          <% end %>
                             <figcaption class="team-caption">
                                 <p>“C’est n’es pas parce que l’on fait des choses sérieuses, qu’il faut se prendre au sérieux. ”</p>
                                 <hr class="hr-short">
@@ -74,7 +84,9 @@
                     </div>
                     <div class="col-md-4 team-card">
                         <figure>
-                            <img src="<%= image_url("download.jpg")%>" data-src="<%= image_url("download.jpg")%>" class="img-fluid b-lazy" alt="teammember">
+                          <% if aurelien != nil && aurelien.ludo_image.attached? %>
+                          <%= image_tag aurelien.ludo_image, class: "img-fluid b-lazy", alt: "teammember" %>
+                          <% end %>
                             <figcaption class="team-caption">
                                 <p>“Faut savoir se faire plaisir, surtout quand on est le patron.”</p>
                                 <hr class="hr-short">

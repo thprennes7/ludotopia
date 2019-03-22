@@ -1,0 +1,7 @@
+<%= render 'new_ludo' %>
+
+<% @home_tabs.each do |home_tab| %>
+
+<%= render partial: 'ludo_img', locals: { home_tab: home_tab } %>
+
+<% end %>

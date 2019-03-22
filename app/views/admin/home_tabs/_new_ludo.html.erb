@@ -1,0 +1,8 @@
+<%= form_tag home_tabs_path, method: :post, multipart: true, remote: true do %>
+	
+	<%= text_field_tag :title, nil, placeholder: "Nom de l'image" %>
+
+	<%= file_field_tag :ludo_image %>
+
+	<%= submit_tag "Uploader l'image" %>
+<% end %>

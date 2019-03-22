@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
 	before_action :authenticate_user!
+	respond_to :js, :html, :json
+	
 	def create
 		user = User.find_by(username: params[:user])
 		unless Contact.find_by(me: current_user, friend: user) || user == current_user
@@ -17,6 +19,8 @@ class ContactsController < ApplicationController
 	end
 
 	def destroy
-		contact = Contact.find_by(me: current_user, friend: params[:user])
+		@contact = Contact.find(params[:id])
+		flash[:success] = "Amis supprimé !" if @contact.destroy
+    respond_with(@contact)
 	end
 end

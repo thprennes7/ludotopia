@@ -19,7 +19,7 @@
 			<h2 class="short-hr-left">Liste d'amis</h2>
 			<ul class="list-group list-group-flush" id="friend-list">
 				<% @friends.each do |friend| %>
-				<li class="list-group-item" style="background: none;"><%= friend.friend.username %></li>
+				<%= render partial: 'friend', locals: {friend: friend} %>
 				<% end %>
 			</ul>
 		</div>

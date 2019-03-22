@@ -191,6 +191,13 @@ ul {
 .border-radius-right {
   border-radius: 0px 6px 6px 0px;
 }
+
+.friend {
+  background: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 /* -<hr>- */
 hr {
   width: 100%;

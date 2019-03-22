@@ -9,8 +9,14 @@ class HomeTabsController < ApplicationController
   	respond_with(@home_tab)
   end
 
+  def update
+    flash[:notice] = "Image mise à jour" if @home_tab.update(home_tab_params)
+    respond_with(@home_tab)
+  end
+
   def destroy
   	flash[:notice] = "Image supprimée" if @home_tab.destroy
+    respond_with(@home_tab)
   end
 
   private

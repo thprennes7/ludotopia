@@ -1,0 +1,3 @@
+$homeTabContainer = $('.ludoimg');
+
+$homeTabContainer.prepend("<%= j render 'admin/home_tabs/ludo_img', home_tab: @home_tab %>").hide().slideDown(1500);

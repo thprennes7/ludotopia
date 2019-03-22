@@ -10,7 +10,7 @@ class DonationsController < ApplicationController
 def create
   @amount = params[:amount]
 
-  @amount = @amount.gsub('$', '').gsub(',', '.')
+  @amount = @amount.gsub('$', '').gsub(',', '') / 100
 
   begin
     @amount = Float(@amount).round(2)

@@ -25,6 +25,10 @@
   height: 100vh;
 }
 
+.carousel-caption p {
+color: var(--silence);
+}
+
 .carousel-inner {
   height: 100vh;
 }

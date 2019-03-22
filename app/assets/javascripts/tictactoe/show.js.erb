@@ -35,7 +35,7 @@ $(document).ready(function(){
 				checkStatus($oldStatus);
 			}
 		});
-	}, 1500);
+	}, 2000);
 });
 
 function checkStatus(status){
@@ -109,23 +109,23 @@ function turnOffButtons() {
 	}
 }
 
-function endGame() {
+function endGame(endPlay) {
 	$.ajax({
 		url: '/tictactoe/tictactoes/' + $partyId,
 		type: "PATCH",
 		data: "status=3"
 	});
-	if ($play == $oldGrid[column]) {
+	if ($play == endPlay) {
 		$.ajax({
 			url: '/scores',
 			type: "POST",
-			data: "user=" + $user + "&winner=true&game_id=1"
+			data: "user=" + $user + "&winner=true&game=Tictactoe"
 		});
 	}else{
 		$.ajax({
 			url: '/scores',
 			type: "POST",
-			data: "user=" + $user + "&winner=false&game_id=1"
+			data: "user=" + $user + "&winner=false&game=Tictactoe"
 		});
 	}
 }

@@ -11,5 +11,12 @@ class HomeController < ApplicationController
     @banners = Banner.all.sort.reverse
     @games = Game.all.sort.reverse
     @articles = Article.all.sort.reverse
+    @about = HomeTab.find_by(title: "about")
+    @florian = HomeTab.find_by(title: "florian")
+    @salome = HomeTab.find_by(title: "salome")
+    @samir = HomeTab.find_by(title: "samir")
+    @yann = HomeTab.find_by(title: "yann")
+    @guillaume = HomeTab.find_by(title: "guillaume")
+    @aurelien = HomeTab.find_by(title: "aurelien")
   end
 end

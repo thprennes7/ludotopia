@@ -23,5 +23,5 @@
 	<% end %>
 	<%= link_to "Plus de jeux", games_path, class: "d-flex justify-content-end p-3 mb-3" %>
 </div>
-<%= render 'shared/about' %>
-<%= render 'team' %>
+<%= render partial: 'shared/about', locals: { about: @about } %>
+<%= render partial: 'team', locals: { florian: @florian, aurelien: @aurelien, yann: @yann, salome: @salome, samir: @samir, guillaume: @guillaume } %>

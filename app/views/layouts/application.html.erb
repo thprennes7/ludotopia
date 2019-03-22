@@ -5,6 +5,9 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all'%>
+  <% if cookies[:theme].to_i == 0 %>
+  <%= stylesheet_link_tag "light_colors" %>
+  <% end %>
 </head>
 <body>
   <%= render 'layouts/loading' %>

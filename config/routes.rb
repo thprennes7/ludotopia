@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  # Theme switching route !!not a page!!
+  get 'theme', to: 'home#index'
+
   resources :supports, only: [:new, :create]
   resources :contacts, only: [:create, :index, :destroy]
   resources :landings, only: [:show]

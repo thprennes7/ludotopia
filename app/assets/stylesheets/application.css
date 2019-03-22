@@ -17,12 +17,8 @@
   width: 100%;
 }
 
-.notice {
-  position: absolute !important;
-}
-
-.alert {
-  position: absolute !important;
+.notice, .alert {
+  position: relative !important;
 }
 
 .carousel {

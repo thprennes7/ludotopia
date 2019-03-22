@@ -25,7 +25,7 @@ $('#donateButton').on('click', function(e) {
     $('#error_explanation').html('<p>Merci de rentrer une valeur décimale pour le montant de la donation.</p>');
   }
   else if (amount < 1.00) {
-    $('#error_explanation').html('<p>Le montant minimum es de 1€.</p>');
+    $('#error_explanation').html('<p>Le montant minimum est de 1€.</p>');
   }
   else {
     amount = amount * 100; // Needs to be an integer!

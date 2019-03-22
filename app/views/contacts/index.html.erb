@@ -1,23 +1,27 @@
-<div class="row">
-	<div class="col-sm-6">
-		<h2 class="short-hr-left">Ajouter un ami</h2>
-		<%= form_tag contacts_path, remote: true do |f| %>
-			<%= label_tag :user, "Utilisateurs : " %>
-			<%= text_field_tag :user, nil, list:'pseudos' %>
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-sm-6 ">
+			<h2 class="short-hr-left">Ajouter un ami</h2>
+			<%= form_tag contacts_path, remote: true do |f| %>
+			<div class="mr-0">
+				<%= label_tag :user, "Utilisateurs : " %>
+				<%= text_field_tag :user, nil, list:'pseudos',  class: "button-devise-third ml-2" %>
+			</div>
 			<datalist id="pseudos">
 				<% @users.each do |user| %>
-					<option value="<%= user.username %>"></option>
+				<option value="<%= user.username %>"></option>
 				<% end -%>
 			</datalist>
-			<%= submit_tag "Ajouter" %>
-		<% end -%>
-	</div>
-	<div class="col-sm-6">
-		<h2 class="short-hr-left">Liste d'amis</h2>
-		<ul class="list-group list-group-flush" id="friend-list">
-			<% @friends.each do |friend| %>
+			<%= submit_tag "Ajouter", class: "button ml-0" %>
+			<% end -%>
+		</div>
+		<div class="col-sm-6">
+			<h2 class="short-hr-left">Liste d'amis</h2>
+			<ul class="list-group list-group-flush" id="friend-list">
+				<% @friends.each do |friend| %>
 				<li class="list-group-item" style="background: none;"><%= friend.friend.username %></li>
-			<% end %>
-		</ul>
+				<% end %>
+			</ul>
+		</div>
 	</div>
 </div>

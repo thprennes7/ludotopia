@@ -2,4 +2,4 @@ $likes = $('#likes<%=@like.article.id %>');
 $likes.children().replaceWith('<%= j render "articles/like", current_info: @like.article %>');
 
 $likesDisplay = $('#score<%=@like.article.id %>');
-$likesDisplay.replaceWith('<%= j render "like_display", info: @like.article %>');
+$likesDisplay.children().replaceWith('<%= j render "like_display", info: @like.article %>');

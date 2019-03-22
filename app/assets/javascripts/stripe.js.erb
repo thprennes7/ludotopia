@@ -4,7 +4,7 @@ $('#donateButton').on('click', function(e) {
   $('#error_explanation').html('');
 
   var amount = $('input#amount').val();
-  amount = amount.replace(/\$/g, '').replace(/\,/g, '')
+  amount = amount.replace(/\$/g, '').replace(/\,/g, '.')
 
   amount = parseFloat(amount);
 

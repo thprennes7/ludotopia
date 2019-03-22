@@ -6,7 +6,7 @@ class HomeController < ApplicationController
       else
         cookies.permanent[:theme] = 1
       end
-      redirect_to root_path
+      redirect_to request.referer
     end
     @banners = Banner.all.sort.reverse
     @games = Game.all.sort.reverse

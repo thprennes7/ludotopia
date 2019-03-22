@@ -18,7 +18,7 @@ class User < ApplicationRecord
   private
 
   def set_status
-    self.status_id = 1
+    self.update(status_id: 1)
   end
 
   def welcome_send

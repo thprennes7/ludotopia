@@ -468,7 +468,7 @@ button {
   transition: 0.3s;
 }
 .scrolled {
-  background-color: rgba(0,0,0,0.8); /* navbar background gradient */
+  background-color: var(--modal); /* navbar background gradient */
   z-index: 900;
 }
 .nav-link {

@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'no-reply@ludotopia.herokuapp.com'
+  default only_path: true
   layout 'mailer'
 end

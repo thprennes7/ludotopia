@@ -1,1 +1,1 @@
-<p class="score" id="score<%= info.id %>"><%= fa_icon "thumbs-up" %> <%= info.likes.length %></p>
+<p class="score expand strong" data-toggle="modal" id="score<%= info.id %>"  data-target="#<%= info.id + info.created_at.day %>"><%= fa_icon "thumbs-up" %> <%= info.likes.length %></p>

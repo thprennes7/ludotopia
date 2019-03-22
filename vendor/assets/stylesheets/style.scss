@@ -319,6 +319,26 @@ button {
   cursor: pointer;
 }
 
+.button-devise-third {
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: Raleway, sans-serif;
+  font-weight: 500;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  margin-left: auto;
+  margin-right: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px 15px;
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
 .button:hover {
   background: var(--white);
   color: var(--secondary);
@@ -333,6 +353,12 @@ button {
   background: var(--white);
   color: var(--secondary);
 }
+
+.button-devise-third:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
 
 /* --------------------------- /////////// II. PAGE PRELOADER /////////// --------------------------- */
 /* -Loading Screen- */

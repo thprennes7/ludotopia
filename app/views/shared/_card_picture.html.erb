@@ -14,8 +14,8 @@
       <div class="reviews d-flex align-items-baseline">
         <!-- condition to see the number of comments of the article-->
         <% if info.class == Article %>
-        <div class="score-card mb-0 ">
-          <p class="score expand strong" id="score<%= info.id %>" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>"><%= fa_icon "thumbs-up" %> <%= info.likes.count %></p>
+        <div class="score-card mb-0 "id="score<%= info.id %>">
+          <p class="score expand strong" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>"><%= fa_icon "thumbs-up" %> <%= info.likes.count %></p>
         </div>
         <div class="score-card" id="score-card<%=info.id %>">
           <p class="score expand strong" data-toggle="modal" data-target="#<%= info.id + info.created_at.day %>"><%= fa_icon "comment" %> <%= find_comment(info).count %></p>

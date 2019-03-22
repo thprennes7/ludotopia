@@ -23,7 +23,7 @@
   <%= yield :javascript_includes %>
 
   <% if controller_name == "donations" %>
-  <%= javascript_include_tag 'stripe' %>
+  <%= javascript_include_tag 'stripe.js' %>
   <script src="https://checkout.stripe.com/checkout.js"></script>
   
   <% end %>

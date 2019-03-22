@@ -1,0 +1,6 @@
+$deletedHomeTab = $('#home_tab<%= @home_tab.id %>');
+
+$deletedHomeTab.slideUp(1500);
+setTimeout(function(){
+  $deletedHomeTab.remove()
+}, 1500);
